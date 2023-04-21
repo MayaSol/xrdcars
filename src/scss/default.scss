@@ -1,0 +1,294 @@
+
+/*================================================
+Default CSS
+=================================================*/
+// @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+// @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+    font-family: 'Exo2';
+    src: url('../fonts/Exo2-Regular.woff2') format('woff2'),
+        url('../fonts/Exo2-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Exo2';
+    src: url('../fonts/Exo2-Medium.woff2') format('woff2'),
+        url('../fonts/Exo2-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Exo2';
+    src: url('../fonts/Exo2-Bold.woff2') format('woff2'),
+        url('../fonts/Exo2-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NunitoSans';
+    src: url('../fonts/NunitoSans-Light.woff2') format('woff2'),
+        url('../fonts/NunitoSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NunitoSans';
+    src: url('../fonts/NunitoSans-Regular.woff2') format('woff2'),
+        url('../fonts/NunitoSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NunitoSans';
+    src: url('../fonts/NunitoSans-SemiBold.woff2') format('woff2'),
+        url('../fonts/NunitoSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NunitoSans';
+    src: url('../fonts/NunitoSans-Bold.woff2') format('woff2'),
+        url('../fonts/NunitoSans-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+$main-font-family: 'NunitoSans',
+sans-serif;
+$heading-font-family: 'Exo2',
+sans-serif;
+$main-color: #ff5421;
+$optional-color: #000244;
+$white-color: #ffffff;
+$black-color: #161c2d;
+$paragraph-color: #666666;
+$font-size: 16px;
+$transition: .5s;
+
+body {
+    display: flex;           // Исправляем баг в IE для min-height and flexbox (flex-direction:column)
+    flex-direction: column;  // и прижимаем footer в IE 10-11
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: $main-font-family;
+    font-size: $font-size;
+}
+
+a {
+    text-decoration: none;
+    transition: $transition;
+    color: $black-color;
+    display: inline-block;
+
+    &:hover,
+    &:focus {
+        color: $main-color;
+        text-decoration: none;
+    }
+
+    &[href^='tel:'] {
+
+        // На больших экранах телефоны-ссылки делаем обычным текстом
+        @media (min-width: 1199px) {
+          white-space: nowrap;
+          pointer-events: none;
+          text-decoration: inherit;
+        }
+    }
+}
+
+button {
+    outline: 0 !important;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: $paragraph-color;
+    font-weight: 400;
+    font-family: $main-font-family;
+    font-size: $font-size;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+i {
+    line-height: normal;
+}
+
+.btn {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  text-align: center;
+  font-family: inherit;
+  line-height: 1.5;
+  text-decoration: none;
+  text-transform: none;
+  background-color: transparent;
+  background-image: none;
+  cursor: pointer;
+  overflow: hidden
+}
+
+
+.d-table {
+    width: 100%;
+    height: 100%;
+
+    &-cell {
+        vertical-align: middle;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+.ptb-100 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.pt-100 {
+    padding-top: 100px;
+}
+
+.pb-100 {
+    padding-bottom: 100px;
+}
+
+.pt-70 {
+    padding-top: 70px;
+}
+
+.pb-70 {
+    padding-bottom: 70px;
+}
+
+.ptb-50 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $black-color;
+    font-family: $heading-font-family;
+    font-weight: bold;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.tab {
+    .tabs_item {
+        display: none;
+
+        &:first-child {
+            display: block;
+        }
+    }
+}
+
+/*================================================
+Default btn CSS
+=================================================*/
+.default-btn {
+    border: none;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+    color: $white-color;
+    background-color: $main-color;
+    transition: $transition;
+    padding: 15px 35px;
+    font-size: $font-size;
+    font-weight: 600;
+    border-radius: 5px;
+
+    span {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background-color: $optional-color;
+        transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        border-radius: 5px;
+    }
+
+    &:hover {
+        color: $white-color;
+
+        span {
+            width: 225%;
+            height: 562.5px;
+        }
+    }
+}
+
+/*================================================
+Section Title CSS
+=================================================*/
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+
+    h2 {
+        font-size: 36px;
+        margin-bottom: 10px;
+        line-height: 1;
+    }
+
+    p {
+        font-size: $font-size;
+    }
+}

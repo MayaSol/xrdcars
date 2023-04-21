@@ -1,0 +1,60 @@
+
+/*=================================
+Buy Now Btn
+====================================*/
+.buy-now-btn {
+    left: 30px;
+    z-index: 99;
+    top: 50%;
+    position: fixed;
+    transform: translateY(-50%);
+    border-radius: 30px;
+    display: inline-block;
+    color: $white-color !important;
+    background-color: #82b440;
+    padding: 8px 20px 8px;
+    font-size: 14px;
+    font-weight: 500;
+
+    animation: {
+        name: tada;
+        duration: 5s;
+        fill-mode: both;
+        iteration-count: infinite;
+    }
+
+    ;
+
+    &:hover {
+        background-color: $main-color;
+        color: $white-color !important;
+    }
+}
+
+@keyframes tada {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    10%,
+    20% {
+        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    }
+
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+
+    40%,
+    60%,
+    80% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}

@@ -1,0 +1,21 @@
+/*================================================
+Плашка цены price-tag
+=================================================*/
+
+.price-tag {
+    position: relative;
+    display: inline-block;
+    padding: 5px 20px;
+    background-color: #ff5421;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: $heading-font-family;
+    white-space: nowrap;
+    border-radius: 30px;
+
+    &::after {
+        content: '\20bd';
+        margin-left: 5px;
+    }
+}

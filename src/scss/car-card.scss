@@ -1,0 +1,54 @@
+/*================================================
+Карточка автомобиля car-card
+=================================================*/
+
+.car-card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 10px;
+	padding-bottom: 0;
+	border-radius: 5px;
+	background-color: #f6f7f9;
+	transition: 0.5s;
+
+	&:hover {
+		transform: translateY(-5px);
+	}
+
+	&__image {
+		position: relative;
+
+		img {
+			border-radius: 5px;
+		}
+	}
+
+	&__icon {
+		position: absolute;
+		bottom: -20px;
+		right: 20px;
+
+		@at-root .car-card:hover & {
+			bottom: 20px;
+			background-color: #ff5421;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		flex-grow: 1;
+		// box-shadow: unset;
+		padding: 25px 15px;
+		// border-radius: unset;
+	}
+
+    &__title {
+        font-size: 26px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+}
