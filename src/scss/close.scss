@@ -1,0 +1,40 @@
+// В этом файле должны быть стили для БЭМ-блока close, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.close {
+  position: relative;
+  opacity: 1;
+
+  &.aside-form__close {
+    margin-left: auto;
+    width: 23px;
+    height: 23px;
+
+    &::before,
+    &::after {
+      height: 23px;
+      width: 2px;
+    }
+  }
+}
+.close:hover {
+  opacity: 0.4;
+}
+.close:before, .close:after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  content: ' ';
+  width: 14px;
+  height: 1px;
+  background-color: #000;
+  transform: translateX(-50%);
+}
+.close:before {
+  transform: translateX(-50%) rotate(45deg);
+}
+.close:after {
+  transform: translateX(-50%) rotate(-45deg);
+}
+

@@ -1,0 +1,883 @@
+/*================================================
+Navbar Area CSS
+=================================================*/
+.main-responsive-nav {
+    display: none;
+}
+
+.main-navbar {
+    padding: 15px 0;
+
+    .container-fluid {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .navbar {
+        transition: $transition;
+        padding: 0;
+
+        .navbar-brand {
+            .white-logo {
+                display: block;
+                width: 225px;
+            }
+
+            .black-logo {
+                display: none;
+                width: 225px;
+            }
+
+            @media (max-width: 1399px) {
+                .white-logo,
+                .black-logo {
+                    max-width: 150px;
+                }
+            }
+        }
+
+        ul {
+            padding-left: 0;
+            list-style-type: none;
+            margin-bottom: 0;
+        }
+    }
+
+    .navbar-nav {
+        width: 100%;
+        align-items: center;
+        margin-right: 0 !important;
+
+        .nav-item {
+            position: relative;
+            margin-left: 15px;
+            margin-right: 15px;
+            max-height: 34px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:first-child {
+                margin-left: auto;
+            }
+
+            &:hover,
+            &.active {
+                a {
+                    color: $main-color;
+                }
+            }
+
+            .dropdown-menu {
+                border: none;
+                top: 50px;
+                left: 0;
+                z-index: 99;
+                opacity: 0;
+                width: 205px;
+                display: block;
+                border-radius: 0;
+                padding: 10px 0;
+                position: absolute;
+                visibility: hidden;
+                opacity: 0;
+                margin-top: 10px;
+                background: $white-color;
+                transition: $transition;
+                box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+
+                li {
+                    margin: 0;
+
+                    a {
+                        padding: 5px 20px;
+                        position: relative;
+                        display: block;
+                        color: $black-color;
+                        font-size: 15px;
+                        font-weight: 600;
+
+                        i {
+                            margin: 0;
+                            position: absolute;
+                            top: 50%;
+                            font-size: 20px;
+                            transform: translateY(-50%);
+                            right: 15px;
+                        }
+
+                        &:hover,
+                        &:focus,
+                        &.active {
+                            color: $main-color;
+                        }
+                    }
+
+                    .dropdown-menu {
+                        top: 0;
+                        opacity: 0;
+                        right: -200px;
+                        left: auto;
+                        visibility: hidden;
+                        transform: translateY(5px);
+
+                        li {
+                            a {
+                                color: $black-color;
+
+                                &:hover,
+                                &:focus,
+                                &.active {
+                                    color: $main-color;
+                                }
+                            }
+
+                            .dropdown-menu {
+                                top: 0;
+                                opacity: 0;
+                                left: 200px;
+                                visibility: hidden;
+
+                                li {
+                                    a {
+                                        color: $black-color;
+
+                                        &:hover,
+                                        &:focus,
+                                        &.active {
+                                            color: $main-color;
+                                        }
+                                    }
+
+                                    .dropdown-menu {
+                                        top: 0;
+                                        opacity: 0;
+                                        left: -200px;
+                                        visibility: hidden;
+
+                                        li {
+                                            a {
+                                                color: $black-color;
+
+                                                &:hover,
+                                                &:focus,
+                                                &.active {
+                                                    color: $main-color;
+                                                }
+                                            }
+
+                                            .dropdown-menu {
+                                                top: 0;
+                                                opacity: 0;
+                                                left: 200px;
+                                                visibility: hidden;
+
+                                                li {
+                                                    a {
+                                                        color: $black-color;
+
+                                                        &:hover,
+                                                        &:focus,
+                                                        &.active {
+                                                            color: $main-color;
+                                                        }
+                                                    }
+
+                                                    .dropdown-menu {
+                                                        top: 0;
+                                                        opacity: 0;
+                                                        left: -200px;
+                                                        visibility: hidden;
+
+                                                        li {
+                                                            a {
+                                                                color: $black-color;
+
+                                                                &:hover,
+                                                                &:focus,
+                                                                &.active {
+                                                                    color: $main-color;
+                                                                }
+                                                            }
+
+                                                            .dropdown-menu {
+                                                                top: 0;
+                                                                opacity: 0;
+                                                                left: 200px;
+                                                                visibility: hidden;
+
+                                                                li {
+                                                                    a {
+                                                                        color: $black-color;
+
+                                                                        &:hover,
+                                                                        &:focus,
+                                                                        &.active {
+                                                                            color: $main-color;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            &.active {
+                                                                a {
+                                                                    color: $main-color;
+                                                                }
+                                                            }
+
+                                                            &:hover {
+                                                                .dropdown-menu {
+                                                                    opacity: 1;
+                                                                    visibility: visible;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+                                                    &.active {
+                                                        a {
+                                                            color: $main-color;
+                                                        }
+                                                    }
+
+                                                    &:hover {
+                                                        .dropdown-menu {
+                                                            opacity: 1;
+                                                            visibility: visible;
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            &.active {
+                                                a {
+                                                    color: $main-color;
+                                                }
+                                            }
+
+                                            &:hover {
+                                                .dropdown-menu {
+                                                    opacity: 1;
+                                                    visibility: visible;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.active {
+                                        a {
+                                            color: $main-color;
+                                        }
+                                    }
+
+                                    &:hover {
+                                        .dropdown-menu {
+                                            opacity: 1;
+                                            visibility: visible;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.active {
+                                a {
+                                    color: $main-color;
+                                }
+                            }
+
+                            &:hover {
+                                .dropdown-menu {
+                                    opacity: 1;
+                                    visibility: visible;
+                                }
+                            }
+                        }
+                    }
+
+                    &.active {
+                        a {
+                            color: $main-color;
+                        }
+                    }
+
+                    &:hover {
+                        .dropdown-menu {
+                            opacity: 1;
+                            visibility: visible;
+                            transform: translateY(0);
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .dropdown-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    margin-top: 0;
+                }
+            }
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            cursor: pointer;
+
+            i {
+                top: 2px;
+                margin-left: 0;
+
+                &:first-child {
+                    margin-right: 7px;
+                }
+            }
+        }
+    }
+
+
+    @at-root .option-item--phone a,
+    & .nav-link {
+            color: $white-color;
+            font-size: $font-size;
+            font-weight: 600;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            transition: $transition;
+
+            i {
+                // font-size: 18px;
+                position: relative;
+                top: 4px;
+                display: inline-block;
+                margin-left: -5px;
+                margin-right: -5px;
+            }
+
+            &:hover,
+            &:focus,
+            &.active {
+                color: $main-color;
+            }
+        }
+}
+
+
+.option-item {
+    margin-right: 15px;
+
+    &--phone {
+        margin-left: auto !important;
+    }
+
+    &--fav {
+        // display: flex;
+        // align-items: center;
+
+        i:first-child {
+            color: $main-color;
+            margin-bottom: 2px;
+        }
+        & .nav-link > span {
+            display: none;
+        }
+
+        & .dropdown-menu .nav-link span {
+            display: inline-block;
+        }
+    }
+
+    &--choose-avto {
+        white-space: nowrap;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .dropdown-account {
+        position: relative;
+
+        .dropdown-toggle {
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            color: $white-color;
+            cursor: pointer;
+            transition: $transition;
+
+            &::after {
+                display: none;
+            }
+
+            i {
+                font-size: 18px;
+                color: $main-color;
+                margin-right: 5px;
+                position: relative;
+                top: 2px;
+            }
+
+            span {
+                display: inline-block;
+                font-size: $font-size;
+                font-weight: 600;
+                position: relative;
+                top: 1px;
+
+                i {
+                    position: relative;
+                    font-size: 20px;
+                    top: 4px;
+                    right: 2px;
+                    transition: $transition;
+                    color: $white-color;
+                }
+            }
+
+            &:hover {
+                color: $white-color;
+
+                span {
+                    i {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            padding: 15px;
+            border: none;
+            box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 0;
+            display: block;
+            margin-top: 30px;
+            opacity: 0;
+            visibility: visible;
+            transition: $transition;
+            transform: scaleX(0);
+
+            .dropdown-item {
+                padding: 0;
+                color: $black-color;
+                margin-bottom: 15px;
+                font-weight: 600;
+
+                &::before {
+                    display: none;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                span {
+                    display: inline-block;
+                    margin-left: 8px;
+                    font-size: $font-size;
+                    font-weight: 600;
+                    margin-top: 0;
+                    transition: $transition;
+
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
+
+                &:hover,
+                &:focus {
+                    background-color: transparent !important;
+                }
+
+                &:active,
+                &.active {
+                    color: $black-color;
+                    background-color: transparent;
+                }
+            }
+
+            &.show {
+                opacity: 1;
+                visibility: visible;
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    .navbar-btn {
+        display: inline-block;
+        background-color: $main-color;
+        color: $white-color;
+        padding: 15px 30px;
+        font-size: 15px;
+        font-weight: 500;
+        transition: $transition;
+        border-radius: 10px;
+
+        &:hover {
+            background-color: $optional-color;
+        }
+    }
+
+    @media (min-width: 1200px) and (max-width: 1399px) {
+        margin-right: 5px;
+    }
+}
+
+
+
+.navbar-area {
+    position: absolute;
+    background-color: rgba(22, 28, 45, .9);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    z-index: 999;
+
+    &.is-sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+        background-color: $white-color !important;
+        animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+
+        .main-navbar {
+            .navbar {
+                .navbar-brand {
+                    .white-logo {
+                        display: none;
+                    }
+
+                    .black-logo {
+                        display: block;
+                    }
+                }
+
+                .navbar-nav {
+                    .nav-item {
+                        a {
+                            color: $black-color;
+
+                            &:hover,
+                            &:focus,
+                            &.active {
+                                color: $main-color;
+                            }
+                        }
+                    }
+                }
+
+                .option-item {
+
+                    .dropdown-account {
+                        .dropdown-toggle {
+                            color: $black-color;
+
+                            span {
+                                i {
+                                    color: $black-color;
+                                }
+                            }
+
+                            &:hover {
+                                color: $main-color;
+
+                                span {
+                                    i {
+                                        color: $main-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .languages-list {
+                        .nice-select {
+                            color: $black-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.navbar-white-color {
+            background-color: unset;
+
+            .main-navbar {
+                .navbar {
+                    .navbar-nav {
+                        .nav-item {
+                            a {
+                                color: $black-color;
+
+                                &:hover,
+                                &:focus,
+                                &.active {
+                                    color: $main-color;
+                                }
+                            }
+
+                            .dropdown-menu {
+                                top: 65;
+                            }
+                        }
+                    }
+
+                    .option-item {
+                        .dropdown-account {
+
+                            .dropdown-toggle {
+                                color: $black-color;
+
+                                span {
+                                    i {
+                                        color: $black-color;
+                                    }
+                                }
+
+                                &:hover {
+                                    color: $main-color;
+
+                                    span {
+                                        i {
+                                            color: $main-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .languages-list {
+                            .nice-select {
+                                color: $black-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.navbar-white-color {
+        background-color: unset;
+
+        .main-navbar {
+            .navbar {
+                .navbar-nav {
+                    .nav-item {
+                        a {
+                            color: $white-color;
+
+                            &:hover,
+                            &:focus,
+                            &.active {
+                                color: $main-color;
+                            }
+                        }
+
+                        .dropdown-menu {
+                            top: 65;
+
+                            li {
+                                a {
+                                    color: $black-color;
+
+                                    &:hover,
+                                    &:focus,
+                                    &.active {
+                                        color: $main-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .option-item {
+                    .dropdown-account {
+
+                        .dropdown-toggle {
+                            color: $white-color;
+
+                            span {
+                                i {
+                                    color: $white-color;
+                                }
+                            }
+
+                            &:hover {
+                                color: $main-color;
+
+                                span {
+                                    i {
+                                        color: $main-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .languages-list {
+                        .nice-select {
+                            color: $white-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// .mean-container .mean-nav ul li a.nav-link {
+//     display: flex;
+//     align-items: center;
+// }
+
+.mean-container .mean-nav ul li a.mean-expand {
+    height: 56px;
+    box-sizing: border-box;
+}
+
+.mean-expand span  {
+    transition: $transition;
+}
+
+
+.mean-expand.mean-clicked span {
+    transform: rotate(180deg);
+}
+
+.mean-container .mean-nav ul li a {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+//!!! .others-option-for-responsive{}
+
+// Mobile and iPad Navbar
+@media only screen and (max-width: 1199px) {
+    .main-responsive-nav {
+        display: block;
+        height: 30px;
+
+        .main-responsive-menu {
+            position: relative;
+
+            &.mean-container {
+                .mean-nav {
+                    .nav-item {
+                        font-size: 18px;
+
+                        &.active {
+                            color: $main-color;
+                        }
+
+                        i:last-child {
+                            display: none;
+                        }
+                    }
+
+                    .option-item {
+                        margin-right: 0;
+
+                        &--choose-avto {
+                            display: none;
+                        }
+
+                        &--fav {
+                            order: -1;
+
+                            i {
+                                margin-right: 9px;
+                            }
+
+                            span {
+                                display: inline-block;
+                            }
+
+                            .dropdown-toggle {
+                                width: 100%;
+                                display: flex;
+                                justify-content: space-between;
+                            }
+                        }
+
+                        &--phone {
+                            margin-left: 0;
+                            margin-right: 0;    
+                        }
+                    }
+
+
+                    .navbar-nav {
+                        overflow-y: scroll;
+                        height: 460px;
+                        font-size: 15px;
+                        box-shadow: 0 7px 13px 0 rgba(0, 0, 0, .1);
+                    }
+                }
+
+                .nav-link {
+                    padding-top: 0.8em;
+                    padding-bottom: 0.8em;
+                }
+            }
+        }
+
+        .mean-container {
+            a {
+                &.meanmenu-reveal {
+                    color: $black-color;
+
+                    span {
+                        background: $black-color;
+                        position: relative;
+                    }
+                }
+            }
+        }
+
+        .logo {
+            position: relative;
+            width: 150px;
+
+            a {
+                display: block;
+            }
+        }
+    }
+
+    .navbar-area {
+        background-color: $white-color;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .main-navbar {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 1399px) {
+    .option-item {
+        &--choose-avto {
+            .navbar-btn {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    }
+}

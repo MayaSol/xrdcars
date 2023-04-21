@@ -1,0 +1,72 @@
+// В этом файле должны быть стили для БЭМ-блока aside-form, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.aside-form {
+
+  $block-name: &; // #{$block-name}__element
+  position: relative;
+  z-index: 99999;
+
+  &__overlay {
+    #{$block-name}--show & {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, .6);
+    }
+  }
+
+  &__content {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding: 20px 15px;
+    right: -100%;
+    width: 100%;
+    color: $tw-gray-500;
+    background-color: $white-color;
+    overflow-y: auto;
+    transition: right $transition, top $transition;
+
+    @media (min-width: $screen-md) {
+      padding: 30px 70px;
+    }
+
+
+    #{$block-name}--show & {
+      right: 0;
+    }
+
+    .scrolled & {
+      top: 51px;
+      padding-top: 30px;
+    }
+  }
+
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 40px;
+    color: $tw-gray-600;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  form {
+    margin-top: 40px;
+  }
+
+  &__submit.btn {
+    margin-top: 30px;
+  }
+}

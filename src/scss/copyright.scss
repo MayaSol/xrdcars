@@ -1,0 +1,26 @@
+/*================================================
+Copy Right Area CSS
+=================================================*/
+.copyright-area {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #151a29;
+}
+
+.copyright-area-content {
+    text-align: center;
+
+    p {
+        color: $white-color;
+
+        a {
+            display: inline-block;
+            font-weight: bold;
+            color: $white-color;
+
+            &:hover {
+                color: $main-color;
+            }
+        }
+    }
+}

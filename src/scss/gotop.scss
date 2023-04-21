@@ -1,0 +1,53 @@
+/*================================================
+Go Top CSS
+=================================================*/
+.go-top {
+    position: fixed;
+    cursor: pointer;
+    bottom: -100px;
+    right: 20px;
+    color: $white-color;
+    background-color: $black-color;
+    z-index: 4;
+    width: 45px;
+    text-align: center;
+    height: 45px;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 50%;
+    font-size: 22px;
+    transition: .9s;
+    overflow: hidden;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+
+    i {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        font-size: 30px;
+
+        margin: {
+            left: auto;
+            right: auto;
+        }
+
+        ;
+    }
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        bottom: 20px;
+    }
+
+    &:hover {
+        background-color: $main-color;
+        color: $white-color;
+        transition: $transition;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+        transform: translateY(-5px);
+    }
+}

@@ -1,0 +1,6 @@
+tz/
+node_modules/
+initial/
+*.sublime-*
+*.rar
+*.zip
