@@ -1,0 +1,39 @@
+//- Все примеси в этом файле должны начинаться c имени блока (compare-slider)
+
+mixin compare-slider(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' compare-slider--' + modsList[i].trim();
+      }
+    }
+
+  .compare-slider(class=allMods)&attributes(attributes)
+    .compare-slider__after
+      .compare-slider__content.compare-slider__content--after
+        +compare-slider-content(props)
+      .compare-slider__before
+        .compare-slider__content.compare-slider__content--before
+          block
+
+
+mixin compare-slider-content(props)
+
+  .compare-card__content&attributes(attributes)
+    .compare-card__image
+      img(src= props.src)
+    //- .compare-card__price.price-tag
+    //-   span.compare-card__price-val= props.price
+    //- .compare-card__desc
+    //-   .compare-card__desc-inner.ellipsis(data-lines=4)= props.desc
+
+
+mixin compare-card-content(props={}, mods)
+
+  h3.compare-card__title= props.title
+  .compare-card__desc
+    .compare-card__desc-inner.ellipsis(data-lines=4)= props.desc

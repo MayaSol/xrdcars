@@ -1,0 +1,66 @@
+mixin advantages(props, mods)
+
+  //- Вызов:
+  
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' advantages--' + modsList[i].trim();
+      }
+    }
+
+    if (!props) {
+      props = {};
+    }
+
+  .advantages(class=allMods)&attributes(attributes)
+    .advantages__aside
+      .advantages__info-wrapper
+        .advantages__info
+          .advantages__image
+            a.advantages__link(href="car-details.html")
+              img(src=props.src alt="image")
+          .advantages__desc
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+          .advantages__form
+            form
+              +form-group-text({
+                  label: "Имя"
+              })
+              +form-group-text({
+                  label: "Телефон"
+              })
+              +form-group-text-area({
+                  label: "Текст"
+              })
+              +form-check()
+              <button type="submit" class="default-btn"> Отправить
+                <span style="top: -416.8px; left: -40px;"></span>
+              </button>
+    .advantages__compare-wrapper
+      block
+
+
+mixin advantages-compare(props, mods)
+
+  //- Вызов:
+  
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' advantages__compare--' + modsList[i].trim();
+      }
+    }
+
+  .advantages__compare(class=allMods)&attributes(attributes)
+
+
+
+
+

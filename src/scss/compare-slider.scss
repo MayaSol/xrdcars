@@ -1,0 +1,127 @@
+// В этом файле должны быть стили для БЭМ-блока compare-slider, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.compare-slider {
+
+    $block-name: &; // #{$block-name}__element
+    flex-shrink: 0;
+    // padding: 10px 10px 0 10px;
+    border-radius: 8px;
+
+    &__after {
+        position: relative;
+        width: 100%;
+        background-color: $black-color;
+        // @media (min-width: $screen-md) {
+        //   display: flex;
+        //   justify-content: space-between;
+        //   width: auto;
+        //   height: auto !important;
+        // }
+    }
+
+    &__before {
+        // position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $black-color;
+        overflow: hidden;
+
+        // @media (min-width: $screen-md) {
+        //   position: static !important;
+        //   width: 48% !important;
+        //   order: -1;
+        // }
+
+
+
+        // img {
+        //   width: auto;
+        //   height: auto;
+        //   max-width: none;
+        // }
+    }
+
+    &__content {
+        display: block;
+        vertical-align: middle;
+        width: 100%;
+        // height: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+
+        // @media (min-width: $screen-md) {
+        //   height: auto;
+
+        //   &--after {
+        //     width: 48% !important;
+        //   }
+
+        //   &--before {
+        //     width: auto !important;
+        //   }
+        // }
+    }
+
+    &__slider {
+        position: absolute;
+        width: 4px;
+        height: 100%;
+        top: 0;
+        background-color: #2196F3;
+        cursor: ew-resize;
+        z-index: 9;
+
+        // @media (min-width: $screen-md) {
+        //   display: none;
+        // }
+    }
+
+    &__slider-handle {
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 40px;
+        margin-left: 2px;
+        background-color: #2196F3;
+        border-radius: 50%;
+        cursor: ew-resize;
+        transform: translate(-50%);
+        background-repeat: no-repeat;
+        background-position: center;
+
+        i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 24px;
+            color: #fff;      transform: translate(-50%, -50%);
+        }
+    }
+
+}
+
+    .compare-card {
+        height: 100%;
+        padding: 10px;
+        background-color: $black-color;
+        color: $white-color;
+            border-radius: 8px;
+
+
+        &__image {
+            height: 270px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            @media (max-width: 1199px) {
+                height: 240px;
+            }
+        }
+    }

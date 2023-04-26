@@ -1,0 +1,21 @@
+.filter-main {
+
+	&__mark,
+	&__model {
+		margin-bottom: 20px;
+		
+		.choices__list--dropdown .choices__item {
+			display: flex;
+			padding-right: 10px;
+			
+			i {
+				margin-right: 10px;
+			}
+
+			span {
+				margin-left: auto;
+				margin-right: 10px;
+			}
+		}
+	}
+}

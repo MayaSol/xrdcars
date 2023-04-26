@@ -1,0 +1,21 @@
+//- Все примеси в этом файле должны начинаться c имени блока (compare-slider)
+
+mixin form-check(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' compare-slider--' + modsList[i].trim();
+      }
+    }
+
+  .form-check&attributes(attributes)
+    input(type="checkbox" class="form-check-input" id="checkme")
+    label(class="form-check-label" for="checkme")
+      span Согласие на обработку моих
+      a(href="privacy-policy.html") персональных данных
+
+

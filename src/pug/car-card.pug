@@ -1,0 +1,53 @@
+mixin car-card(props, mods)
+
+  //- Вызов:
+        +car-card({
+            src: "/images/featured-cars/featured-cars-7.jpg",
+            photos: 5,
+            price: "300 000 000",
+            title: "2021 VOLVO XC60",
+            options: [
+                {title: 'flaticon-calendar', value: 2012},
+                {title: 'flaticon-road', value: '15 000'},
+                {title: 'flaticon-power', value: 150},
+                {title: 'flaticon-engine', value: 'Бензин'},
+            ]
+        })
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' car-card--' + modsList[i].trim();
+      }
+    }
+
+  .car-card(class=allMods)&attributes(attributes)
+    .car-card__image
+      a.car-card__link(href="car-details.html")
+        img(src=props.src alt="image")
+      .pict-num-icon.car-card__icon
+        a(href="car-details.html")
+          i.flaticon-gallery= props.photos
+    .car-card__content
+      .price-tag.car-card__tag= props.price
+      h3.car-card__title
+        a(href="car-details.html")= props.title
+      .car-option__list.car-card__options
+        .car-option__item
+          i.car-option__icon(class=props.options[0].title)
+          .car-option__value= props.options[0].value
+        .car-option__item
+          i.car-option__icon(class=props.options[1].title)
+          .car-option__value= props.options[1].value
+        .car-option__item
+          i.car-option__icon(class=props.options[2].title)
+          .car-option__value= props.options[2].value
+        .car-option__item
+          i.car-option__icon(class=props.options[3].title)
+          .car-option__value= props.options[3].value
+
+
+

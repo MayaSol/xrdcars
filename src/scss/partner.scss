@@ -1,0 +1,72 @@
+/*================================================
+Partner Area CSS
+=================================================*/
+.partner-area {
+    background-color: $black-color;
+}
+
+.partner-item {
+    img {
+        width: auto !important;
+        margin: auto;
+    }
+}
+
+.partner-slides {
+    &.owl-theme {
+        .owl-nav {
+            margin-top: 0;
+
+            [class*=owl-] {
+                position: absolute;
+                left: 0;
+                top: 40%;
+                transform: translateY(-40%);
+                margin: 0;
+                outline: 0;
+                width: 45px;
+                height: 45px;
+                line-height: 50px;
+                transition: $transition;
+                background-color: $white-color;
+                box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+                color: $black-color;
+                border-radius: 50%;
+                opacity: 0;
+                visibility: hidden;
+
+                &:hover,
+                &:focus {
+                    background-color: $main-color;
+                    color: $white-color;
+                }
+
+                &.owl-next {
+                    left: auto;
+                    right: 0;
+                }
+
+                i {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        &:hover {
+            .owl-nav {
+                [class*=owl-] {
+                    opacity: 1;
+                    visibility: visible;
+                    left: -50px;
+                    transition: $transition;
+
+                    &.owl-next {
+                        left: auto;
+                        right: -50px;
+                    }
+                }
+            }
+        }
+    }
+}

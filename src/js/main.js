@@ -1,5 +1,7 @@
 const Choices = require('choices.js');
 const closest = require('closest');
+const makeEllipsis = require('./utils/ellipsis.js');
+const autosize = require('autosize');
 
 jQuery(function ($) {
     'use strict';
@@ -15,9 +17,6 @@ jQuery(function ($) {
 	});
 
 	// Mean Menu
-	console.log('mm');
-	console.log(jQuery('.mean-menu').meanmenu);
-
 	jQuery('.mean-menu').meanmenu({
 		meanScreenWidth: "1199",
 		meanExpand: "<span class='bx bx-chevron-down'></span>",
@@ -58,17 +57,17 @@ jQuery(function ($) {
 	// });
 	
 	// // Models Slides
-	// $('.models-slides').owlCarousel({
-	// 	loop: true,
-	// 	nav: false,
-	// 	dots: true,
-	// 	autoplayHoverPause: true,
-	// 	items: 1,
-	// 	animateOut: 'fadeOut',
-	// 	animateIn: 'fadeIn',
-	// 	smartSpeed: 200,
-	// 	autoplay: true,
-	// });
+	$('.models-slides').owlCarousel({
+		loop: true,
+		nav: false,
+		dots: true,
+		autoplayHoverPause: true,
+		items: 1,
+		animateOut: 'fadeOut',
+		animateIn: 'fadeIn',
+		smartSpeed: 200,
+		autoplay: true,
+	});
 	
 	// Testimonials Slides
 	$('.testimonials-slides').owlCarousel({
@@ -89,36 +88,36 @@ jQuery(function ($) {
 	});
 
 	// Partner Slides
-	// $('.partner-slides').owlCarousel({
-	// 	loop: true,
-	// 	nav: true,
-	// 	dots: false,
-	// 	smartSpeed: 500,
-	// 	margin: 30,
-	// 	autoplayHoverPause: true,
-	// 	autoplay: true,
-	// 	navText: [
-	// 		"<i class='flaticon-left-arrow'></i>",
-	// 		"<i class='flaticon-right-arrow'></i>"
-	// 	],
-	// 	responsive: {
-	// 		0: {
-	// 			items: 2
-	// 		},
-	// 		576: {
-	// 			items: 2
-	// 		},
-	// 		768: {
-	// 			items: 3
-	// 		},
-	// 		1024: {
-	// 			items: 4
-	// 		},
-	// 		1200: {
-	// 			items: 5
-	// 		}
-	// 	}
-	// });
+	$('.partner-slides').owlCarousel({
+		loop: true,
+		nav: true,
+		dots: false,
+		smartSpeed: 500,
+		margin: 30,
+		autoplayHoverPause: true,
+		autoplay: true,
+		navText: [
+			"<i class='flaticon-left-arrow'></i>",
+			"<i class='flaticon-right-arrow'></i>"
+		],
+		responsive: {
+			0: {
+				items: 2
+			},
+			576: {
+				items: 2
+			},
+			768: {
+				items: 3
+			},
+			1024: {
+				items: 4
+			},
+			1200: {
+				items: 5
+			}
+		}
+	});
 
 	// Listing Slides
 	// $('.listing-slides').owlCarousel({
@@ -137,14 +136,30 @@ jQuery(function ($) {
 	// });
 	
 	// Popup Video
-	// $('.popup-youtube').magnificPopup({
-	// 	disableOn: 320,
-	// 	type: 'iframe',
-	// 	mainClass: 'mfp-fade',
-	// 	removalDelay: 160,
-	// 	preloader: false,
-	// 	fixedContentPos: false
-	// });
+	$('.popup-youtube').magnificPopup({
+		disableOn: 320,
+		type: 'iframe',
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		preloader: false,
+		fixedContentPos: false
+	});
+
+	// Наш блог 
+	//!!! makeEllipsis('.blog-desc.ellipsis');
+
+	makeEllipsis('.compare-card__desc-inner.ellipsis');
+
+	//Преимущества
+	 if (document.querySelector('.advantages__info-wrapper') && document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth <=991) {
+	    var floatBlock = new StickySidebar('.advantages__info-wrapper', {
+	      containerSelector: '.advantages__aside',
+	      innerWrapperSelector: '.advantages__info',
+	      resizeSensor: true,
+	      topSpacing: 60,
+	    //   bottomSpacing: 20
+	    }); 
+  	}
 
 	// Subscribe form
 	// $(".newsletter-form").validator().on("submit", function (event) {
@@ -339,6 +354,8 @@ jQuery(function ($) {
 	$('.go-top').on('click', function() {
 		$("html, body").animate({ scrollTop: "0" },  500);
 	});
+
+	autosize(document.querySelectorAll('textarea'));
 	
 	// WOW JS
 	// $(window).on ('load', function (){

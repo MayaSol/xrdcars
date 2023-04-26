@@ -1,0 +1,53 @@
+mixin form-group-text(props, mods)
+
+  //- Вызов:
+  
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' form-group--' + modsList[i].trim();
+      }
+    }
+
+    if (!props) {
+      props = {};
+    }
+
+  .form-group(class=allMods)&attributes(attributes)
+    if props.label
+      label= props.label
+    input.form-control(type="text")
+
+
+
+
+mixin form-group-text-area(props, mods)
+
+  //- Вызов:
+  
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' form-group--' + modsList[i].trim();
+      }
+    }
+
+    if (!props) {
+      props = {};
+    }
+
+  .form-group(class=allMods)&attributes(attributes)
+    if props.label
+      label= props.label
+    textarea.form-control
+
+
+
+
+

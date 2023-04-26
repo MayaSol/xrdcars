@@ -122,6 +122,28 @@ let postCssPlugins = [
 // }
 // exports.minifyImgs = minifyImgs;
 
+function compilePug() {
+  const fileList = [
+    `${dir.src}pages/**/*.pug`
+  ];
+  return src(fileList)
+    .pipe(plumber({
+      errorHandler: function(err) {
+        console.log(err.message);
+        this.emit('end');
+      }
+    }))
+    .pipe(debug({ title: 'Compiles ' }))
+    .pipe(pug(pugOption))
+    .pipe(prettyHtml(prettyOption))
+    .pipe(replace(/^(\s*)(<button.+?>)(.*)(<\/button>)/gm, '$1$2\n$1  $3\n$1$4'))
+    .pipe(replace(/^( *)(<.+?>)(<script>)([\s\S]*)(<\/script>)/gm, '$1$2\n$1$3\n$4\n$1$5\n'))
+    .pipe(replace(/^( *)(<.+?>)(<script\s+src.+>)(?:[\s\S]*)(<\/script>)/gm, '$1$2\n$1$3$4'))
+    // .pipe(through2.obj(getClassesToBlocksList))
+    .pipe(dest(dir.build));
+}
+exports.compilePug = compilePug;
+
 
 function minifyImgs(cb) {
   (async () => {
@@ -426,7 +448,7 @@ exports.minCss = minCss;
 
 function minJs() {
 
-  return src('./initial/assets/js/jquery.meanmenu.js')
+  return src('./initial/assets/js/resizeSensor.js')
       .pipe(terser())
       .pipe(rename(function (path) {
         // Updates the object in-place
@@ -459,7 +481,10 @@ function serve() {
   });
 
   // Страницы: изменение, добавление
-
+  watch([`${dir.src}pages/**/*.pug`, `${dir.src}pug/*.pug`], { events: ['change', 'add'], delay: 100 }, series(
+    compilePug,
+    reload
+  ));
 
   // Страницы: удаление
 
@@ -482,6 +507,7 @@ function serve() {
   // SCSS: изменение
   watch([`${dir.src}scss/*.scss`], { events: ['change'], delay: 100 }, series(
     compileSass,
+    reload
     // compileTailwind,
     // concatCss
   ));
@@ -489,13 +515,15 @@ function serve() {
   // CSS: изменение
   watch([`${dir.src}css/*.css`], { events: ['change'], delay: 100 }, series(
     copyAssets,
+    reload
     // compileTailwind,
     // concatCss
   ));
 
   // JS: изменение
   watch([`${dir.src}js/*.js`], { events: ['change'], delay: 100 }, series(
-    buildJs
+    buildJs,
+    reload
   ));
 
   // // Стили Блоков: добавление
@@ -542,7 +570,7 @@ function serve() {
 
 exports.build = series(
   clearBuildDir,
-  copyAssets,
+  parallel(compilePug,copyAssets),
   parallel(generateSvgSprite, generateInlineSvgSprite, generatePngSprite),
   writeTailwindToSass,
   compileSass,
@@ -552,7 +580,7 @@ exports.build = series(
 
 exports.default = series(
   clearBuildDir,
-  copyAssets,
+  parallel(compilePug,copyAssets),
   parallel(generateSvgSprite, generateInlineSvgSprite, generatePngSprite),
   writeTailwindToSass,
   compileSass,

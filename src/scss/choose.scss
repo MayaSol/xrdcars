@@ -1,0 +1,207 @@
+/*================================================
+Choose Area CSS
+=================================================*/
+.choose-area {
+    &.bg-f6f7f9 {
+        background-color: #f6f7f9;
+    }
+}
+
+.choose-item {
+    max-width: 570px;
+
+    .content {
+        h3 {
+            font-size: 36px;
+        }
+    }
+
+    .choose-inner-content {
+        position: relative;
+        margin-top: 30px;
+        padding-left: 110px;
+
+        .icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            i {
+                display: inline-block;
+                height: 80px;
+                width: 80px;
+                line-height: 80px;
+                background-color: $main-color;
+                color: $white-color;
+                font-size: 50px;
+                text-align: center;
+                border-radius: 50%;
+                transition: $transition;
+            }
+        }
+
+        h4 {
+            margin-bottom: 12px;
+        }
+
+        &:hover {
+            .icon {
+                i {
+                    animation: bounce 1s;
+                }
+            }
+        }
+    }
+
+    &.item-wrap {
+        .choose-inner-content {
+            .icon {
+                i {
+                    background-color: #e3e7ff;
+                    color: $black-color;
+                }
+            }
+
+            &:hover {
+                .icon {
+                    i {
+                        background-color: $main-color;
+                        color: $white-color;
+                        animation: bounce 1s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.choose-image {
+    position: relative;
+
+    .image-box {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -100px;
+        border-right: 10px solid $white-color;
+        border-top: 10px solid $white-color;
+        border-bottom: 10px solid $white-color;
+        border-radius: 10px;
+
+        .video-btn {
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            background-color: $white-color;
+            border-radius: 50%;
+            color: $black-color;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: $transition;
+
+            i {
+                font-size: 65px;
+                position: relative;
+                top: 4px;
+                left: 8px;
+                color: $main-color;
+                transition: $transition;
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                border-radius: 50%;
+                border: 2px solid $white-color;
+                animation: ripple 1s linear infinite;
+                transition: $transition;
+            }
+
+            &:hover {
+                background-color: $main-color;
+
+                i {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}
+
+.choose-image-wrap {
+    position: relative;
+
+    .video-btn {
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        background-color: $main-color;
+        border-radius: 50%;
+        color: $white-color;
+        position: absolute;
+        z-index: 1;
+        left: 30%;
+        transform: translateX(-30%);
+        bottom: 20px;
+        transition: $transition;
+
+        i {
+            font-size: 65px;
+            position: relative;
+            top: 4px;
+            left: 8px;
+            color: $white-color;
+            transition: $transition;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+            bottom: 0;
+            left: 0;
+            border-radius: 50%;
+            border: 2px solid $main-color;
+            animation: ripple 1s linear infinite;
+            transition: $transition;
+        }
+
+        &:hover {
+            background-color: $main-color;
+
+            i {
+                color: $white-color;
+            }
+        }
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.75);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}

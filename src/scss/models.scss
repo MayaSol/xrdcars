@@ -1,0 +1,112 @@
+/*================================================
+Models Area CSS
+=================================================*/
+.models-box-item {
+    .models-image {
+        height: 100%;
+        width: 100%;
+        margin-top: -100px;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .models-title {
+        text-align: center;
+        margin-top: 50px;
+
+        h3 {
+            font-size: 36px;
+            margin-bottom: 0;
+        }
+    }
+
+    .models-item {
+        background-color: rgba(22, 28, 45, .9);
+        padding: 50px;
+        margin-left: -180px;
+        margin-top: 50px;
+
+        .models-content {
+            h3 {
+                font-size: 30px;
+                margin-bottom: 20px;
+                color: $white-color;
+                text-transform: uppercase;
+            }
+
+            .tag {
+                display: inline-block;
+                padding: 5px 20px;
+                background-color: $main-color;
+                color: $white-color;
+                font-size: 18px;
+                font-weight: 500;
+                font-family: $heading-font-family;
+                border-radius: 30px;
+            }
+
+            h4 {
+                font-size: 25px;
+                margin-top: 20px;
+                color: $white-color;
+            }
+        }
+
+        .models-list {
+            padding-left: 0;
+            margin-bottom: 0;
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                list-style-type: none;
+                font-size: $font-size;
+                color: $white-color;
+                margin-top: 15px;
+                flex: 50%;
+                max-width: 50%;
+
+                span {
+                    color: #929ba4;
+                }
+            }
+        }
+    }
+}
+
+.models-slides {
+    background-color: #f6f7f9;
+
+    &.owl-theme {
+        .owl-dots {
+            margin: 0;
+            position: absolute;
+            bottom: 35px;
+            left: 22%;
+            transform: translateX(-22%);
+
+            .owl-dot {
+                span {
+                    width: 15px;
+                    height: 15px;
+                    background-color: $black-color;
+                    transition: $transition;
+                    border-radius: 50%;
+                }
+
+                &:hover,
+                &.active {
+                    span {
+                        background-color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,150 @@
+/*================================================
+Blog Area CSS
+=================================================*/
+.blog-area {
+    .section-title {
+        text-align: left;
+        position: relative;
+
+        .section-btn {
+            text-align: right;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            .default-btn {
+                padding: 15px 45px;
+                border-radius: 5px;
+                background-color: $main-color;
+                color: $white-color;
+                border: none;
+
+                span {
+                    background-color: $black-color;
+                }
+
+                &:hover {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+
+    .single-blog {
+        background-color: #f6f7f9;
+        padding: 10px;
+        border-radius: 5px;
+
+        img {
+            border-radius: 5px;
+        }
+
+        .blog-content {
+            background-color: unset;
+            box-shadow: unset;
+            padding: 20px 10px;
+            max-width: 100%;
+            margin: 0 auto 0;
+        }
+
+        .blog-desc {
+            line-height: 28px;
+
+            p {
+                line-height: 28px;
+            }
+        }
+    }
+}
+
+.single-blog {
+    margin-bottom: 30px;
+    transition: $transition;
+
+    .blog-content {
+        background-color: $white-color;
+        box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1);
+        padding: 20px;
+        max-width: 400px;
+        margin: -30px auto 0;
+        position: relative;
+
+        .tag {
+            display: inline-block;
+            padding: 5px 30px;
+            background-color: $main-color;
+            color: $white-color;
+            font-size: 15px;
+            font-weight: 500;
+            font-family: $heading-font-family;
+            border-radius: 30px;
+        }
+
+        h3 {
+            font-size: 26px;
+            margin-top: 20px;
+            margin-bottom: 0;
+
+            a {
+                color: $black-color;
+            }
+        }
+
+        .post-meta {
+            padding-left: 0;
+            margin-top: 18px;
+            margin-bottom: 15px;
+
+            li {
+                list-style-type: none;
+                display: inline-block;
+                position: relative;
+                padding-left: 22px;
+                margin-right: 25px;
+                color: #929ba4;
+                font-size: 15px;
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    right: -15px;
+                    top: 4px;
+                    width: 1px;
+                    content: '';
+                    height: 15px;
+                    background-color: $black-color;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+
+                    &::before {
+                        display: none;
+                    }
+                }
+
+                a {
+                    color: #929ba4;
+                    font-size: 15px;
+                }
+
+                i {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    font-size: 15px;
+                    color: $main-color;
+                }
+            }
+        }
+
+        .blog-btn {
+            margin-top: 20px;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+

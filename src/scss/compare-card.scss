@@ -1,0 +1,18 @@
+.compare-card {
+
+	&__title {
+		margin-top: 20px;
+		margin-bottom: 10px;
+		color: #fff;
+
+		@media (max-width: 1199px) {
+			margin-top: 15px;
+			margin-bottom: 8px;
+		}
+	}
+
+	&__desc {
+		height: 24 * 4px;
+		margin-bottom: 20px;
+	}
+}
