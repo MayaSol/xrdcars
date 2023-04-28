@@ -46,6 +46,7 @@ ready(function() {
     console.log(this);
     this.classList.add('aside-form--show');
     this.dispatchEvent(new CustomEvent('aside-open'));
+    document.body.classList.add('no-scroll');
   }
 
   function asideClose() {
@@ -53,6 +54,7 @@ ready(function() {
     console.log(this);
     this.classList.remove('aside-form--show');
     this.dispatchEvent(new CustomEvent('aside-close'));
+    document.body.classList.remove('no-scroll');
   }
 
 });

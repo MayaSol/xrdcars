@@ -115,6 +115,33 @@ Newsletter Area CSS
     .row {
         position: relative;
     }
+
+    .choices__inner {
+        font-size: 16px;
+    }
+
+    .choices__list--dropdown .choices__item, .choices__list[aria-expanded] .choices__item {
+        font-size: 16px;
+    }
+
+    .choices[data-type*="select-one"]::after {
+        right: auto;
+        left: 400px;
+
+        @media (max-width: 991px) {
+            right: auto;
+            left: 350px;
+        }
+
+        @media (max-width: 767px) {
+            right: 24px;
+        }
+    }
+
+    .newsletter-back-btn {
+        margin-right: 5px;
+        padding: 5px 10px;
+    }
 }
 
 
@@ -193,7 +220,6 @@ Newsletter Area CSS
     -webkit-transition: 0.5s;
     transition: 0.5s;
     line-height: 50px;
-    text-transform: capitalize;
     cursor: pointer;
     font-size: 16px;
     font-weight: 500;

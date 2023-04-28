@@ -2,11 +2,10 @@ const Choices = require('choices.js');
 const closest = require('closest');
 const ready = require('./utils/documentReady.js');
 
-
 ready(function() {
     if (document.querySelector('.filter-main')) {
 
-        // Выбор марки
+        // ВЫБОР МАРКИ
         var markSelectEl = document.querySelector('.filter-main__mark-select');
         // 	Получаем data-custom из html
         var markChoicesData = getJSONChoices(markSelectEl);
@@ -70,16 +69,6 @@ ready(function() {
             }
 
         })
-        // markSelectEl.addEventListener('addItem', function(event) {
-        //     console.log('addItem event');
-        //     console.log(event);
-        //     console.log(markSelectEl.selectedOptions);
-        // })
-        // markSelectEl.addEventListener('removeItem', function(event) {
-        //     console.log('removeItem event');
-        //     console.log(event);
-        //     console.log(markSelectEl.selectedOptions);
-        // })
         //
         // ВЫБОР МОДЕЛИ
         //
@@ -92,6 +81,7 @@ ready(function() {
             allowHTML: true,
             renderSelectedChoices: 'always',
             removeItemButton: true,
+            noChoicesText: 'Выберите марку для выбора модели',
             callbackOnCreateTemplates: function(template) {
                 return {
                     item: ({ classNames }, data) => {
@@ -126,7 +116,9 @@ ready(function() {
 					        } data-id="${data.id}" data-value="${data.value}" ${
 					          data.groupId > 0 ? 'role="treeitem"' : 'role="option"'
 					        }>
-					            <i class="flaticon-${icon}"></i> ${data.label}
+					            <i class="flaticon-${icon}"></i> 
+					            ${data.label}
+					            <span>${data.customProperties.num}</span>
 					          </div>
 					        `);
                     },
@@ -136,13 +128,15 @@ ready(function() {
         //	Загруажем список с  data-custom 
         modelChoice.clearStore();
         modelChoice.setChoices(modelChoicesData, 'value', 'label', true);
+        // Все возможные группы моделей
         const allModelGroups = modelChoice._currentState.groups;
         console.log('allModelGroups')
         console.log(allModelGroups);
+        // Все возможные модели
         const allModelChoices = [...modelChoice._currentState.choices];
         console.log('allModelChoices');
         console.log(allModelChoices);
-        renderModels(markChoice, modelChoice,allModelChoices,allModelGroups);
+        renderModels(markChoice, modelChoice,allModelChoices,allModelGroups, null);
 
         console.log('modelChoice');
         console.log(modelChoice);
@@ -160,27 +154,21 @@ ready(function() {
         });
         // modelChoice.passedElement.element.addEventListener('change', function(event){
         // });
-        //Изменение списка марок
-        var lastChangedMarkValue;
         console.log('markChoice');
         console.log(markChoice);
         markChoice.passedElement.element.addEventListener('change', function(e) {
         	console.log('selected MARKS change');
         	console.log(e);
-        	lastChangedMarkValue = e.detail.value;
-        	renderModels(markChoice,modelChoice,allModelChoices,allModelGroups,lastChangedMarkValue);
+        	renderModels(markChoice,modelChoice,allModelChoices,allModelGroups,e.detail.value);
         });
 
 
-///
+	//
+	// 	Берем список из html, добавляя данные из data-custom в customProperites
+	//
     function getJSONChoices(selectEl) {
-        // console.log('getJSONChoices');
-        // console.log(selectEl);
-        // var tmp = selectEl;
-        // console.log({...tmp});
         var choices = [];
         var groups = selectEl.querySelectorAll('optgroup');
-        // console.log(groups);
         if (groups.length > 0) {
             for (var i = 0; i < groups.length; i++) {
                 var choicesItem = {};
@@ -188,9 +176,7 @@ ready(function() {
                 choicesItem.groupValue = groups[i].dataset.value;
                 choicesItem.id = i;
                 choicesItem.disabled = false;
-                // console.log(groups[i].label);
                 var options = groups[i].children;
-                // console.log(options);
                 choicesItem.choices = [];
                 for (var j = 0; j < options.length; j++) {
                     var optionsItem = {};
@@ -199,9 +185,7 @@ ready(function() {
                     optionsItem.selected = options[j].selected;
                     optionsItem.disabled = (options[j].disabled) ? true : false;
                     if (options[j].dataset && options[j].dataset.custom) {
-                        // console.log(options[j].dataset.custom);
                         var customProperties = options[j].dataset.custom.replaceAll('\'', '"');
-                        // console.log(customProperties);
                         optionsItem.customProperties = JSON.parse(customProperties);
                     }
                     choicesItem.choices.push(optionsItem);
@@ -210,7 +194,6 @@ ready(function() {
             }
         } else {
             var options = selectEl.options;
-            // console.log(options);
             for (var i = 0; i < options.length; i++) {
                 var choicesItem = {};
                 choicesItem.label = options[i].label;
@@ -223,8 +206,8 @@ ready(function() {
                 choices.push(choicesItem);
             }
         }
+        console.log('choices');
         console.log(choices);
-        console.log('--------------------------------');
         return choices;
     }
 
@@ -234,11 +217,8 @@ ready(function() {
     function renderModels(markChoice, modelChoice, allChoices, allGroups, lastChangedMarkValue) {
     	console.log('lastChangedMarkValue');
     	console.log(lastChangedMarkValue);
+    	// lastChangedMarkValue - Последняя марка добавленная/удаленная из списка марок
     	var lastChangedMarkLabel = allMarkChoices.reduce((acc,curr) => {
-    		console.log(curr);
-    		console.log('acc: ' + acc);
-    		console.log('curr.value ' + curr.value);
-    		console.log('lastChangedMarkValue ' + lastChangedMarkValue);
     		if (curr.value == lastChangedMarkValue) {
     			return acc + curr.label.toUpperCase();
 			}
@@ -278,13 +258,6 @@ ready(function() {
         })
         console.log('selectedGroups');
         console.log(selectedGroups);
-        // 	Массив id групп для выбранных марок
-        // selectedGroupsId = selectedGroups
-        //     .map((group) => {
-        //         return group.id;
-        //     })
-        // console.log('selectedGroupsId');
-        // console.log(selectedGroupsId);
         // Список выбранных моделей 
         var selectedModels = modelChoice._currentState.items
         	.map((item) => {
@@ -305,15 +278,23 @@ ready(function() {
             // 	item.selected = false;
             // }
             item.choices = {};
+            // Добавляем в список все модели, для групп выбранных марок
             item.choices = allChoices.filter((choice) => {
                 return item.id == choice.groupId;
             });
             item.choices.map(item => {
+            	// Делаем все модели доступными
             	item.disabled = false;
-            	console.log(item);
-            	if (selectedModels.includes(item.label.toUpperCase())) {
-            		item.selected = true;
-            	}
+            	 if (lastChangedMarkLabel.length > 0 && lastChangedMarkLabel == group.value.toUpperCase()) {
+            	 	//	Марка была только что добавлена или удалена
+            	 	item.selected = false;
+            	 }
+            	 else {
+	            	// Если модели были выбраны ранее, оставляем выбор
+	            	if (selectedModels.includes(item.label.toUpperCase())) {
+	            		item.selected = true;
+	            	}
+            	 }
             });
             newChoiceData.push(item);
         }

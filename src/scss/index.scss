@@ -2,7 +2,12 @@
 @import "src/scss/_tailwind-colours.scss";
 @import "src/scss/_tailwind-screens.scss";
 @import "../../node_modules/choices.js/public/assets/styles/choices.min.css";
+@import "../../node_modules/nouislider/dist/nouislider.min.css";
 @import "src/scss/page.scss";
+@import "src/scss/mixins/form-mixins.scss";
+@import "src/scss/range-slider.scss";
+@import "src/scss/field-radio.scss";
+@import "src/scss/field-checkbox.scss";
 @import "src/scss/navbar.scss";
 // @import "src/scss/main-sliders.scss";
 @import "src/scss/pict-num-icon.scss";
@@ -21,6 +26,10 @@
 @import "src/scss/team.scss";
 @import "src/scss/partner.scss";
 @import "src/scss/filter-main.scss";
+@import "src/scss/filter-year.scss";
+@import "src/scss/filter-milage.scss";
+@import "src/scss/filter-price.scss";
+@import "src/scss/filter-others.scss";
 @import "src/scss/blog.scss";
 @import "src/scss/footer.scss";
 @import "src/scss/blog.scss";

@@ -1,0 +1,160 @@
+// В этом файле должны быть стили для БЭМ-блока field-radio, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.field-radio {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: block;
+  margin-bottom: $typo-margin-vertical;
+
+  &__title {
+    @include field-name;
+
+    .filter-main & {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__input-wrap {
+
+    & + & {
+      margin-top: $typo-margin-vertical;
+    }
+
+    &--error {
+
+      #{$block-name}__name-text,
+      #{$block-name}__help-text {
+        color: $main-color;
+      }
+    }
+  }
+
+  &__name {
+    display: inline-block;
+    position: relative;
+    margin-right: 0.6em;
+    font-weight: 400;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $main-color;
+
+      #{$block-name}__name-text {
+        color: $main-color;
+      }
+    }
+  }
+
+  &__name-text {
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+    color: $black-color;
+
+    // своя радиокнопка с картинкой
+
+    // &:before {
+    //   content: '';
+    //   position: absolute;
+    //   top: 5px;
+    //   left: 0;
+    //   width: 14px;
+    //   height: 14px;
+    //   background-image: svg-load('../blocks/field-radio/bg-img/radiobutton.svg');
+    //   background-size: 100%;
+    // }
+    // @at-root input:checked ~ &:before {
+    //   background-image: svg-load('../blocks/field-radio/bg-img/radiobutton--checked.svg');
+    // }
+
+    // / своя радиокнопка с картинкой
+
+    // своя радиокнопка без картинки
+
+    @at-root input:disabled ~ & {
+      cursor: not-allowed;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+
+      @at-root input:checked ~ & {
+        background-color: $main-color;
+        border-color: $main-color;
+      }
+
+      @at-root input:checked:disabled ~ & {
+        background-color: $gray-light;
+      }
+    }
+
+    @at-root input:focus ~ &:before {
+      @include field-focus;
+    }
+
+    @at-root input:disabled ~ &:before {
+      border-color: $gray-light;
+      background: $gray-lighter;
+    }
+
+    // &:after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 9px;
+    //   left: 4px;
+    //   width: 6px;
+    //   height: 6px;
+    //   opacity: 0;
+    //   border-radius: 50%;
+    //   background-color: currentColor;
+    //   transition: opacity $transition;
+
+    //   @at-root input:checked ~ & {
+    //     opacity: 1;
+    //   }
+
+    //   @at-root input:checked:disabled ~ & {
+    //     background-color: $gray-light;
+    //   }
+    // }
+
+    // / своя радиокнопка без картинки
+  }
+
+  &__input {
+    position: absolute;
+    top: 0.8em;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    transform: translateY(-50%);
+
+    &:focus,
+    &:active {
+      @include field-focus;
+    }
+
+    // сокрытие инпута в случае использования своей радиокнопки
+    opacity: 0;
+  }
+
+  &__help-text-wrap {
+    padding-left: 1.5em;
+  }
+
+  &__help-text {
+    @include field-help-text;
+  }
+}

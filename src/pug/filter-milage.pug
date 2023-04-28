@@ -1,0 +1,37 @@
+mixin filter-milage(props, mods)
+
+  //- Вызов:
+  
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' filter-main--' + modsList[i].trim();
+      }
+    }
+
+    if (!props) {
+      props = {};
+    }
+
+  .filter-milage(class=allMods)&attributes(attributes)
+    .filter-title Пробег
+    .filter-milage__range.range
+      .range__values
+        .range__value-item.range__value-item--from
+          input.range__input(type="text")
+        .range__value-item.range__value-item--to
+          input.range__input(type="text")
+      .filter-milage__slider.range-slider(id= props.id)
+    .filter-milage__selects.filter-selects
+      .filter-milage__from.filter-selects__from
+        select(name="milage-from" id="milageFrom")
+
+      .filter-milage__to.filter-selects__to
+        select(name="milage-to" id="milageTo")
+
+
+
+

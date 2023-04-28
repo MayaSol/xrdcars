@@ -1,0 +1,10 @@
+.filter-year {
+   
+    @at-root .filter-main &__selects {
+            display: none;
+            
+            @media (max-width: 767px) {
+                display: flex;
+            }
+        }
+}

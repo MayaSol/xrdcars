@@ -1,0 +1,51 @@
+mixin filter-year(props, mods)
+
+  //- Вызов:
+  
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' filter-main--' + modsList[i].trim();
+      }
+    }
+
+    if (!props) {
+      props = {};
+    }
+
+  .filter-year.filter-group(class=allMods)&attributes(attributes)
+    .filter-title Год выпуска
+    .filter-year__range.range
+      .range__values
+        .range__value-item.range__value-item--from
+          input.range__input(type="text")
+        .range__value-item.range__value-item--to
+          input.range__input(type="text")
+      .filter-year__slider.range-slider(id= props.id)
+    .filter-year__selects.filter-selects
+      .filter-year__from.filter-selects__from
+        select(name="year-from" id="yearFrom")
+          option(value="2017") 2017
+          option(value="2018") 2018
+          option(value="2019") 2019
+          option(value="2020") 2020
+          option(value="2021") 2021
+          option(value="2022") 2022
+          option(value="2023") 2023
+
+      .filter-year__to.filter-selects__to
+        select(name="year-to" id="yearTo")
+          option(value="2017") 2017
+          option(value="2018") 2018
+          option(value="2019") 2019
+          option(value="2020") 2020
+          option(value="2021") 2021
+          option(value="2022") 2022
+          option(value="2023" selected) 2023
+
+
+
+

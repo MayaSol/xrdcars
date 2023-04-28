@@ -1012,7 +1012,7 @@ include ../pug/mixins.pug
                             </div>
                             <div class="newsletter-list newsletter-list--default">
                                 <div class="newsletter-item newsletter-item--right newsletter-item--my-search">
-                                    <select class="js-choice" id="newsletter-my-search">
+                                    <select id="newsletter-my-search">
                                         <option value="1">BMW из Европы</option>
                                         <option value="2">Chevrolet Tahoe 2020-2023</option>
                                         <option value="3">Ford Mustang 2020-2023</option>
@@ -1200,7 +1200,69 @@ include ../pug/mixins.pug
                 <div class="aside-form__title">Расширенный поиск</div>
                 <button class="btn close aside-form__close" type="button" aria-label="Close modal" title="Закрыть" data-aside-close="data-aside-close"></button>
             </div>
-            +filter-main
+            form.form-filter-main
+                +filter-content
+                //- +filter-main
+                //-     +filter-year({id: 'filterYear'})
+                //-     +filter-milage({id: 'filterMilage'})(class="filter-group")
+                //-     +field-radio([
+                //-       {
+                //-         title: 'Все',
+                //-         mods: '',
+                //-         attrs: {
+                //-           name: 'condition',
+                //-           value: 'all',
+                //-           checked: true,
+                //-         }
+                //-       },
+                //-       {
+                //-         title: 'Новые',
+                //-         mods: '',
+                //-         attrs: {
+                //-           name: 'condition',
+                //-           value: 'new'
+                //-         }
+                //-       },
+                //-       {
+                //-         title: 'Подержанные',
+                //-         mods: '',
+                //-         attrs: {
+                //-           name: 'condition',
+                //-           value: 'used'
+                //-         }
+                //-       },
+                //-     ], 'Состояние')(class="filter-condition filter-group")
+                //-     +filter-price({id: 'filterPrice'})(class="filter-group")
+                //-     .filter-type.filter-group
+                //-         .filter-title Тип автомобиля
+                //-         select(name="type" id="type")
+                //-             option(value="1") Легковые
+                //-             option(value="2") Внедорожники
+                //-             option(value="3") Минивэны
+                //-             option(value="4") Автодома
+                //-             option(value="5") Электро
+                //-     .filter-transmission.filter-group
+                //-         .filter-title Передача
+                //-         select(name="transmission" id="transmission")
+                //-             option(value="1") Механика
+                //-             option(value="2") Автомат
+                //-     +field-checkbox([
+                //-     {
+                //-         title: '4x4',
+                //-         mods: '',
+                //-         attrs: {
+                //-           name: 'drive',
+                //-           checked: false,
+                //-         }
+                //-     }],'Привод')(class="filter-drive filter-group")
+                //-     .filter-engine.filter-group
+                //-         .filter-title Двигатель
+                //-         select(name="engine" id="engine")
+                //-             option(value="1") Бензин
+                //-             option(value="2") Дизель
+                //-             option(value="3") Электро
+                //-             option(value="4") Гибрид
+                .btn.btn--submit Применить
         </div>
     </div>
     <div class="aside-form" id="add-search-for-newsletter">
@@ -1210,6 +1272,7 @@ include ../pug/mixins.pug
                 <div class="aside-form__title">Добавить новый фильтр</div>
                 <button class="btn close aside-form__close" type="button" aria-label="Close modal" title="Закрыть" data-aside-close="data-aside-close"></button>
             </div>
+            +filter-content
             <div class="aside-form__footer">
                 <div class="section-btn">
                     <button class="btn default-btn" id="search-advanced-submit"> Добавить новый фильтр

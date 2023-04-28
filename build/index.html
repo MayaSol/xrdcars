@@ -1098,7 +1098,7 @@
               </div>
               <div class="newsletter-list newsletter-list--default">
                 <div class="newsletter-item newsletter-item--right newsletter-item--my-search">
-                  <select class="js-choice" id="newsletter-my-search">
+                  <select id="newsletter-my-search">
                     <option value="1">BMW из Европы</option>
                     <option value="2">Chevrolet Tahoe 2020-2023</option>
                     <option value="3">Ford Mustang 2020-2023</option>
@@ -1287,8 +1287,143 @@
           
         </button>
       </div>
+      <form class="form-filter-main">
+        <div class="filter-main">
+          <div class="filter-main__mark filter-group">
+            <div class="filter-title">Марка</div><select class="filter-main__mark-select" name="mark" id="mark" multiple="multiple">
+              <option value="108" data-custom="{'num': '4'}">Audi</option>
+              <option value="117" data-custom="{'num': '2'}">BMW</option>
+              <option value="111" data-custom="{'num': '3'}">DW Hower</option>
+              <option value="105" data-custom="{'num': '1'}">Citroen</option>
+              <option value="120" data-custom="{'num': '5'}">Geely</option>
+              <option value="128" data-custom="{'num': '4'}">Haval</option>
+              <option value="103" data-custom="{'num': '4'}">Hyundai</option>
+              <option value="112" data-custom="{'num': '4'}">Kia</option>
+            </select>
+          </div>
+          <div class="filter-main__model filter-group">
+            <div class="filter-title">Модель</div><select class="filter-main__model-select" name="model" id="model" multiple="multiple">
+              <optgroup label="Audi">
+                <option value="a6" data-custom="{'num':'1'}" disabled="disabled">A6</option>
+                <option value="a7" data-custom="{'num':'2'}" disabled="disabled">A7</option>
+              </optgroup>
+              <optgroup label="BMW">
+                <option value="x3" data-num="2" data-custom="{'num':'2'}" disabled="disabled">X3</option>
+              </optgroup>
+              <optgroup label="Citroen">
+                <option value="c5-aircross" data-custom="{'num':'2'}" disabled="disabled">C5 Aircross</option>
+                <option value="c4" data-custom="{'num':'2'}" disabled="disabled">C4</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="filter-year filter-group">
+            <div class="filter-title">Год выпуска</div>
+            <div class="filter-year__range range">
+              <div class="range__values">
+                <div class="range__value-item range__value-item--from"><input class="range__input" type="text" /></div>
+                <div class="range__value-item range__value-item--to"><input class="range__input" type="text" /></div>
+              </div>
+              <div class="filter-year__slider range-slider" id="filterYear"></div>
+            </div>
+            <div class="filter-year__selects filter-selects">
+              <div class="filter-year__from filter-selects__from"><select name="year-from" id="yearFrom">
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                </select></div>
+              <div class="filter-year__to filter-selects__to"><select name="year-to" id="yearTo">
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023" selected="selected">2023</option>
+                </select></div>
+            </div>
+          </div>
+          <div class="filter-milage filter-group">
+            <div class="filter-title">Пробег</div>
+            <div class="filter-milage__range range">
+              <div class="range__values">
+                <div class="range__value-item range__value-item--from"><input class="range__input" type="text" /></div>
+                <div class="range__value-item range__value-item--to"><input class="range__input" type="text" /></div>
+              </div>
+              <div class="filter-milage__slider range-slider" id="filterMilage"></div>
+            </div>
+            <div class="filter-milage__selects filter-selects">
+              <div class="filter-milage__from filter-selects__from"><select name="milage-from" id="milageFrom"></select></div>
+              <div class="filter-milage__to filter-selects__to"><select name="milage-to" id="milageTo"></select></div>
+            </div>
+          </div>
+          <div class="field-radio filter-condition filter-group">
+            <div class="field-radio__title">Состояние</div>
+            <div class="field-radio__input-wrap"><label class="field-radio__name"><input class="field-radio__input" type="radio" name="condition" value="all" checked="checked" /><span class="field-radio__name-text">Все</span></label></div>
+            <div class="field-radio__input-wrap"><label class="field-radio__name"><input class="field-radio__input" type="radio" name="condition" value="new" /><span class="field-radio__name-text">Новые</span></label></div>
+            <div class="field-radio__input-wrap"><label class="field-radio__name"><input class="field-radio__input" type="radio" name="condition" value="used" /><span class="field-radio__name-text">Подержанные</span></label></div>
+          </div>
+          <div class="filter-price filter-group">
+            <div class="filter-title">Цена</div>
+            <div class="filter-price__range range">
+              <div class="range__values">
+                <div class="range__value-item range__value-item--from"><input class="range__input" type="text" /></div>
+                <div class="range__value-item range__value-item--to"><input class="range__input" type="text" /></div>
+              </div>
+              <div class="filter-price__slider range-slider" id="filterPrice"></div>
+            </div>
+            <div class="filter-price__selects filter-selects">
+              <div class="filter-price__from filter-selects__from"><select name="price-from" id="priceFrom"></select></div>
+              <div class="filter-price__to filter-selects__to"><select name="price-to" id="priceTo"></select></div>
+            </div>
+          </div>
+          <div class="filter-type filter-group">
+            <div class="filter-title">Тип автомобиля</div><select name="type" id="type">
+              <option value="1">Легковые</option>
+              <option value="2">Внедорожники</option>
+              <option value="3">Минивэны</option>
+              <option value="4">Автодома</option>
+              <option value="5">Электро</option>
+            </select>
+          </div>
+          <div class="filter-transmission filter-group">
+            <div class="filter-title">Передача</div><select name="transmission" id="transmission">
+              <option value="1">Механика</option>
+              <option value="2">Автомат</option>
+            </select>
+          </div>
+          <div class="field-checkbox filter-drive filter-group">
+            <div class="field-checkbox__title">Привод</div>
+            <div class="field-checkbox__input-wrap"><label class="field-checkbox__name"><input class="field-checkbox__input" type="checkbox" name="drive" /><span class="field-checkbox__name-text">4x4</span></label></div>
+          </div>
+          <div class="filter-engine filter-group">
+            <div class="filter-title">Двигатель</div><select name="engine" id="engine">
+              <option value="1">Бензин</option>
+              <option value="2">Дизель</option>
+              <option value="3">Электро</option>
+              <option value="4">Гибрид</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn btn--submit">Применить</div>
+      </form>
+    </div>
+  </div>
+  <div class="aside-form" id="add-search-for-newsletter">
+    <div class="aside-form__overlay" data-aside-close="data-aside-close"></div>
+    <div class="aside-form__content">
+      <div class="aside-form__header">
+        <div class="aside-form__title">Добавить новый фильтр</div>
+        <button class="btn close aside-form__close" type="button" aria-label="Close modal" title="Закрыть" data-aside-close="data-aside-close">
+          
+        </button>
+      </div>
       <div class="filter-main">
-        <div class="filter-main__mark"><select class="filter-main__mark-select" name="mark" id="mark" multiple="multiple">
+        <div class="filter-main__mark filter-group">
+          <div class="filter-title">Марка</div><select class="filter-main__mark-select" name="mark" id="mark" multiple="multiple">
             <option value="108" data-custom="{'num': '4'}">Audi</option>
             <option value="117" data-custom="{'num': '2'}">BMW</option>
             <option value="111" data-custom="{'num': '3'}">DW Hower</option>
@@ -1297,8 +1432,10 @@
             <option value="128" data-custom="{'num': '4'}">Haval</option>
             <option value="103" data-custom="{'num': '4'}">Hyundai</option>
             <option value="112" data-custom="{'num': '4'}">Kia</option>
-          </select></div>
-        <div class="filter-main__model"><select class="filter-main__model-select" name="model" id="model" multiple="multiple">
+          </select>
+        </div>
+        <div class="filter-main__model filter-group">
+          <div class="filter-title">Модель</div><select class="filter-main__model-select" name="model" id="model" multiple="multiple">
             <optgroup label="Audi">
               <option value="a6" data-custom="{'num':'1'}" disabled="disabled">A6</option>
               <option value="a7" data-custom="{'num':'2'}" disabled="disabled">A7</option>
@@ -1310,18 +1447,99 @@
               <option value="c5-aircross" data-custom="{'num':'2'}" disabled="disabled">C5 Aircross</option>
               <option value="c4" data-custom="{'num':'2'}" disabled="disabled">C4</option>
             </optgroup>
-          </select></div>
-      </div>
-    </div>
-  </div>
-  <div class="aside-form" id="add-search-for-newsletter">
-    <div class="aside-form__overlay" data-aside-close="data-aside-close"></div>
-    <div class="aside-form__content">
-      <div class="aside-form__header">
-        <div class="aside-form__title">Добавить новый фильтр</div>
-        <button class="btn close aside-form__close" type="button" aria-label="Close modal" title="Закрыть" data-aside-close="data-aside-close">
-          
-        </button>
+          </select>
+        </div>
+        <div class="filter-year filter-group">
+          <div class="filter-title">Год выпуска</div>
+          <div class="filter-year__range range">
+            <div class="range__values">
+              <div class="range__value-item range__value-item--from"><input class="range__input" type="text" /></div>
+              <div class="range__value-item range__value-item--to"><input class="range__input" type="text" /></div>
+            </div>
+            <div class="filter-year__slider range-slider" id="filterYear"></div>
+          </div>
+          <div class="filter-year__selects filter-selects">
+            <div class="filter-year__from filter-selects__from"><select name="year-from" id="yearFrom">
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+              </select></div>
+            <div class="filter-year__to filter-selects__to"><select name="year-to" id="yearTo">
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023" selected="selected">2023</option>
+              </select></div>
+          </div>
+        </div>
+        <div class="filter-milage filter-group">
+          <div class="filter-title">Пробег</div>
+          <div class="filter-milage__range range">
+            <div class="range__values">
+              <div class="range__value-item range__value-item--from"><input class="range__input" type="text" /></div>
+              <div class="range__value-item range__value-item--to"><input class="range__input" type="text" /></div>
+            </div>
+            <div class="filter-milage__slider range-slider" id="filterMilage"></div>
+          </div>
+          <div class="filter-milage__selects filter-selects">
+            <div class="filter-milage__from filter-selects__from"><select name="milage-from" id="milageFrom"></select></div>
+            <div class="filter-milage__to filter-selects__to"><select name="milage-to" id="milageTo"></select></div>
+          </div>
+        </div>
+        <div class="field-radio filter-condition filter-group">
+          <div class="field-radio__title">Состояние</div>
+          <div class="field-radio__input-wrap"><label class="field-radio__name"><input class="field-radio__input" type="radio" name="condition" value="all" checked="checked" /><span class="field-radio__name-text">Все</span></label></div>
+          <div class="field-radio__input-wrap"><label class="field-radio__name"><input class="field-radio__input" type="radio" name="condition" value="new" /><span class="field-radio__name-text">Новые</span></label></div>
+          <div class="field-radio__input-wrap"><label class="field-radio__name"><input class="field-radio__input" type="radio" name="condition" value="used" /><span class="field-radio__name-text">Подержанные</span></label></div>
+        </div>
+        <div class="filter-price filter-group">
+          <div class="filter-title">Цена</div>
+          <div class="filter-price__range range">
+            <div class="range__values">
+              <div class="range__value-item range__value-item--from"><input class="range__input" type="text" /></div>
+              <div class="range__value-item range__value-item--to"><input class="range__input" type="text" /></div>
+            </div>
+            <div class="filter-price__slider range-slider" id="filterPrice"></div>
+          </div>
+          <div class="filter-price__selects filter-selects">
+            <div class="filter-price__from filter-selects__from"><select name="price-from" id="priceFrom"></select></div>
+            <div class="filter-price__to filter-selects__to"><select name="price-to" id="priceTo"></select></div>
+          </div>
+        </div>
+        <div class="filter-type filter-group">
+          <div class="filter-title">Тип автомобиля</div><select name="type" id="type">
+            <option value="1">Легковые</option>
+            <option value="2">Внедорожники</option>
+            <option value="3">Минивэны</option>
+            <option value="4">Автодома</option>
+            <option value="5">Электро</option>
+          </select>
+        </div>
+        <div class="filter-transmission filter-group">
+          <div class="filter-title">Передача</div><select name="transmission" id="transmission">
+            <option value="1">Механика</option>
+            <option value="2">Автомат</option>
+          </select>
+        </div>
+        <div class="field-checkbox filter-drive filter-group">
+          <div class="field-checkbox__title">Привод</div>
+          <div class="field-checkbox__input-wrap"><label class="field-checkbox__name"><input class="field-checkbox__input" type="checkbox" name="drive" /><span class="field-checkbox__name-text">4x4</span></label></div>
+        </div>
+        <div class="filter-engine filter-group">
+          <div class="filter-title">Двигатель</div><select name="engine" id="engine">
+            <option value="1">Бензин</option>
+            <option value="2">Дизель</option>
+            <option value="3">Электро</option>
+            <option value="4">Гибрид</option>
+          </select>
+        </div>
       </div>
       <div class="aside-form__footer">
         <div class="section-btn">

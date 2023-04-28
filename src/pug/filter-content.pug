@@ -1,0 +1,78 @@
+mixin filter-content(props, mods)
+
+    //- Вызов:
+
+    -
+        // список модификаторов
+        var allMods = '';
+        if(typeof(mods) !== 'undefined' && mods) {
+            var modsList = mods.split(',');
+            for (var i = 0; i < modsList.length; i++) {
+            allMods = allMods + ' filter-content--' + modsList[i].trim();
+          }
+        }
+
+        if (!props) {
+          props = {};
+        }
+
+    +filter-main(class=allMods)&attributes(attributes)
+        +filter-year({id: 'filterYear'})
+        +filter-milage({id: 'filterMilage'})(class="filter-group")
+        +field-radio([
+          {
+            title: 'Все',
+            mods: '',
+            attrs: {
+              name: 'condition',
+              value: 'all',
+              checked: true,
+            }
+          },
+          {
+            title: 'Новые',
+            mods: '',
+            attrs: {
+              name: 'condition',
+              value: 'new'
+            }
+          },
+          {
+            title: 'Подержанные',
+            mods: '',
+            attrs: {
+              name: 'condition',
+              value: 'used'
+            }
+          },
+        ], 'Состояние')(class="filter-condition filter-group")
+        +filter-price({id: 'filterPrice'})(class="filter-group")
+        .filter-type.filter-group
+            .filter-title Тип автомобиля
+            select(name="type" id="type")
+                option(value="1") Легковые
+                option(value="2") Внедорожники
+                option(value="3") Минивэны
+                option(value="4") Автодома
+                option(value="5") Электро
+        .filter-transmission.filter-group
+            .filter-title Передача
+            select(name="transmission" id="transmission")
+                option(value="1") Механика
+                option(value="2") Автомат
+        +field-checkbox([
+        {
+            title: '4x4',
+            mods: '',
+            attrs: {
+              name: 'drive',
+              checked: false,
+            }
+        }],'Привод')(class="filter-drive filter-group")
+        .filter-engine.filter-group
+            .filter-title Двигатель
+            select(name="engine" id="engine")
+                option(value="1") Бензин
+                option(value="2") Дизель
+                option(value="3") Электро
+                option(value="4") Гибрид

@@ -6,8 +6,8 @@ mixin filter-main(props, mods)
     // список модификаторов
     var allMods = '';
     if(typeof(mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
-      for (var i = 0; i < modsList.length; i++) {
+        var modsList = mods.split(',');
+        for (var i = 0; i < modsList.length; i++) {
         allMods = allMods + ' filter-main--' + modsList[i].trim();
       }
     }
@@ -17,7 +17,8 @@ mixin filter-main(props, mods)
     }
 
   .filter-main(class=allMods)&attributes(attributes)
-    .filter-main__mark
+    .filter-main__mark.filter-group
+      .filter-title Марка
       select.filter-main__mark-select(name="mark" id="mark" multiple)
         option(value="108" data-custom="{'num': '4'}") Audi
         option(value="117" data-custom="{'num': '2'}") BMW
@@ -28,7 +29,8 @@ mixin filter-main(props, mods)
         option(value="103" data-custom="{'num': '4'}") Hyundai
         option(value="112" data-custom="{'num': '4'}") Kia
 
-    .filter-main__model
+    .filter-main__model.filter-group
+      .filter-title Модель
       select.filter-main__model-select(name="model" id="model" multiple)
         optgroup(label="Audi")
           option(value="a6" data-custom="{'num':'1'}" disabled) A6
@@ -38,7 +40,6 @@ mixin filter-main(props, mods)
         optgroup(label="Citroen")
           option(value="c5-aircross" data-custom="{'num':'2'}" disabled) C5 Aircross
           option(value="c4" data-custom="{'num':'2'}" disabled) C4
-
-
+    block
 
 

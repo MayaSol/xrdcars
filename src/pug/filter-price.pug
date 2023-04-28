@@ -1,0 +1,37 @@
+mixin filter-price(props, mods)
+
+  //- Вызов:
+  
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' filter-main--' + modsList[i].trim();
+      }
+    }
+
+    if (!props) {
+      props = {};
+    }
+
+  .filter-price&attributes(attributes)(class=allMods)
+    .filter-title Цена
+    .filter-price__range.range
+      .range__values
+        .range__value-item.range__value-item--from
+          input.range__input(type="text")
+        .range__value-item.range__value-item--to
+          input.range__input(type="text")
+      .filter-price__slider.range-slider(id= props.id)
+    .filter-price__selects.filter-selects
+      .filter-price__from.filter-selects__from
+        select(name="price-from" id="priceFrom")
+
+      .filter-price__to.filter-selects__to
+        select(name="price-to" id="priceTo")
+
+
+
+

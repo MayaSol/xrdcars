@@ -5,4 +5,8 @@ require('./aside-form.js');
 require('./newsletter.js');
 require('./compare-slider.js');
 require('./filter-main.js');
+require('./filter-year.js');
+require('./filter-milage.js');
+require('./filter-price.js');
+require('./filter-others.js');
 require('./script.js');
