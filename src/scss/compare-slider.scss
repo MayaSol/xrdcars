@@ -107,8 +107,15 @@
         height: 100%;
         padding: 10px;
         background-color: $black-color;
+        background-color: $gray-bg;
         color: $white-color;
-            border-radius: 8px;
+        color: $black-color;
+        border-radius: 8px;
+
+        &__title {
+            color: #fff;
+            color: $black-color;
+        }
 
 
         &__image {

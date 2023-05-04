@@ -1,0 +1,84 @@
+
+/*================================================
+Page Banner CSS
+=================================================*/
+.page-banner-area {
+    position: relative;
+    z-index: 1;
+    background-image: url(/images/region-page/region-banner-01.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 110px;
+    padding-bottom: 70px;
+
+    &::before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background-color: #000000;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: -1;
+        opacity: .75;
+    }
+}
+
+.page-banner-content {
+    text-align: center;
+
+    h2 {
+        color: $white-color;
+        margin-bottom: 10px;
+        font-size: 60px;
+    }
+
+    .pages-list {
+        text-align: center;
+        padding-left: 0;
+        margin-bottom: 0;
+
+        li {
+            display: inline-block;
+            list-style-type: none;
+            margin-left: 30px;
+            font-weight: 600;
+            color: $white-color;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: -16px;
+                top: 6px;
+                height: 12px;
+                width: 1px;
+                background: $white-color;
+                transform: rotate(20deg);
+            }
+
+            span {
+                color: $main-color;
+            }
+
+            &:first-child {
+                margin-left: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+
+            a {
+                display: block;
+                color: $white-color;
+
+                &:hover {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+}

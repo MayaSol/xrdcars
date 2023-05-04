@@ -16,7 +16,7 @@ mixin filter-price(props, mods)
       props = {};
     }
 
-  .filter-price&attributes(attributes)(class=allMods)
+  .filter-price(class=allMods)&attributes(attributes)
     .filter-title Цена
     .filter-price__range.range
       .range__values

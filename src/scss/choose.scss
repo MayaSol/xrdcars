@@ -136,6 +136,21 @@ Choose Area CSS
             }
         }
     }
+
+    @at-root .choose-area--region & {
+        &::before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background-color: #000000;
+            left: 0;
+            right: 0;
+            top: 0;
+            opacity: .4;
+        }
+
+    }
 }
 
 .choose-image-wrap {
@@ -203,5 +218,53 @@ Choose Area CSS
     100% {
         transform: scale(2);
         opacity: 0;
+    }
+}
+
+
+.choose-regions {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 2;
+
+    svg {
+        margin-right: 10px;
+    }
+
+    &__item {
+        position: absolute;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 700;
+
+        &:first-child {
+            left: 5px;
+            top: 5px;
+        }
+
+        &:nth-child(2) {
+            right: 5px;
+            top: 5px;
+
+        }
+
+        &:nth-child(3) {
+            right: 5px;
+            bottom: 5px;
+        }
+
+        &:nth-child(4) {
+            left: 5px;
+            bottom: 5px;
+        }
     }
 }

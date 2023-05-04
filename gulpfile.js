@@ -165,8 +165,12 @@ exports.minifyImgs = minifyImgs;
 
 
 function generateSvgSprite(cb) {
-  let spriteSvgPath = `${dir.blocks}sprite-svg/svg/`;
+  console.log(`${dir.src}sprite-svg/svg/`);
+  let spriteSvgPath = `${dir.src}sprite-svg/svg/`;
+  console.log(nth.config.alwaysAddBlocks.indexOf('sprite-svg'));
+  console.log(fileExist(spriteSvgPath));
   if (nth.config.alwaysAddBlocks.indexOf('sprite-svg') > -1 && fileExist(spriteSvgPath)) {
+    console.log('1');
     return src(spriteSvgPath + '*.svg')
       // .pipe(svgmin(function() {
       //   return { plugins: [
@@ -176,7 +180,7 @@ function generateSvgSprite(cb) {
       // }))
       .pipe(svgstore({ inlineSvg: true }))
       .pipe(rename('sprite.svg'))
-      .pipe(dest(`${dir.blocks}sprite-svg/img/`));
+      .pipe(dest(`${dir.build}images/`));
   } else {
     cb();
   }
@@ -459,6 +463,22 @@ function minJs() {
 };
 exports.minJs = minJs;
 
+
+// function copySprites(cb) {
+//   let copiedImages = [];
+//   let src = `${dir.src}/`;
+//   if (fileExist(src)) copiedImages.push(src);
+//   if (copiedImages.length) {
+//     (async () => {
+//       await cpy(copiedImages, `${dir.build}image`);
+//       cb();
+//     })();
+//   } else {
+//     cb();
+//   }
+// }
+// exports.copySprites = copySprites;
+
 function reload(done) {
   browserSync.reload();
   done();
@@ -521,7 +541,7 @@ function serve() {
   ));
 
   // JS: изменение
-  watch([`${dir.src}js/*.js`], { events: ['change'], delay: 100 }, series(
+  watch([`${dir.src}js/*.js`,`${dir.src}js/utils/*.js`], { events: ['change'], delay: 100 }, series(
     buildJs,
     reload
   ));
@@ -549,12 +569,12 @@ function serve() {
   // // Картинки: все события
   // watch([`${dir.blocks}**/img/*.{jpg,jpeg,png,gif,svg,webp}`], { events: ['all'], delay: 100 }, series(copyImg, reload));
 
-  // // Спрайт SVG
-  // watch([`${dir.blocks}sprite-svg/svg/*.svg`], { events: ['all'], delay: 100 }, series(
-  //   generateSvgSprite,
-  //   copyImg,
-  //   reload,
-  // ));
+  // Спрайт SVG
+  watch([`${dir.src}sprite-svg/svg/*.svg`], { events: ['all'], delay: 100 }, series(
+    generateSvgSprite,
+    // copySprites,
+    reload,
+  ));
 
   // // Спрайт PNG
   // watch([`${dir.blocks}sprite-png/png/*.png`], { events: ['all'], delay: 100 }, series(

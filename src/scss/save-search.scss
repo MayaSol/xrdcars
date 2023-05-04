@@ -1,0 +1,62 @@
+/*================================================
+Модалка сохранения поиска
+=================================================*/
+.save-search {
+    .modal-dialog {
+        max-width: 320px;
+    }
+
+    .modal-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    button[type="submit"] {
+        @include btn-regular;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        padding: 0;
+        right: 0;
+        top: 0;
+    }
+
+    &__field {
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+
+        input {
+            width: auto;
+        }
+
+        button {
+
+            width: auto;
+            span {
+                font-size: 0;
+            }
+        }
+    }
+
+    &__others  {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        margin-top: 15px;
+        list-style: none;
+
+        button {
+            @include btn-invert;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            margin-right: 10px;
+            padding: 0;
+            font-size: 30px;
+        }
+    }
+}

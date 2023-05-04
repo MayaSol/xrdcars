@@ -1,3 +1,6 @@
+//
+//Почему выгодно заказывать авто из-за границы?
+//
 .advantages {
 	display: grid;
 	grid-template-columns: 33% 1fr 1fr;
@@ -86,3 +89,10 @@
 	}
 }
 
+
+.advantages-area {
+
+	.section-title {
+		text-align: left;
+	}
+}

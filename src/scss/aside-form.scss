@@ -57,6 +57,10 @@
   &__title {
     font-size: 40px;
     color: $tw-gray-600;
+
+    @media (max-width: 767px) {
+      font-size: 25px;
+    }
   }
 
   &__text {
@@ -65,6 +69,10 @@
 
   form {
     margin-top: 40px;
+
+    @media (max-width: 767px) {
+      margin-top: 20px;
+    }
   }
 
   &__submit.btn {

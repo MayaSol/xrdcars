@@ -3,10 +3,10 @@ const closest = require('closest');
 const ready = require('./utils/documentReady.js');
 
 ready(function() {
-    if (document.querySelector('.filter-main')) {
+    if (document.querySelector('#search-advanced .filter-main')) {
 
         // ВЫБОР МАРКИ
-        var markSelectEl = document.querySelector('.filter-main__mark-select');
+        var markSelectEl = document.querySelector('#search-advanced .filter-main__mark-select');
         // 	Получаем data-custom из html
         var markChoicesData = getJSONChoices(markSelectEl);
         var markChoice = markSelectEl && new Choices(markSelectEl, {
@@ -72,7 +72,7 @@ ready(function() {
         //
         // ВЫБОР МОДЕЛИ
         //
-        var modelSelectEl = document.querySelector('.filter-main__model-select');
+        var modelSelectEl = document.querySelector('#search-advanced .filter-main__model-select');
         const allMarkChoices = [...markChoice._currentState.choices];
         console.log(modelSelectEl);
         //	Берем data-custom из html

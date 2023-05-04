@@ -5,6 +5,10 @@ const autosize = require('autosize');
 
 jQuery(function ($) {
     'use strict';
+
+    const svg4everybody = require('svg4everybody');
+
+	svg4everybody();
 	
 	// Header Sticky
 	$(window).on('scroll',function() {
@@ -160,6 +164,21 @@ jQuery(function ($) {
 	    //   bottomSpacing: 20
 	    }); 
   	}
+
+  	//Регион фильтр на мобиле
+  	$('[data-open="#filter-aside"]').on('click', function(event) {
+        var collapseSelector = $(this).data('open');
+        var collapseElement = $(collapseSelector);
+        var collpaseInstance = bootstrap.Collapse.getOrCreateInstance(collapseElement);
+
+        if (!collapseElement.hasClass('show')) {
+            collpaseInstance.show();
+        }
+        else {
+            collpaseInstance.hide();
+        }
+    });
+
 
 	// Subscribe form
 	// $(".newsletter-form").validator().on("submit", function (event) {

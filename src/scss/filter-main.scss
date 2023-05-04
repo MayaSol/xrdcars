@@ -2,6 +2,10 @@
 	padding: 20px 10px;
 	background-color: $gray-bg;
 
+	#advanced-search-page-filter & {
+		padding: 20px 0;
+	}
+
 
 	&__mark,
 	&__model {

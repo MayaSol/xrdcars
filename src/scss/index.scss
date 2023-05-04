@@ -33,11 +33,17 @@
 @import "src/scss/blog.scss";
 @import "src/scss/footer.scss";
 @import "src/scss/blog.scss";
+//region page
+@import "src/scss/page-banner.scss";
+@import "src/scss/car-shop.scss";
+@import "src/scss/widget.scss";
+//
 @import "src/scss/copyright.scss";
 @import "src/scss/gotop.scss";
 // @import "src/scss/buy-now-btn.scss";
 @import "src/scss/aside-form.scss";
 @import "src/scss/close.scss";
+@import "src/scss/save-search.scss";
 // @import "src/scss/style.scss";
 @import "src/scss/responsive.scss";
 @import "tailwindcss/components";

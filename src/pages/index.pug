@@ -410,8 +410,11 @@ include ../pug/mixins.pug
             <!-- Start Advantages -->
             <section class="advantages-area">
                 <div class="container">
+                    <div class="section-title">
+                    <h2>Почему выгодно заказывать авто из-за границы?</h2>
+                    </div>
                     +advantages({
-                        src: '/images/advantages/advantages-01.jpg'
+                        src: '/images/advantages/thumbs-up-guy.jpg'
                     })
                         .compare-card
                             +compare-slider({
@@ -1283,33 +1286,32 @@ include ../pug/mixins.pug
         </div>
     </div>
 
-
-
-<div class="modal fade" id="newsletter-email-modal" aria-hidden="true" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-            <label>
-                <input type="email" class="form-field" placeholder="Электронная почта">
-            </label>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="disabled">Получать на почту</button>
-      </div>
-    </div>
-  </div>
-</div>
-
     <!-- Start Go Top Area -->
     <div class="go-top">
         <i class='bx bx-up-arrow-alt'></i>
     </div>
     <!-- End Go Top Area -->
+
+    <div class="modal fade" id="newsletter-email-modal" aria-hidden="true" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+                <label>
+                    <input type="email" class="form-field" placeholder="Электронная почта">
+                </label>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="disabled">Получать на почту</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="/js/utils.js"></script>
     <script src="/js/main.js"></script>
 </body>

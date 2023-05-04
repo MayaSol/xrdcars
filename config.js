@@ -8,7 +8,7 @@ let config = {
     'no-js',
   ],
   'alwaysAddBlocks': [
-    // 'sprite-svg',
+    'sprite-svg',
     // 'sprite-png',
     // 'object-fit-polyfill',
   ],
@@ -40,7 +40,9 @@ let config = {
     'src/images/geography': 'images/geography/',
     'src/images/partner': 'images/partner/',
     'src/images/blog': 'images/blog/',
+    'src/images/car-shop': 'images/car-shop/',
     'src/images/advantages': 'images/advantages/',
+    'src/images/region-page': 'images/region-page/',
     'src/css/utils.css': 'css/',
     'src/js/utils.js': 'js/',
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',

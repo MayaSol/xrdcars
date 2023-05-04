@@ -250,7 +250,28 @@ i {
   cursor: pointer;
   overflow: hidden;
 }
-.btn--submit {
+.btn--submit,
+.btn--regular {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  text-align: center;
+  font-family: inherit;
+  line-height: 1.5;
+  text-decoration: none;
+  text-transform: none;
+  background-color: transparent;
+  background-image: none;
+  overflow: hidden;
   width: 100%;
   height: 52px;
   padding: 0 30px;
@@ -265,8 +286,52 @@ i {
   transition: 0.5s;
   cursor: pointer;
 }
-.btn--submit:hover, .btn--submit:focus, .btn--submit:active {
+.btn--submit:hover, .btn--submit:focus, .btn--submit:active,
+.btn--regular:hover,
+.btn--regular:focus,
+.btn--regular:active {
   background-color: #ff5421;
+  color: #fff;
+}
+.btn--invert {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  text-align: center;
+  font-family: inherit;
+  line-height: 1.5;
+  text-decoration: none;
+  text-transform: none;
+  background-color: transparent;
+  background-image: none;
+  overflow: hidden;
+  width: 100%;
+  height: 52px;
+  padding: 0 30px;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #161c2d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+  background-color: #ff5421;
+}
+.btn--invert:hover, .btn--invert:focus, .btn--invert:active {
+  background-color: #ff5421;
+  background-color: #161c2d;
   color: #fff;
 }
 .d-table {
@@ -408,7 +473,18 @@ Section Title CSS
   flex-shrink: 0;
 }
 .choices__inner {
-  border-radius: 9px;
+  font-size: 16px;
+}
+.choices__list--dropdown .choices__item, .choices__list[aria-expanded] .choices__item {
+  font-size: 16px;
+}
+.choices[data-type*=select-one] .choices__inner {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+.is-open .choices[data-type*=select-one] .choices__inner {
+  border-radius: 5px 5px 0 0;
 }
 .choices__list--dropdown .choices__item--selectable.is-highlighted, .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
   background-color: #ff5421;
@@ -428,13 +504,48 @@ Section Title CSS
 .choices__list--dropdown .choices__placeholder {
   display: none;
 }
-.choices__list--multiple .choices__item {
+.choices__list--multiple .choices__item,
+.choices__list--multiple .choices__item.is-highlighted {
   background-color: #f5683d;
+  border-color: #ff5421;
+}
+.choices__list--multiple .choices__item.is-highlighted {
+  background-color: #ff5421;
   border-color: #ff5421;
 }
 .choices[data-type*=select-multiple] .choices__button,
 .choices[data-type*=text] .choices__button {
   border-color: #ffffff;
+}
+.choices[data-type*=select-one]::after {
+  content: "";
+  display: block;
+  height: 8px;
+  width: 8px;
+  margin-top: -4px;
+  pointer-events: none;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  border-bottom: 2px solid #ff5421;
+  border-right: 2px solid #ff5421;
+  border-top: none;
+  border-left: none;
+  -webkit-transform-origin: 66% 66%;
+  -ms-transform-origin: 66% 66%;
+  transform-origin: 66% 66%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+.choices[data-type*=select-one].is-open::after {
+  border-bottom: 2px solid #ff5421;
+  border-right: 2px solid #ff5421;
+  border-top: none;
+  border-left: none;
+  transform: rotate(-135deg);
 }
 .form-field {
   background-color: #fff;
@@ -2081,6 +2192,9 @@ Car Ranking Area CSS
 .advantages .form-check a {
   color: #ff5421;
 }
+.advantages-area .section-title {
+  text-align: left;
+}
 /*================================================
 Testimonials Area CSS
 =================================================*/
@@ -2241,8 +2355,14 @@ Testimonials Area CSS
   height: 100%;
   padding: 10px;
   background-color: #161c2d;
+  background-color: #f6f7f9;
   color: #ffffff;
+  color: #161c2d;
   border-radius: 8px;
+}
+.compare-card__title {
+  color: #fff;
+  color: #161c2d;
 }
 .compare-card__image {
   height: 270px;
@@ -2261,7 +2381,6 @@ Testimonials Area CSS
 .compare-card__title {
   margin-top: 20px;
   margin-bottom: 10px;
-  color: #fff;
 }
 @media (max-width: 1199px) {
   .compare-card__title {
@@ -2899,6 +3018,17 @@ Choose Area CSS
 .choose-image .image-box .video-btn:hover i {
   color: #ffffff;
 }
+.choose-area--region .choose-image::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+  left: 0;
+  right: 0;
+  top: 0;
+  opacity: 0.4;
+}
 .choose-image-wrap {
   position: relative;
 }
@@ -2957,6 +3087,45 @@ Choose Area CSS
     transform: scale(2);
     opacity: 0;
   }
+}
+.choose-regions {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  z-index: 2;
+}
+.choose-regions svg {
+  margin-right: 10px;
+}
+.choose-regions__item {
+  position: absolute;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.choose-regions__item:first-child {
+  left: 5px;
+  top: 5px;
+}
+.choose-regions__item:nth-child(2) {
+  right: 5px;
+  top: 5px;
+}
+.choose-regions__item:nth-child(3) {
+  right: 5px;
+  bottom: 5px;
+}
+.choose-regions__item:nth-child(4) {
+  left: 5px;
+  bottom: 5px;
 }
 /*================================================
 Team Area CSS
@@ -3129,6 +3298,9 @@ Partner Area CSS
   padding: 20px 10px;
   background-color: #f6f7f9;
 }
+#advanced-search-page-filter .filter-main {
+  padding: 20px 0;
+}
 .filter-main__mark, .filter-main__model {
   margin-bottom: 20px;
 }
@@ -3173,28 +3345,6 @@ Partner Area CSS
 .filter-title {
   font-weight: 700;
   margin-bottom: 10px;
-}
-.filter-main .filter-year__selects {
-  display: none;
-}
-@media (max-width: 767px) {
-  .filter-main .filter-year__selects {
-    display: flex;
-  }
-}
-.filter-main .filter-milage__selects {
-  display: none;
-}
-.filter-main .filter-price__selects {
-  display: none;
-}
-@media (max-width: 767px) {
-  .filter-main .filter-price__selects {
-    display: flex;
-  }
-  .filter-price__range {
-    display: none;
-  }
 }
 /*================================================
 Blog Area CSS
@@ -3718,6 +3868,846 @@ Blog Area CSS
   transform: translateY(-5px);
 }
 /*================================================
+Page Banner CSS
+=================================================*/
+.page-banner-area {
+  position: relative;
+  z-index: 1;
+  background-image: url(/images/region-page/region-banner-01.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 110px;
+  padding-bottom: 70px;
+}
+.page-banner-area::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  opacity: 0.75;
+}
+.page-banner-content {
+  text-align: center;
+}
+.page-banner-content h2 {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 60px;
+}
+.page-banner-content .pages-list {
+  text-align: center;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.page-banner-content .pages-list li {
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 30px;
+  font-weight: 600;
+  color: #ffffff;
+  position: relative;
+}
+.page-banner-content .pages-list li::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 6px;
+  height: 12px;
+  width: 1px;
+  background: #ffffff;
+  transform: rotate(20deg);
+}
+.page-banner-content .pages-list li span {
+  color: #ff5421;
+}
+.page-banner-content .pages-list li:first-child {
+  margin-left: 0;
+}
+.page-banner-content .pages-list li:first-child::before {
+  display: none;
+}
+.page-banner-content .pages-list li a {
+  display: block;
+  color: #ffffff;
+}
+.page-banner-content .pages-list li a:hover {
+  color: #ff5421;
+}
+/*================================================
+Car Shop Area CSS
+=================================================*/
+.car-shop-area__inner {
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  grid-template-rows: auto 1fr;
+  grid-gap: 0 24px;
+}
+.car-shop-area .btn--save-search {
+  font-size: 16px;
+  font-weight: 600;
+  color: #666666;
+}
+.car-shop-area .btn--save-search i {
+  margin-right: 5px;
+}
+.car-shop-area .btn--save-search:hover {
+  color: #ff5421;
+}
+@media (max-width: 991px) {
+  .car-shop-area .btn--save-search {
+    font-size: 20px;
+  }
+  .car-shop-area .btn--save-search span {
+    font-size: 0;
+  }
+}
+.car-shop-area .btn--filter-show {
+  font-size: 20px;
+  font-weight: 600;
+  color: #666666;
+}
+.car-shop-area .btn--filter-show:hover {
+  color: #ff5421;
+}
+.car-shop-area .btn--filter-show span {
+  font-size: 0;
+}
+.car-shop-area .btn--show-more {
+  width: auto;
+}
+.car-shop-filter-options {
+  display: flex;
+  justify-content: space-between;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+@media (max-width: 991px) {
+  .car-shop-filter-options {
+    grid-column-start: 1;
+    margin-bottom: 20px;
+    padding: 20px 10px;
+    background-color: #f6f7f9;
+    border-radius: 5px;
+  }
+}
+.car-shop-filter-options__save-search {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 991px) {
+  .car-shop-filter-options__save-search {
+    order: 3;
+    margin-left: 15px;
+  }
+}
+.car-shop-filter-options__order {
+  margin-left: auto;
+  min-width: 32%;
+}
+@media (max-width: 991px) {
+  .car-shop-filter-options__order {
+    min-width: 50%;
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+@media (max-width: 480px) {
+  .car-shop-filter-options__order {
+    width: 100%;
+  }
+}
+.car-shop-filter-options__filter {
+  display: none;
+}
+@media (max-width: 991px) {
+  .car-shop-filter-options__filter {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+  }
+}
+.car-shop-filter-options p {
+  font-weight: 600;
+}
+.car-shop-filter-options .car-shop-ordering-list .nice-select {
+  background-color: #f6f7f9;
+  border: 1px solid #ebebeb;
+  height: 50px;
+  line-height: 48px;
+  color: #666666;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 16px;
+  border-radius: 0;
+  font-weight: 500;
+}
+.car-shop-filter-options .car-shop-ordering-list .nice-select::after {
+  border-color: #ff5421;
+  height: 8px;
+  width: 8px;
+  right: 20px;
+}
+.car-shop-filter-options .car-shop-ordering-list .nice-select .list {
+  background-color: #ffffff;
+  border-radius: 0;
+  box-shadow: unset;
+  width: 100%;
+  -ms-overflow-style: none;
+  max-width: 100%;
+  height: 215px;
+  overflow-y: scroll;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.car-shop-filter-options .car-shop-ordering-list .nice-select .list .option {
+  line-height: 40px;
+  min-height: 40px;
+  color: #666666;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-right: 15px;
+}
+.car-shop-filter-options .car-shop-ordering-list .nice-select .list .option.selected {
+  background-color: #ff5421 !important;
+  color: #ffffff;
+  font-weight: normal;
+}
+.car-shop-filter {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+@media (max-width: 991px) {
+  .car-shop-filter {
+    grid-column-end: 3;
+    grid-row-start: 2;
+  }
+  .car-shop-filter.widget-area {
+    margin-bottom: 0 !important;
+  }
+}
+.car-shop-catalog {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+@media (max-width: 991px) {
+  .car-shop-catalog {
+    grid-column-start: 1;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+}
+.single-car-shop-item {
+  margin-top: 30px;
+  background-color: #f6f7f9;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.single-car-shop-item .car-shop-image {
+  position: relative;
+}
+.single-car-shop-item .car-shop-image img {
+  border-radius: 5px;
+}
+.single-car-shop-item .car-shop-image .icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.single-car-shop-item .car-shop-image .icon a i {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  background-color: #ff5421;
+  color: #ffffff;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 50px;
+  transition: 0.5s;
+}
+.single-car-shop-item .car-shop-image .icon a i:hover {
+  background-color: #161c2d;
+}
+.single-car-shop-item .car-shop-content {
+  position: relative;
+}
+.single-car-shop-item .car-shop-content__milage b {
+  margin-right: 10px;
+  color: #161c2d;
+  text-transform: uppercase;
+}
+.single-car-shop-item .car-shop-content__milage ~ span {
+  font-size: 18px;
+}
+.single-car-shop-item .car-shop-content__icons {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.single-car-shop-item .car-shop-content__icons .pict-num-icon--video {
+  display: none;
+}
+.single-car-shop-item .car-shop-content__icons--video .pict-num-icon--images {
+  display: none;
+}
+.single-car-shop-item .car-shop-content__icons--video .pict-num-icon--video {
+  display: block;
+}
+.single-car-shop-item .car-shop-content .tag {
+  display: inline-block;
+  padding: 5px 20px;
+  background-color: #ff5421;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 30px;
+}
+.single-car-shop-item .car-shop-content h3 {
+  font-size: 26px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.single-car-shop-item .car-shop-content h3 a {
+  color: #161c2d;
+}
+.single-car-shop-item .car-shop-content__option-title {
+  color: #161c2d;
+}
+.single-car-shop-item .car-shop-content__option-title ~ span {
+  color: #929ba4;
+}
+.single-car-shop-item .car-shop-content__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-auto-flow: column;
+  grid-gap: 0 25px;
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+.single-car-shop-item .car-shop-content__list li {
+  color: #161c2d;
+  font-size: 16px;
+  list-style-type: none;
+  padding-bottom: 5px;
+  font-weight: 600;
+}
+.single-car-shop-item .car-shop-content__list li:last-child {
+  margin-bottom: 0;
+}
+.single-car-shop-item .car-shop-content__list li:nth-child(-n+3) {
+  border-right: 1px solid #e1e1e1;
+}
+.single-car-shop-item .car-shop-list {
+  margin-left: 70px;
+  position: relative;
+}
+.single-car-shop-item .car-shop-list::before {
+  position: absolute;
+  left: -70px;
+  top: 0;
+  width: 1px;
+  content: "";
+  height: 100%;
+  background-color: #e1e1e1;
+}
+.single-car-shop-item .car-shop-list h4 {
+  font-size: 20px;
+  margin-bottom: 0;
+  font-family: "NunitoSans", sans-serif;
+  font-weight: 600;
+}
+.single-car-shop-item .car-shop-list .list {
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+.single-car-shop-item .car-shop-list .list li {
+  list-style-type: none;
+  color: #929ba4;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 22px;
+}
+.single-car-shop-item .car-shop-list .list li:last-child {
+  margin-bottom: 0;
+}
+.single-car-shop-item .car-shop-list .list li i {
+  font-size: 16px;
+  color: #ff5421;
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+.single-car-shop-item:hover {
+  transform: translateY(-5px);
+}
+.single-car-shop-box {
+  margin-top: 30px;
+  transition: 0.5s;
+  padding: 10px 10px 0;
+  border-radius: 5px;
+  background-color: #161c2d;
+}
+.single-car-shop-box .image {
+  position: relative;
+}
+.single-car-shop-box .image a img {
+  border-radius: 5px;
+}
+.single-car-shop-box .image .icon {
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  transition: 0.5s;
+  background-color: #161c2d;
+  border-radius: 50px;
+}
+.single-car-shop-box .image .icon a i {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  background-color: #ff5421;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 50px;
+  margin: 2px;
+  transition: 0.5s;
+}
+.single-car-shop-box .content {
+  box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1);
+  padding: 25px 15px;
+  border-radius: 0 0 5px 5px;
+}
+.single-car-shop-box .content .tag {
+  display: inline-block;
+  padding: 5px 20px;
+  background-color: #ff5421;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Exo2", sans-serif;
+  border-radius: 30px;
+}
+.single-car-shop-box .content h3 {
+  font-size: 28px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.single-car-shop-box .content h3 a {
+  color: #ffffff;
+}
+.single-car-shop-box .content p {
+  font-size: 15px;
+  color: #929ba4;
+}
+.single-car-shop-box .content p b {
+  color: #ffffff;
+}
+.single-car-shop-box:hover {
+  transform: translateY(-5px);
+}
+.single-car-shop-box:hover .image .icon {
+  bottom: 20px;
+  background-color: #ff5421;
+}
+.single-car-shop-box:hover .image .icon i {
+  margin: 0;
+}
+/*================================================
+Widget Sidebar CSS
+=================================================*/
+.widget-area .widget {
+  margin-bottom: 30px;
+}
+@media (max-width: 991px) {
+  .widget-area .widget {
+    margin-bottom: 0;
+  }
+}
+.widget-area .widget:last-child {
+  margin-bottom: 0;
+}
+.widget-area .widget .widget-title {
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #494c53;
+  font-size: 22px;
+}
+.widget-area .widget .widget-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100px;
+  height: 1px;
+  bottom: -1px;
+  background: #ff5421;
+}
+.widget-area .widget_search {
+  background-color: #f6f7f9;
+  padding: 25px 25px 25px;
+}
+@media (max-width: 1199px) {
+  .widget-area .widget_search {
+    padding: 25px 10px;
+  }
+}
+.widget-area .widget_search form {
+  position: relative;
+}
+.widget-area .widget_search form label {
+  display: block;
+  margin-bottom: 0;
+}
+.widget-area .widget_search form .screen-reader-text {
+  display: none;
+}
+.widget-area .widget_search form .search-field {
+  background-color: #ffffff;
+  height: 50px;
+  padding: 8px 15px;
+  border: 1px solid #eeeeee;
+  width: 100%;
+  display: block;
+  outline: 0;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+.widget-area .widget_search form .search-field:focus {
+  border-color: #ff5421;
+}
+.widget-area .widget_search form button {
+  border: none;
+  background-color: #eeeeee;
+  color: #ff5421;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  right: 5px;
+  padding: 0;
+  transition: 0.5s;
+  top: 5px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.widget-area .widget_search form button i {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 52%;
+  transform: translateY(-52%);
+}
+.widget-area .widget_search form button:hover, .widget-area .widget_search form button:focus {
+  background-color: #ff5421;
+  color: #ffffff;
+}
+.widget-area .widget_filter_results {
+  background-color: #f6f7f9;
+  padding: 0 25px;
+}
+@media (max-width: 1199px) {
+  .widget-area .widget_filter_results {
+    padding: 0 10px;
+  }
+}
+.widget-area .widget_filter_results .btn--clear-filter {
+  margin-bottom: 15px;
+}
+.widget-area .widget_make_model_body_style {
+  background-color: #f6f7f9;
+  padding: 25px 25px 30px;
+}
+.widget-area .widget_make_model_body_style form .form-group {
+  margin-bottom: 15px;
+}
+.widget-area .widget_make_model_body_style form .form-group:last-child {
+  margin-bottom: 0;
+}
+.widget-area .widget_make_model_body_style form .form-group label {
+  font-size: 16px;
+  color: #161c2d;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.widget-area .widget_make_model_body_style form .form-group .nice-select {
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  height: 50px;
+  line-height: 48px;
+  color: #666666;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 16px;
+  border-radius: 0;
+  font-weight: 500;
+}
+.widget-area .widget_make_model_body_style form .form-group .nice-select::after {
+  border-color: #ff5421;
+  height: 8px;
+  width: 8px;
+  right: 20px;
+}
+.widget-area .widget_make_model_body_style form .form-group .nice-select .list {
+  background-color: #ffffff;
+  border-radius: 0;
+  box-shadow: unset;
+  width: 100%;
+  -ms-overflow-style: none;
+  max-width: 100%;
+  height: 215px;
+  overflow-y: scroll;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.widget-area .widget_make_model_body_style form .form-group .nice-select .list .option {
+  line-height: 40px;
+  min-height: 40px;
+  color: #666666;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-right: 15px;
+}
+.widget-area .widget_make_model_body_style form .form-group .nice-select .list .option.selected {
+  background-color: #ff5421 !important;
+  color: #ffffff;
+  font-weight: normal;
+}
+.widget-area .widget_filter_color {
+  background-color: #f6f7f9;
+  padding: 25px 25px 30px;
+}
+.widget-area .widget_filter_color span {
+  font-size: 16px;
+  color: #161c2d;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.widget-area .widget_filter_color .color-list-row {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: -5px;
+  margin-top: -5px;
+}
+.widget-area .widget_filter_color .color-list-row li {
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.widget-area .widget_filter_color .color-list-row li a {
+  display: block;
+  position: relative;
+  border: 1px solid transparent;
+  width: 45px;
+  height: 45px;
+  border-radius: 0;
+}
+.widget-area .widget_filter_color .color-list-row li a::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #eeeeee;
+  border-radius: 0;
+  margin: 2px;
+  transition: 0.5s;
+}
+.widget-area .widget_filter_color .color-list-row li a:hover {
+  border-color: #161c2d;
+}
+.widget-area .widget_filter_color .color-list-row li a.color-white::before {
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+}
+.widget-area .widget_filter_color .color-list-row li a.color-black::before {
+  background: #161c2d;
+}
+.widget-area .widget_filter_color .color-list-row li a.color-red::before {
+  background: red;
+}
+.widget-area .widget_filter_color .color-list-row li a.color-blue::before {
+  background: blue;
+}
+.widget-area .widget_filter_color .color-list-row li a.color-green::before {
+  background: green;
+}
+.widget-area .widget_filter_color .color-list-row li a.color-yellow::before {
+  background: yellow;
+}
+.widget-area .widget_filter_color .color-list-row li a.color-yellowgreen::before {
+  background: yellowgreen;
+}
+.widget-area .widget_filter_color .color-list-row li a.color-pink::before {
+  background: pink;
+}
+.widget-area .widget_filter_color .color-list-row li a.color-violet::before {
+  background: violet;
+}
+.widget-area .widget_filter_color .color-list-row li a.color-teal::before {
+  background: teal;
+}
+.widget-area .widget_filter_color .color-list-row li a.color-plum::before {
+  background: plum;
+}
+.widget-area .widget_filter_color .color-list-row li a.color-lime::before {
+  background: lime;
+}
+.widget-area .widget_filter_color .color-list-row li a.color-blueviolet::before {
+  background: blueviolet;
+}
+.widget-area .widget_filter_color .color-list-row li.active a {
+  border-color: #161c2d;
+}
+.widget-area .widget_mund_posts_thumb {
+  position: relative;
+  overflow: hidden;
+  background-color: #f6f7f9;
+  padding: 25px 25px 30px;
+}
+.widget-area .widget_mund_posts_thumb .item {
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.widget-area .widget_mund_posts_thumb .item:last-child {
+  margin-bottom: 0;
+}
+.widget-area .widget_mund_posts_thumb .item .thumb {
+  float: left;
+  height: 80px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  width: 80px;
+  margin-right: 15px;
+  z-index: 1;
+}
+.widget-area .widget_mund_posts_thumb .item .thumb .fullimage {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  border-radius: 5px;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.widget-area .widget_mund_posts_thumb .item .thumb .fullimage.bg1 {
+  background-image: url(../../assets/images/blog/blog-1.jpg);
+}
+.widget-area .widget_mund_posts_thumb .item .thumb .fullimage.bg2 {
+  background-image: url(../../assets/images/blog/blog-2.jpg);
+}
+.widget-area .widget_mund_posts_thumb .item .thumb .fullimage.bg3 {
+  background-image: url(../../assets/images/blog/blog-3.jpg);
+}
+.widget-area .widget_mund_posts_thumb .item .info {
+  overflow: hidden;
+  margin-top: 5px;
+}
+.widget-area .widget_mund_posts_thumb .item .info span {
+  display: block;
+  color: #929ba4;
+  margin-top: -2px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.widget-area .widget_mund_posts_thumb .item .info .title {
+  margin-bottom: 0;
+  line-height: 1.4;
+  font-size: 18px;
+  font-weight: bold;
+}
+.widget-area .widget_mund_posts_thumb .item .info .title a {
+  display: inline-block;
+  transition: 0.5s;
+}
+.widget-area .widget_mund_posts_thumb .item .info .title a:hover {
+  color: #ff5421;
+}
+.widget-area .widget_categories {
+  background-color: #f6f7f9;
+  padding: 25px 25px 30px;
+}
+.widget-area .widget_categories ul {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+.widget-area .widget_categories ul li {
+  position: relative;
+  margin-bottom: 12px;
+  overflow: hidden;
+  color: #161c2d;
+  padding-left: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.widget-area .widget_categories ul li:last-child {
+  margin-bottom: 0;
+}
+.widget-area .widget_categories ul li::before {
+  background: #ff5421;
+  height: 10px;
+  width: 10px;
+  content: "";
+  left: 0;
+  top: 7px;
+  position: absolute;
+}
+.widget-area .widget_categories ul li a {
+  color: #161c2d;
+  display: inline-block;
+}
+.widget-area .widget_categories ul li a:hover {
+  color: #ff5421;
+}
+.widget-area .widget_tag_cloud {
+  background-color: #f6f7f9;
+  padding: 25px 25px 30px;
+}
+.widget-area .widget_tag_cloud .widget-title {
+  margin-bottom: 18px;
+}
+.widget-area .tagcloud a {
+  display: inline-block;
+  background: #ffffff;
+  color: #929ba4;
+  padding: 7px 15px;
+  border: none;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 15px !important;
+  margin-top: 8px;
+  margin-right: 5px;
+}
+.widget-area .tagcloud a:hover, .widget-area .tagcloud a:focus {
+  color: #ffffff;
+  background-color: #ff5421;
+}
+/*================================================
 Copy Right Area CSS
 =================================================*/
 .copyright-area {
@@ -3830,11 +4820,21 @@ Go Top CSS
   font-size: 40px;
   color: #4b5563;
 }
+@media (max-width: 767px) {
+  .aside-form__title {
+    font-size: 25px;
+  }
+}
 .aside-form__text {
   margin-bottom: 20px;
 }
 .aside-form form {
   margin-top: 40px;
+}
+@media (max-width: 767px) {
+  .aside-form form {
+    margin-top: 20px;
+  }
 }
 .aside-form__submit.btn {
   margin-top: 30px;
@@ -3870,6 +4870,129 @@ Go Top CSS
 }
 .close:after {
   transform: translateX(-50%) rotate(-45deg);
+}
+/*================================================
+Модалка сохранения поиска
+=================================================*/
+.save-search .modal-dialog {
+  max-width: 320px;
+}
+.save-search .modal-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.save-search button[type=submit] {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  margin: 0;
+  border: 0;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  text-align: center;
+  font-family: inherit;
+  line-height: 1.5;
+  text-decoration: none;
+  text-transform: none;
+  background-color: transparent;
+  background-image: none;
+  overflow: hidden;
+  width: 100%;
+  height: 52px;
+  padding: 0 30px;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #161c2d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  padding: 0;
+  right: 0;
+  top: 0;
+}
+.save-search button[type=submit]:hover, .save-search button[type=submit]:focus, .save-search button[type=submit]:active {
+  background-color: #ff5421;
+  color: #fff;
+}
+.save-search__field {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.save-search__field input {
+  width: auto;
+}
+.save-search__field button {
+  width: auto;
+}
+.save-search__field button span {
+  font-size: 0;
+}
+.save-search__others {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  margin-top: 15px;
+  list-style: none;
+}
+.save-search__others button {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  margin: 0;
+  border: 0;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  text-align: center;
+  font-family: inherit;
+  line-height: 1.5;
+  text-decoration: none;
+  text-transform: none;
+  background-color: transparent;
+  background-image: none;
+  overflow: hidden;
+  width: 100%;
+  height: 52px;
+  padding: 0 30px;
+  line-height: 50px;
+  font-weight: 500;
+  background-color: #161c2d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+  background-color: #ff5421;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  margin-right: 10px;
+  padding: 0;
+  font-size: 30px;
+}
+.save-search__others button:hover, .save-search__others button:focus, .save-search__others button:active {
+  background-color: #ff5421;
+  background-color: #161c2d;
+  color: #fff;
 }
 @media only screen and (max-width: 767px) {
   .ptb-100 {
