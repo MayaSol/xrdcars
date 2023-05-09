@@ -16,6 +16,11 @@
 		transform: translateY(-5px);
 	}
 
+	&--dark {
+		color: $white-color;
+		background-color: $black-color;
+	}
+
 	&__image {
 		position: relative;
 
@@ -49,6 +54,12 @@
         font-size: 26px;
         margin-top: 15px;
         margin-bottom: 10px;
+
+        @at-root .car-card--dark & {
+        	a {
+	        	color: $white-color;
+        	}
+        }
     }
 
 }

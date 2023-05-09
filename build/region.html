@@ -141,12 +141,12 @@
       </div>
       <!-- End Navbar Area -->
       <!-- Start Page Banner -->
-      <div class="page-banner-area item-bg-2">
+      <div class="page-banner-area">
         <div class="d-table">
           <div class="d-table-cell">
             <div class="container">
               <div class="page-banner-content">
-                <h2>Advanced Search</h2>
+                <h1>Advanced Search</h1>
                 <ul class="pages-list">
                   <li><a href="index.html">Home</a></li>
                   <li>Pages</li>
@@ -162,32 +162,34 @@
       <section class="choose-area choose-area--region ptb-100">
         <div class="container">
           <div class="row align-items-center">
-            <div class="col-lg-7">
+            <div class="col-lg-6">
               <div class="choose-item">
                 <div class="content">
                   <h3>Почему мы</h3>
                   <p>Три причины купить авто в нашей компании</p>
                 </div>
-                <div class="choose-inner-content">
-                  <div class="icon">
-                    <i class="flaticon-handshake"></i>
+                <div class="choose-item__inner">
+                  <div class="choose-inner-content">
+                    <div class="icon">
+                      <i class="flaticon-handshake"></i>
+                    </div>
+                    <h4>TRANSPARENT DEAL</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravi maecenas.</p>
                   </div>
-                  <h4>TRANSPARENT DEAL</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravi maecenas.</p>
-                </div>
-                <div class="choose-inner-content">
-                  <div class="icon">
-                    <i class="flaticon-perfect"></i>
+                  <div class="choose-inner-content">
+                    <div class="icon">
+                      <i class="flaticon-perfect"></i>
+                    </div>
+                    <h4>HASSLE-FREE</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravi maecenas.</p>
                   </div>
-                  <h4>HASSLE-FREE</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravi maecenas.</p>
-                </div>
-                <div class="choose-inner-content">
-                  <div class="icon">
-                    <i class="flaticon-headache"></i>
+                  <div class="choose-inner-content">
+                    <div class="icon">
+                      <i class="flaticon-headache"></i>
+                    </div>
+                    <h4>WORRY-FREE</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravi maecenas.</p>
                   </div>
-                  <h4>WORRY-FREE</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravi maecenas.</p>
                 </div>
               </div>
             </div>
@@ -195,21 +197,29 @@
               <div class="choose-image">
                 <img src="/images/choose/choose-1.jpg" alt="image">
                 <ul class="choose-regions">
-                  <li class="choose-regions__item"><svg width="36" height="26" aria-hidden="true" focusable="false">
-                      <use xlink:href="/images/sprite.svg#flag-germany"></use>
-                    </svg><span>Из Германии</span>
+                  <li class="choose-regions__item">
+                    <a href="#" class="image-box">
+                      <img src="/images/choose/choose-2.jpg" alt="image">
+                      <span>Из Германии</span>
+                    </a>
                   </li>
-                  <li class="choose-regions__item"> <svg width="36" height="26" aria-hidden="true" focusable="false">
-                      <use xlink:href="/images/sprite.svg#flag-france"></use>
-                    </svg><span>Из Франции</span>
+                  <li class="choose-regions__item">
+                    <a href="#" class="image-box">
+                      <img src="/images/choose/choose-2.jpg" alt="image">
+                      <span>Из Франции</span>
+                    </a>
                   </li>
-                  <li class="choose-regions__item"> <svg width="36" height="26" aria-hidden="true" focusable="false">
-                      <use xlink:href="/images/sprite.svg#flag-italy"></use>
-                    </svg><span>Из Италии</span>
+                  <li class="choose-regions__item">
+                    <a href="#" class="image-box">
+                      <img src="/images/choose/choose-2.jpg" alt="image">
+                      <span>Из Италии</span>
+                    </a>
                   </li>
-                  <li class="choose-regions__item"> <svg width="36" height="26" aria-hidden="true" focusable="false">
-                      <use xlink:href="/images/sprite.svg#flag-netherlands"></use>
-                    </svg><span>Из Нидерландов</span>
+                  <li class="choose-regions__item">
+                    <a href="#" class="image-box">
+                      <img src="/images/choose/choose-2.jpg" alt="image">
+                      <span>Из Нидерландов</span>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -308,7 +318,7 @@
                         <div class="filter-milage__to filter-selects__to"><select name="milage-to" id="milageTo"></select></div>
                       </div>
                     </div>
-                    <div class="field-radio filter-condition filter-group">
+                    <div class="field-radio filter-condition filter-group" data-tags-id="filter-condition-tags">
                       <div class="field-radio__title">Состояние</div>
                       <div class="field-radio__input-wrap"><label class="field-radio__name"><input class="field-radio__input" type="radio" name="condition" value="all" checked="checked" /><span class="field-radio__name-text">Все</span></label></div>
                       <div class="field-radio__input-wrap"><label class="field-radio__name"><input class="field-radio__input" type="radio" name="condition" value="new" /><span class="field-radio__name-text">Новые</span></label></div>
@@ -329,7 +339,7 @@
                       </div>
                     </div>
                     <div class="filter-type filter-group">
-                      <div class="filter-title">Тип автомобиля</div><select name="type" id="type">
+                      <div class="filter-title">Тип автомобиля</div><select name="type" id="type" data-tags-id="filter-type-tags">
                         <option value="0" selected="selected">Все</option>
                         <option value="1">Легковые</option>
                         <option value="2">Внедорожники</option>
@@ -339,18 +349,18 @@
                       </select>
                     </div>
                     <div class="filter-transmission filter-group">
-                      <div class="filter-title">Передача</div><select name="transmission" id="transmission">
+                      <div class="filter-title">Передача</div><select name="transmission" id="transmission" data-tags-id="filter-transmission-tags">
                         <option value="0" selected="selected">Все</option>
                         <option value="1">Механика</option>
                         <option value="2">Автомат</option>
                       </select>
                     </div>
-                    <div class="field-checkbox filter-drive filter-group">
+                    <div class="field-checkbox filter-drive filter-group" data-tags-id="filter-drive-tags">
                       <div class="field-checkbox__title">Привод</div>
                       <div class="field-checkbox__input-wrap"><label class="field-checkbox__name"><input class="field-checkbox__input" type="checkbox" name="drive" /><span class="field-checkbox__name-text">4x4</span></label></div>
                     </div>
                     <div class="filter-engine filter-group">
-                      <div class="filter-title">Двигатель</div><select name="engine" id="engine">
+                      <div class="filter-title">Двигатель</div><select name="engine" id="engine" data-tags-id="filter-engine-tags">
                         <option value="0" selected="selected">Все</option>
                         <option value="1">Бензин</option>
                         <option value="2">Дизель</option>
@@ -360,6 +370,18 @@
                     </div><button class="btn btn--regular btn--clear-filter btn--invert" type="button">Сбросить</button><button class="btn btn--submit" type="sumbit">Применить</button>
                   </div>
                 </form>
+              </div>
+              <div class="filter-tags">
+                <ul class="filter-tags__list" id="filter-condition-tags">
+                </ul>
+                <ul class="filter-tags__list" id="filter-type-tags">
+                </ul>
+                <ul class="filter-tags__list" id="filter-transmission-tags">
+                </ul>
+                <ul class="filter-tags__list" id="filter-drive-tags">
+                </ul>
+                <ul class="filter-tags__list" id="filter-engine-tags">
+                </ul>
               </div>
             </aside>
             <div class="car-shop-filter-options">
@@ -390,7 +412,7 @@
                 <div class="row align-items-center">
                   <div class="col-lg-4 col-md-4">
                     <div class="car-shop-image">
-                      <a href="car-details.html"><img src="/images/car-shop/car-shop-1.jpg" alt="image"></a>
+                      <a href="car-details.html"><img class="lazyload" data-src="/images/car-shop/car-shop-1.jpg" alt="image"></a>
                       <div class="icon">
                         <a href="favorites.html"><i class="flaticon-love"></i></a>
                       </div>
@@ -449,7 +471,7 @@
                 <div class="row align-items-center">
                   <div class="col-lg-4 col-md-4">
                     <div class="car-shop-image">
-                      <a href="car-details.html"><img src="/images/car-shop/car-shop-2.jpg" alt="image"></a>
+                      <a href="car-details.html"><img class="lazyload" data-src="/images/car-shop/car-shop-2.jpg" alt="image"></a>
                       <div class="icon">
                         <a href="favorites.html"><i class="flaticon-love"></i></a>
                       </div>
@@ -461,18 +483,45 @@
                       <h3>
                         <a href="car-details.html">2021 NISSAN CX-10</a>
                       </h3>
-                      <p><b>Пробег</b> 7 Miles</p>
-                      <ul class="list">
+                      <p class="car-shop-content__milage"><b>Пробег</b> 87 540км</p>
+                      <ul class="car-shop-content__list">
                         <li>
-                          <Engine></Engine><span>: JN5AY2LC2KX512350</span>
+                          <span class="car-shop-content__option-title">Год выпуска</span>
+                          <span>: 2.4L I4 16V MPFI DOHC</span>
                         </li>
                         <li>
-                          <Transmission></Transmission><span>: 4-Speed Automatic</span>
+                          <span class="car-shop-content__option-title">Тип кузова</span>
+                          <span>: седан</span>
                         </li>
                         <li>
-                          <Fuel></Fuel><span>: GAS</span>
+                          <span class="car-shop-content__option-title">Тип двигателя</span>
+                          <span>: GAS</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Привод</span>
+                          <span>: полный</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Двигатель</span>
+                          <span>: 4-Speed Automatic</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Коробка передач</span>
+                          <span>: GAS</span>
                         </li>
                       </ul>
+                      <div class="car-shop-content__icons">
+                        <div class="pict-num-icon pict-num-icon--images">
+                          <a href="car-details.html">
+                            <i class="flaticon-gallery">5</i>
+                          </a>
+                        </div>
+                        <div class="pict-num-icon pict-num-icon--video">
+                          <a href="car-details.html">
+                            <i class="flaticon-video">2</i>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -481,7 +530,7 @@
                 <div class="row align-items-center">
                   <div class="col-lg-4 col-md-4">
                     <div class="car-shop-image">
-                      <a href="car-details.html"><img src="/images/car-shop/car-shop-3.jpg" alt="image"></a>
+                      <a href="car-details.html"><img class="lazyload" data-src="/images/car-shop/car-shop-3.jpg" alt="image"></a>
                       <div class="icon">
                         <a href="favorites.html"><i class="flaticon-love"></i></a>
                       </div>
@@ -493,18 +542,45 @@
                       <h3>
                         <a href="car-details.html">2021 TOYOTA RAV4</a>
                       </h3>
-                      <p><b>Пробег</b> 4 Miles</p>
-                      <ul class="list">
+                      <p class="car-shop-content__milage"><b>Пробег</b> 87 540км</p>
+                      <ul class="car-shop-content__list">
                         <li>
-                          <Engine></Engine><span>: 1C4PJMCS7HD231285</span>
+                          <span class="car-shop-content__option-title">Год выпуска</span>
+                          <span>: 2.4L I4 16V MPFI DOHC</span>
                         </li>
                         <li>
-                          <Transmission></Transmission><span>: 4-Speed Automatic</span>
+                          <span class="car-shop-content__option-title">Тип кузова</span>
+                          <span>: седан</span>
                         </li>
                         <li>
-                          <Fuel></Fuel><span>: GAS</span>
+                          <span class="car-shop-content__option-title">Тип двигателя</span>
+                          <span>: GAS</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Привод</span>
+                          <span>: полный</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Двигатель</span>
+                          <span>: 4-Speed Automatic</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Коробка передач</span>
+                          <span>: GAS</span>
                         </li>
                       </ul>
+                      <div class="car-shop-content__icons">
+                        <div class="pict-num-icon pict-num-icon--images">
+                          <a href="car-details.html">
+                            <i class="flaticon-gallery">5</i>
+                          </a>
+                        </div>
+                        <div class="pict-num-icon pict-num-icon--video">
+                          <a href="car-details.html">
+                            <i class="flaticon-video">2</i>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -513,7 +589,7 @@
                 <div class="row align-items-center">
                   <div class="col-lg-4 col-md-4">
                     <div class="car-shop-image">
-                      <a href="car-details.html"><img src="/images/car-shop/car-shop-4.jpg" alt="image"></a>
+                      <a href="car-details.html"><img class="lazyload" data-src="/images/car-shop/car-shop-4.jpg" alt="image"></a>
                       <div class="icon">
                         <a href="favorites.html"><i class="flaticon-love"></i></a>
                       </div>
@@ -521,192 +597,49 @@
                   </div>
                   <div class="col-lg-8 col-md-8">
                     <div class="car-shop-content">
-                      <div class="price-tag">65 000</div>
-                      <h3>
-                        <a href="car-details.html">2021 VOLVO XC10</a>
-                      </h3>
-                      <p><b>Пробег</b> 7 Miles</p>
-                      <ul class="list">
-                        <li>
-                          <Engine></Engine><span>: W1KZF8EB8LA8016370</span>
-                        </li>
-                        <li>
-                          <Transmission></Transmission><span>: 4-Speed Automatic</span>
-                        </li>
-                        <li>
-                          <Fuel></Fuel><span>: GAS</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="single-car-shop-item">
-                <div class="row align-items-center">
-                  <div class="col-lg-4 col-md-4">
-                    <div class="car-shop-image">
-                      <a href="car-details.html"><img src="/images/car-shop/car-shop-5.jpg" alt="image"></a>
-                      <div class="icon">
-                        <a href="favorites.html"><i class="flaticon-love"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-8 col-md-8">
-                    <div class="car-shop-content">
-                      <div class="price-tag">25 000</div>
-                      <h3>
-                        <a href="car-details.html">2021 MAZDA CX-30</a>
-                      </h3>
-                      <p><b>Пробег</b> 3 Miles</p>
-                      <ul class="list">
-                        <li>
-                          <Engine></Engine><span>: JM1BM1W74F12345879</span>
-                        </li>
-                        <li>
-                          <Transmission></Transmission><span>: 4-Speed Automatic</span>
-                        </li>
-                        <li>
-                          <Fuel></Fuel><span>: GAS</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="single-car-shop-item">
-                <div class="row align-items-center">
-                  <div class="col-lg-4 col-md-4">
-                    <div class="car-shop-image">
-                      <a href="car-details.html"><img src="/images/car-shop/car-shop-6.jpg" alt="image"></a>
-                      <div class="icon">
-                        <a href="favorites.html"><i class="flaticon-love"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-8 col-md-8">
-                    <div class="car-shop-content">
-                      <div class="price-tag">45 000</div>
-                      <h3>
-                        <a href="car-details.html">2021 MAZDA CX-30</a>
-                      </h3>
-                      <p><b>Пробег</b> 7 Miles</p>
-                      <ul class="list">
-                        <li>
-                          <Engine></Engine><span>: JN8AY2NC2KX512370</span>
-                        </li>
-                        <li>
-                          <Transmission></Transmission><span>: 4-Speed Automatic</span>
-                        </li>
-                        <li>
-                          <Fuel></Fuel><span>: GAS</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="single-car-shop-item">
-                <div class="row align-items-center">
-                  <div class="col-lg-4 col-md-4">
-                    <div class="car-shop-image">
-                      <a href="car-details.html"><img src="/images/car-shop/car-shop-7.jpg" alt="image"></a>
-                      <div class="icon">
-                        <a href="favorites.html"><i class="flaticon-love"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-8 col-md-8">
-                    <div class="car-shop-content">
-                      <div class="price-tag">65 000</div>
-                      <h3>
-                        <a href="car-details.html">2021 NISSAN XX-50</a>
-                      </h3>
-                      <p><b>Пробег</b> 5 Miles</p>
-                      <ul class="list">
-                        <li>
-                          <Engine></Engine><span>: JN8AY2NB2KD51y4580</span>
-                        </li>
-                        <li>
-                          <Transmission></Transmission><span>: 4-Speed Automatic</span>
-                        </li>
-                        <li>
-                          <Fuel></Fuel><span>: GAS</span>
-                        </li>
-                      </ul>
-                      <div class="pict-num-icon">
-                        <a href="car-details.html">
-                          <i class="flaticon-gallery">5</i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="single-car-shop-item">
-                <div class="row align-items-center">
-                  <div class="col-lg-4 col-md-4">
-                    <div class="car-shop-image">
-                      <a href="car-details.html"><img src="/images/car-shop/car-shop-8.jpg" alt="image"></a>
-                      <div class="icon">
-                        <a href="favorites.html"><i class="flaticon-love"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-8 col-md-8">
-                    <div class="car-shop-content">
-                      <div class="price-tag">75 000</div>
-                      <h3>
-                        <a href="car-details.html">2021 KIA SOUL XC 60</a>
-                      </h3>
-                      <p><b>Пробег</b> 9 Miles</p>
-                      <ul class="list">
-                        <li>
-                          <Engine></Engine><span>: YK8AY2NC2KX515870</span>
-                        </li>
-                        <li>
-                          <Transmission></Transmission><span>: 4-Speed Automatic</span>
-                        </li>
-                        <li>
-                          <Fuel></Fuel><span>: GAS</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="pict-num-icon">
-                    <a href="car-details.html">
-                      <i class="flaticon-gallery">5</i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="single-car-shop-item">
-                <div class="row align-items-center">
-                  <div class="col-lg-4 col-md-4">
-                    <div class="car-shop-image">
-                      <a href="car-details.html"><img src="/images/car-shop/car-shop-9.jpg" alt="image"></a>
-                      <div class="icon">
-                        <a href="favorites.html"><i class="flaticon-love"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-8 col-md-4">
-                    <div class="car-shop-content">
-                      <div class="price-tag">30,000</div>
+                      <div class="price-tag">30 000</div>
                       <h3>
                         <a href="car-details.html">2021 VOLVO XC60</a>
                       </h3>
-                      <p><b>Пробег</b> 4 Miles</p>
-                      <ul class="list">
+                      <p class="car-shop-content__milage"><b>Пробег</b> 87 540км</p>
+                      <ul class="car-shop-content__list">
                         <li>
-                          <Engine></Engine><span>: KV8AN2MC2KX512681</span>
+                          <span class="car-shop-content__option-title">Год выпуска</span>
+                          <span>: 2.4L I4 16V MPFI DOHC</span>
                         </li>
                         <li>
-                          <Transmission></Transmission><span>: 4-Speed Automatic</span>
+                          <span class="car-shop-content__option-title">Тип кузова</span>
+                          <span>: седан</span>
                         </li>
                         <li>
-                          <Fuel></Fuel><span>: GAS</span>
+                          <span class="car-shop-content__option-title">Тип двигателя</span>
+                          <span>: GAS</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Привод</span>
+                          <span>: полный</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Двигатель</span>
+                          <span>: 4-Speed Automatic</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Коробка передач</span>
+                          <span>: GAS</span>
                         </li>
                       </ul>
+                      <div class="car-shop-content__icons">
+                        <div class="pict-num-icon pict-num-icon--images">
+                          <a href="car-details.html">
+                            <i class="flaticon-gallery">5</i>
+                          </a>
+                        </div>
+                        <div class="pict-num-icon pict-num-icon--video">
+                          <a href="car-details.html">
+                            <i class="flaticon-video">2</i>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -715,30 +648,352 @@
                 <div class="row align-items-center">
                   <div class="col-lg-4 col-md-4">
                     <div class="car-shop-image">
-                      <a href="car-details.html"><img src="/images/car-shop/car-shop-10.jpg" alt="image"></a>
+                      <a href="car-details.html"><img class="lazyload" data-src="/images/car-shop/car-shop-5.jpg" alt="image"></a>
                       <div class="icon">
                         <a href="favorites.html"><i class="flaticon-love"></i></a>
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-8 col-md-4">
+                  <div class="col-lg-8 col-md-8">
                     <div class="car-shop-content">
-                      <div class="price-tag">40,000</div>
+                      <div class="price-tag">30 000</div>
                       <h3>
-                        <a href="car-details.html">2021 MAZDA CX-10</a>
+                        <a href="car-details.html">2021 MAZDA CX-30</a>
                       </h3>
-                      <p><b>Пробег</b> 5 Miles</p>
-                      <ul class="list">
+                      <p class="car-shop-content__milage"><b>Пробег</b> 87 540км</p>
+                      <ul class="car-shop-content__list">
                         <li>
-                          <Engine></Engine><span>: JN9AY2NC2KK512399</span>
+                          <span class="car-shop-content__option-title">Год выпуска</span>
+                          <span>: 2.4L I4 16V MPFI DOHC</span>
                         </li>
                         <li>
-                          <Transmission></Transmission><span>: 4-Speed Automatic</span>
+                          <span class="car-shop-content__option-title">Тип кузова</span>
+                          <span>: седан</span>
                         </li>
                         <li>
-                          <Fuel></Fuel><span>: GAS</span>
+                          <span class="car-shop-content__option-title">Тип двигателя</span>
+                          <span>: GAS</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Привод</span>
+                          <span>: полный</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Двигатель</span>
+                          <span>: 4-Speed Automatic</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Коробка передач</span>
+                          <span>: GAS</span>
                         </li>
                       </ul>
+                      <div class="car-shop-content__icons">
+                        <div class="pict-num-icon pict-num-icon--images">
+                          <a href="car-details.html">
+                            <i class="flaticon-gallery">5</i>
+                          </a>
+                        </div>
+                        <div class="pict-num-icon pict-num-icon--video">
+                          <a href="car-details.html">
+                            <i class="flaticon-video">2</i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="single-car-shop-item">
+                <div class="row align-items-center">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="car-shop-image">
+                      <a href="car-details.html"><img class="lazyload" data-src="/images/car-shop/car-shop-6.jpg" alt="image"></a>
+                      <div class="icon">
+                        <a href="favorites.html"><i class="flaticon-love"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="car-shop-content">
+                      <div class="price-tag">30 000</div>
+                      <h3>
+                        <a href="car-details.html">2021 MAZDA CX-30</a>
+                      </h3>
+                      <p class="car-shop-content__milage"><b>Пробег</b> 87 540км</p>
+                      <ul class="car-shop-content__list">
+                        <li>
+                          <span class="car-shop-content__option-title">Год выпуска</span>
+                          <span>: 2.4L I4 16V MPFI DOHC</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Тип кузова</span>
+                          <span>: седан</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Тип двигателя</span>
+                          <span>: GAS</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Привод</span>
+                          <span>: полный</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Двигатель</span>
+                          <span>: 4-Speed Automatic</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Коробка передач</span>
+                          <span>: GAS</span>
+                        </li>
+                      </ul>
+                      <div class="car-shop-content__icons">
+                        <div class="pict-num-icon pict-num-icon--images">
+                          <a href="car-details.html">
+                            <i class="flaticon-gallery">5</i>
+                          </a>
+                        </div>
+                        <div class="pict-num-icon pict-num-icon--video">
+                          <a href="car-details.html">
+                            <i class="flaticon-video">2</i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="single-car-shop-item">
+                <div class="row align-items-center">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="car-shop-image">
+                      <a href="car-details.html"><img class="lazyload" data-src="/images/car-shop/car-shop-7.jpg" alt="image"></a>
+                      <div class="icon">
+                        <a href="favorites.html"><i class="flaticon-love"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="car-shop-content">
+                      <div class="price-tag">30 000</div>
+                      <h3>
+                        <a href="car-details.html">2021 KIA SOUL XC 60</a>
+                      </h3>
+                      <p class="car-shop-content__milage"><b>Пробег</b> 87 540км</p>
+                      <ul class="car-shop-content__list">
+                        <li>
+                          <span class="car-shop-content__option-title">Год выпуска</span>
+                          <span>: 2.4L I4 16V MPFI DOHC</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Тип кузова</span>
+                          <span>: седан</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Тип двигателя</span>
+                          <span>: GAS</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Привод</span>
+                          <span>: полный</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Двигатель</span>
+                          <span>: 4-Speed Automatic</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Коробка передач</span>
+                          <span>: GAS</span>
+                        </li>
+                      </ul>
+                      <div class="car-shop-content__icons">
+                        <div class="pict-num-icon pict-num-icon--images">
+                          <a href="car-details.html">
+                            <i class="flaticon-gallery">5</i>
+                          </a>
+                        </div>
+                        <div class="pict-num-icon pict-num-icon--video">
+                          <a href="car-details.html">
+                            <i class="flaticon-video">2</i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="single-car-shop-item">
+                <div class="row align-items-center">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="car-shop-image">
+                      <a href="car-details.html"><img class="lazyload" data-src="/images/car-shop/car-shop-8.jpg" alt="image"></a>
+                      <div class="icon">
+                        <a href="favorites.html"><i class="flaticon-love"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="car-shop-content">
+                      <div class="price-tag">30 000</div>
+                      <h3>
+                        <a href="car-details.html">2021 VOLVO XC60</a>
+                      </h3>
+                      <p class="car-shop-content__milage"><b>Пробег</b> 87 540км</p>
+                      <ul class="car-shop-content__list">
+                        <li>
+                          <span class="car-shop-content__option-title">Год выпуска</span>
+                          <span>: 2.4L I4 16V MPFI DOHC</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Тип кузова</span>
+                          <span>: седан</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Тип двигателя</span>
+                          <span>: GAS</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Привод</span>
+                          <span>: полный</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Двигатель</span>
+                          <span>: 4-Speed Automatic</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Коробка передач</span>
+                          <span>: GAS</span>
+                        </li>
+                      </ul>
+                      <div class="car-shop-content__icons">
+                        <div class="pict-num-icon pict-num-icon--images">
+                          <a href="car-details.html">
+                            <i class="flaticon-gallery">5</i>
+                          </a>
+                        </div>
+                        <div class="pict-num-icon pict-num-icon--video">
+                          <a href="car-details.html">
+                            <i class="flaticon-video">2</i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="single-car-shop-item">
+                <div class="row align-items-center">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="car-shop-image">
+                      <a href="car-details.html"><img class="lazyload" data-src="/images/car-shop/car-shop-9.jpg" alt="image"></a>
+                      <div class="icon">
+                        <a href="favorites.html"><i class="flaticon-love"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="car-shop-content">
+                      <div class="price-tag">30 000</div>
+                      <h3>
+                        <a href="car-details.html">2021 KIA SOUL XC 60</a>
+                      </h3>
+                      <p class="car-shop-content__milage"><b>Пробег</b> 87 540км</p>
+                      <ul class="car-shop-content__list">
+                        <li>
+                          <span class="car-shop-content__option-title">Год выпуска</span>
+                          <span>: 2.4L I4 16V MPFI DOHC</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Тип кузова</span>
+                          <span>: седан</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Тип двигателя</span>
+                          <span>: GAS</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Привод</span>
+                          <span>: полный</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Двигатель</span>
+                          <span>: 4-Speed Automatic</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Коробка передач</span>
+                          <span>: GAS</span>
+                        </li>
+                      </ul>
+                      <div class="car-shop-content__icons">
+                        <div class="pict-num-icon pict-num-icon--images">
+                          <a href="car-details.html">
+                            <i class="flaticon-gallery">5</i>
+                          </a>
+                        </div>
+                        <div class="pict-num-icon pict-num-icon--video">
+                          <a href="car-details.html">
+                            <i class="flaticon-video">2</i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="single-car-shop-item">
+                <div class="row align-items-center">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="car-shop-image">
+                      <a href="car-details.html"><img class="lazyload" data-src="/images/car-shop/car-shop-10.jpg" alt="image"></a>
+                      <div class="icon">
+                        <a href="favorites.html"><i class="flaticon-love"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="car-shop-content">
+                      <div class="price-tag">30 000</div>
+                      <h3>
+                        <a href="car-details.html">2021 VOLVO XC60</a>
+                      </h3>
+                      <p class="car-shop-content__milage"><b>Пробег</b> 87 540км</p>
+                      <ul class="car-shop-content__list">
+                        <li>
+                          <span class="car-shop-content__option-title">Год выпуска</span>
+                          <span>: 2.4L I4 16V MPFI DOHC</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Тип кузова</span>
+                          <span>: седан</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Тип двигателя</span>
+                          <span>: GAS</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Привод</span>
+                          <span>: полный</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Двигатель</span>
+                          <span>: 4-Speed Automatic</span>
+                        </li>
+                        <li>
+                          <span class="car-shop-content__option-title">Коробка передач</span>
+                          <span>: GAS</span>
+                        </li>
+                      </ul>
+                      <div class="car-shop-content__icons">
+                        <div class="pict-num-icon pict-num-icon--images">
+                          <a href="car-details.html">
+                            <i class="flaticon-gallery">5</i>
+                          </a>
+                        </div>
+                        <div class="pict-num-icon pict-num-icon--video">
+                          <a href="car-details.html">
+                            <i class="flaticon-video">2</i>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

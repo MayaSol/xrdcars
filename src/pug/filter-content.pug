@@ -126,11 +126,38 @@ mixin filter-content-page(props, mods)
               value: 'used'
             }
           },
-        ], 'Состояние')(class="filter-condition filter-group")
+        ], 'Состояние')(class="filter-condition filter-group" data-tags-id="filter-condition-tags")
+        //- +field-radio([
+        //-   {
+        //-     title: 'Все',
+        //-     mods: '',
+        //-     attrs: {
+        //-       name: 'test',
+        //-       value: 'all',
+        //-       checked: true,
+        //-     }
+        //-   },
+        //-   {
+        //-     title: 'Тест 1',
+        //-     mods: '',
+        //-     attrs: {
+        //-       name: 'test',
+        //-       value: 'test1'
+        //-     }
+        //-   },
+        //-   {
+        //-     title: 'Тест 2',
+        //-     mods: '',
+        //-     attrs: {
+        //-       name: 'test',
+        //-       value: 'test2'
+        //-     }
+        //-   },
+        //- ], 'Тест')(class="filter-test filter-group" data-tags-id="filter-test-tags")
         +filter-price({id: 'filterPrice'})(class="filter-group")
         .filter-type.filter-group
             .filter-title Тип автомобиля
-            select(name="type" id="type")
+            select(name="type" id="type" data-tags-id="filter-type-tags")
                 option(value="0" selected) Все
                 option(value="1") Легковые
                 option(value="2") Внедорожники
@@ -139,7 +166,7 @@ mixin filter-content-page(props, mods)
                 option(value="5") Электро
         .filter-transmission.filter-group
             .filter-title Передача
-            select(name="transmission" id="transmission")
+            select(name="transmission" id="transmission" data-tags-id="filter-transmission-tags")
                 option(value="0" selected) Все
                 option(value="1") Механика
                 option(value="2") Автомат
@@ -151,10 +178,10 @@ mixin filter-content-page(props, mods)
               name: 'drive',
               checked: false,
             }
-        }],'Привод')(class="filter-drive filter-group")
+        }],'Привод')(class="filter-drive filter-group" data-tags-id="filter-drive-tags")
         .filter-engine.filter-group
             .filter-title Двигатель
-            select(name="engine" id="engine")
+            select(name="engine" id="engine" data-tags-id="filter-engine-tags")
                 option(value="0" selected) Все
                 option(value="1") Бензин
                 option(value="2") Дизель

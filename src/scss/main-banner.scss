@@ -119,7 +119,7 @@ Main Banner Area CSS
 
 .main-banner-content {
     background-color: rgba(33, 39, 55, .6);
-    padding: 50px 30px 60px;
+    padding: 50px 30px 40px;
     border-radius: 5px;
     max-width: 870px;
 
@@ -321,8 +321,14 @@ Main Banner Area CSS
 
         .list {
             display: inline-block;
-            flex: 20%;
-            max-width: 20%;
+            flex: 16.666%;
+            max-width: 16.666%;
+            margin-bottom: 20px;
+
+            @media (max-width: 991px) {
+                flex: 33.333%;
+                max-width: 33.333%;
+            }
 
             .icon {
                 margin-bottom: 15px;
@@ -344,6 +350,10 @@ Main Banner Area CSS
                         &:hover {
                             background-color: $main-color;
                             color: $white-color;
+                        }
+
+                        &.flaticon-electriccar {
+                            font-size: 34px;
                         }
                     }
                 }
@@ -392,14 +402,14 @@ Main Banner Area CSS
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .main-banner-item {
         padding-top: 130px;
         padding-bottom: 85px;
     }
 
     .main-banner-content {
-        padding: 30px 20px 30px;
+        padding: 30px 20px 10px;
 
         h1 {
             font-size: 35px;
@@ -542,7 +552,7 @@ Main Banner Area CSS
 
     .main-banner-content {
         margin: auto;
-        padding: 50px 15px 55px;
+        padding: 50px 15px 35px;
 
         h1 {
             font-size: 50px;

@@ -165,12 +165,8 @@ exports.minifyImgs = minifyImgs;
 
 
 function generateSvgSprite(cb) {
-  console.log(`${dir.src}sprite-svg/svg/`);
   let spriteSvgPath = `${dir.src}sprite-svg/svg/`;
-  console.log(nth.config.alwaysAddBlocks.indexOf('sprite-svg'));
-  console.log(fileExist(spriteSvgPath));
   if (nth.config.alwaysAddBlocks.indexOf('sprite-svg') > -1 && fileExist(spriteSvgPath)) {
-    console.log('1');
     return src(spriteSvgPath + '*.svg')
       // .pipe(svgmin(function() {
       //   return { plugins: [

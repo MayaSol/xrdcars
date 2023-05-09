@@ -2,6 +2,8 @@ const Choices = require('choices.js');
 const closest = require('closest');
 const makeEllipsis = require('./utils/ellipsis.js');
 const autosize = require('autosize');
+var throttle = require('lodash.throttle');
+import 'lazysizes';
 
 jQuery(function ($) {
     'use strict';
@@ -59,6 +61,66 @@ jQuery(function ($) {
 	// 	smartSpeed: 100,
 	// 	autoplay: false,
 	// });
+
+	var regionChooseSlider = $('.choose-item__inner');
+	if (regionChooseSlider.length > 0) {
+		//Region Page Choose Slides
+		var prevClientWidth = 1000;
+		setUpOwlCarousel(regionChooseSlider, {})();
+		// if (document.documentElement.clientWidth < 768) {
+		// 	regionChooseSlider.addClass('owl-carousel');
+		// 	regionChooseSlider.addClass('owl-theme');
+
+		// 	regionChooseSlider.owlCarousel({
+		// 		loop: true,
+		// 		nav: true,
+		// 		dots: false,
+		// 		autoplayHoverPause: true,
+		// 		items: 1,
+		// 		autoplay: false,
+		// 		navText: [
+		// 			"<i class='flaticon-left-arrow'></i>",
+		// 			"<i class='flaticon-right-arrow'></i>"
+		// 		],
+		// 	});
+		// } else {
+		// 	regionChooseSlider.removeClass('owl-carousel');
+		// 	regionChooseSlider.removeClass('owl-theme');
+		// }
+	}
+
+	function setUpOwlCarousel(owlElement, config) {
+		return function() {
+			if (document.documentElement.clientWidth < 768 && prevClientWidth >= 768) {
+				console.log('1');
+				owlElement.addClass('owl-carousel');
+				owlElement.addClass('owl-theme');
+				owlElement.owlCarousel({
+					loop: true,
+					nav: true,
+					dots: false,
+					autoplayHoverPause: true,
+					items: 1,
+					autoplay: false,
+					navText: [
+						"<i class='flaticon-left-arrow'></i>",
+						"<i class='flaticon-right-arrow'></i>"
+					],
+				});
+			}
+			else if (document.documentElement.clientWidth >= 768 && prevClientWidth < 768)
+			{
+				console.log('2');
+				owlElement.removeClass('owl-carousel owl-theme owl-loaded');
+				owlElement.owlCarousel('destroy'); 
+			    owlElement.find('.owl-stage-outer').children().unwrap();
+			    owlElement.removeData();
+			}
+			prevClientWidth = document.documentElement.clientWidth;
+		}
+	}
+
+	window.addEventListener('resize', throttle(setUpOwlCarousel(regionChooseSlider, {})));
 	
 	// // Models Slides
 	$('.models-slides').owlCarousel({
@@ -254,7 +316,6 @@ jQuery(function ($) {
             shouldSort: false,
 	  	});
 	  	choices.push(choiceObj);
-	  	console.log(choices);
 	}
 
 	

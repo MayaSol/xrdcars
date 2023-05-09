@@ -412,3 +412,40 @@ Section Title CSS
         font-size: $font-size;
     }
 }
+
+
+/*================================================
+Owl Carousel Custom CSS
+=================================================*/
+.owl-carousel.owl-theme {
+    .owl-nav {
+        // margin-top: 0;
+        // margin-left: -200px;
+        // position: absolute;
+        // left: 0;
+        // right: 30%;
+        // margin: auto;
+        // bottom: 10px;
+
+        [class*=owl-] {
+            background-color: $main-color;
+            border: 2px solid $main-color;
+            box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+            margin: 0 5px;
+            transition: $transition;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            color: $white-color;
+            text-align: center;
+            line-height: 40px;
+
+            &:hover {
+                background-color: $white-color;
+                border-color: $main-color;
+                color: $main-color;
+                box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+            }
+        }
+    }
+}

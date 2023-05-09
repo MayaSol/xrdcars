@@ -19,7 +19,6 @@ ready(function() {
 		callbackOnCreateTemplates: function(strToEl) {
 			// var classNames = this.config.classNames;
 			// var itemSelectText = this.config.itemSelectText;
-			console.log('callbackOnCreateTemplates');
 			return {
 			  item: function({classNames}, data) {
 			    return strToEl(
@@ -60,7 +59,6 @@ ready(function() {
 
 	})
 
-	console.log(choiceNewsletterSearch);
 
 	function onBtnBackClick() {
 		// let btnBack = document.getElementById('newsletterBackBtn');
@@ -74,11 +72,10 @@ ready(function() {
 	}
 
 	choiceNewsletterSearch.itemList.element.addEventListener('click', function(event) {
-		console.log('choiceNewsletterSearch click');
-		console.log(event.target.id);
-		console.log(getParents(event.target, '#newsletterBackBtn'));
+		// console.log('choiceNewsletterSearch click');
+		// console.log(event.target.id);
+		// console.log(getParents(event.target, '#newsletterBackBtn'));
 		if (event.target.id == 'newsletterBackBtn' || getParents(event.target, '#newsletterBackBtn').length > 0) {
-			console.log('back-btn click');
 			onBtnBackClick();
 		}
 	})
@@ -86,21 +83,15 @@ ready(function() {
 	const itemNewsletterDefault = document.querySelector('.newsletter-item--default');
 	const newsLetterList = document.querySelector('.newsletter-list');
 	// setBtnBackClick();
-	console.log(itemNewsletterDefault);
 	selectNewsletter.addEventListener('choice',function(event) {
-		console.log('#newsletter choice');
-		console.log(event);
-		console.log(event.detail.choice.value);
-			console.log(newsLetterList.classList);
+		// console.log('#newsletter choice');
+		// console.log(event.detail.choice.value);
 		if (+event.detail.choice.value == 2) {
-			console.log('animation');
-			console.log(itemNewsletterSearch);
 			newsLetterList.classList = [];
 			newsLetterList.classList.add('newsletter-list');
 			newsLetterList.classList.add('newsletter-list--my-search');
 		}
 		if (+event.detail.choice.value == 3) {
-			console.log('modal here');
 			var asideForm = document.getElementById('add-search-for-newsletter');
 			if (asideForm) {
 				asideForm.asideOpen();
@@ -114,7 +105,6 @@ ready(function() {
 				asideForm.addEventListener('aside-close',function(event) {
 					if (advancedSearchSubmitted) {
 						advancedSearchSubmitted = false;
-						console.log('advancedSearchSubmitted');
 					}
 					else {
 					}

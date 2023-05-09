@@ -3,6 +3,10 @@ Car Shop Area CSS
 =================================================*/
 .car-shop-area {
 
+    @media (max-width: 600px) {
+        padding-top: 0 !important;
+    }
+
     &__inner {
         display: grid;
         grid-template-columns: 25% 1fr;
@@ -182,6 +186,12 @@ Car Shop Area CSS
     grid-row-start: 2;
     grid-row-end: 3;
 
+    &--country {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
     @media (max-width: 991px) {
         grid-column-start: 1;
         grid-row-start: 3;
@@ -310,6 +320,12 @@ Car Shop Area CSS
             margin-bottom: 0;
             margin-top: 10px;
 
+            @media (max-width: 767px) {
+                grid-template-columns: auto;
+                grid-auto-flow: row;
+                grid-gap: 0;
+            }
+
             li {
                 color: $black-color;
                 font-size: $font-size;
@@ -323,6 +339,10 @@ Car Shop Area CSS
 
                 &:nth-child(-n+3) {
                     border-right: 1px solid #e1e1e1;
+
+                    @media (max-width: 767px) {
+                        border: none;
+                    }
                 }
 
             }
@@ -474,4 +494,8 @@ Car Shop Area CSS
             }
         }
     }
+}
+
+.car-shop-item {
+    margin-bottom: 20px;
 }

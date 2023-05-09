@@ -43,6 +43,7 @@ let config = {
     'src/images/car-shop': 'images/car-shop/',
     'src/images/advantages': 'images/advantages/',
     'src/images/region-page': 'images/region-page/',
+    'src/images/country-page': 'images/country-page/',
     'src/css/utils.css': 'css/',
     'src/js/utils.js': 'js/',
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',

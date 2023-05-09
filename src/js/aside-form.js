@@ -10,7 +10,6 @@ ready(function() {
   }
 
   var openBtns = document.querySelectorAll('body *[data-aside-open]');
-  console.log(openBtns);
 
    for (let btn of openBtns) {
     btn.addEventListener('click', function(event) {

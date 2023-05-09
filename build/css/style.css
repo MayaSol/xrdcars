@@ -454,6 +454,28 @@ Section Title CSS
 .section-title p {
   font-size: 16px;
 }
+/*================================================
+Owl Carousel Custom CSS
+=================================================*/
+.owl-carousel.owl-theme .owl-nav [class*=owl-] {
+  background-color: #ff5421;
+  border: 2px solid #ff5421;
+  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+  margin: 0 5px;
+  transition: 0.5s;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 40px;
+}
+.owl-carousel.owl-theme .owl-nav [class*=owl-]:hover {
+  background-color: #ffffff;
+  border-color: #ff5421;
+  color: #ff5421;
+  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+}
 .page {
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -1429,6 +1451,10 @@ Navbar Area CSS
 .car-card:hover {
   transform: translateY(-5px);
 }
+.car-card--dark {
+  color: #ffffff;
+  background-color: #161c2d;
+}
 .car-card__image {
   position: relative;
 }
@@ -1455,6 +1481,9 @@ Navbar Area CSS
   font-size: 26px;
   margin-top: 15px;
   margin-bottom: 10px;
+}
+.car-card--dark .car-card__title a {
+  color: #ffffff;
 }
 .car-option__list {
   display: flex;
@@ -1519,7 +1548,7 @@ Main Banner Area CSS
 }
 .main-banner-content {
   background-color: rgba(33, 39, 55, 0.6);
-  padding: 50px 30px 60px;
+  padding: 50px 30px 40px;
   border-radius: 5px;
   max-width: 870px;
 }
@@ -1686,8 +1715,15 @@ Main Banner Area CSS
 }
 .main-banner-content .banner-category-list .list {
   display: inline-block;
-  flex: 20%;
-  max-width: 20%;
+  flex: 16.666%;
+  max-width: 16.666%;
+  margin-bottom: 20px;
+}
+@media (max-width: 991px) {
+  .main-banner-content .banner-category-list .list {
+    flex: 33.333%;
+    max-width: 33.333%;
+  }
 }
 .main-banner-content .banner-category-list .list .icon {
   margin-bottom: 15px;
@@ -1708,6 +1744,9 @@ Main Banner Area CSS
 .main-banner-content .banner-category-list .list .icon a i:hover {
   background-color: #ff5421;
   color: #ffffff;
+}
+.main-banner-content .banner-category-list .list .icon a i.flaticon-electriccar {
+  font-size: 34px;
 }
 .main-banner-content .banner-category-list .list h3 {
   font-size: 18px;
@@ -1740,13 +1779,13 @@ Main Banner Area CSS
     transform: translateY(0px);
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .main-banner-item {
     padding-top: 130px;
     padding-bottom: 85px;
   }
   .main-banner-content {
-    padding: 30px 20px 30px;
+    padding: 30px 20px 10px;
   }
   .main-banner-content h1 {
     font-size: 35px;
@@ -1840,7 +1879,7 @@ Main Banner Area CSS
   }
   .main-banner-content {
     margin: auto;
-    padding: 50px 15px 55px;
+    padding: 50px 15px 35px;
   }
   .main-banner-content h1 {
     font-size: 50px;
@@ -2921,6 +2960,7 @@ Choose Area CSS
 }
 .choose-item {
   max-width: 570px;
+  padding-right: 30px;
 }
 .choose-item .content h3 {
   font-size: 36px;
@@ -2974,6 +3014,48 @@ Choose Area CSS
   border-top: 10px solid #ffffff;
   border-bottom: 10px solid #ffffff;
   border-radius: 10px;
+  background-color: #ffffff;
+}
+.choose-area--region .choose-image .image-box {
+  display: block;
+  position: static;
+  border: none;
+  border-radius: 10px;
+  transform: none;
+  transition: transform 0.5s;
+}
+.choose-area--region .choose-image .image-box:hover {
+  transform: scale(1.1);
+}
+.choose-image .image-box img {
+  padding: 7px 7px 0;
+}
+@media (max-width: 1199px) {
+  .choose-image .image-box img {
+    padding: 7px 5px 0;
+  }
+}
+.choose-image .image-box span {
+  display: inline-block;
+  width: 100%;
+  padding: 7px 4px 7px;
+}
+@media (max-width: 1199px) {
+  .choose-image .image-box span {
+    padding: 7px 3px 0;
+    font-size: 13px;
+  }
+}
+@media (max-width: 991px) {
+  .choose-image .image-box span {
+    padding: 7px 5px 7px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .choose-image .image-box span {
+    font-size: 13px;
+  }
 }
 .choose-image .image-box .video-btn {
   display: inline-block;
@@ -3092,40 +3174,67 @@ Choose Area CSS
   position: absolute;
   display: flex;
   align-items: center;
-  top: 0;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: -50px;
+  right: -50px;
   padding: 0;
   margin: 0;
   list-style: none;
+  transform: translateY(50%);
   z-index: 2;
+}
+@media (max-width: 1199px) {
+  .choose-regions {
+    right: -100px;
+  }
+}
+@media (max-width: 600px) {
+  .choose-regions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px 20px;
+    top: 20px;
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    transform: none;
+  }
 }
 .choose-regions svg {
   margin-right: 10px;
 }
 .choose-regions__item {
-  position: absolute;
+  width: 25%;
+  margin-right: 10px;
   color: #fff;
-  font-size: 18px;
-  text-transform: uppercase;
+  font-size: 14px;
   font-weight: 700;
 }
-.choose-regions__item:first-child {
-  left: 5px;
-  top: 5px;
+@media (max-width: 1199px) {
+  .choose-regions__item {
+    width: 22%;
+    margin-right: 5px;
+  }
 }
-.choose-regions__item:nth-child(2) {
-  right: 5px;
-  top: 5px;
+@media (max-width: 600px) {
+  .choose-regions__item {
+    width: 140px;
+    margin-right: 0;
+    align-self: end;
+    font-size: 13px;
+  }
 }
-.choose-regions__item:nth-child(3) {
-  right: 5px;
-  bottom: 5px;
+.choose-regions__item:last-child {
+  margin-right: 0;
 }
-.choose-regions__item:nth-child(4) {
-  left: 5px;
-  bottom: 5px;
+@media (max-width: 600px) {
+  .choose-regions__item:nth-child(2n) {
+    justify-self: end;
+  }
+  .choose-regions__item:nth-child(-n+2) {
+    align-self: start;
+  }
 }
 /*================================================
 Team Area CSS
@@ -3345,6 +3454,50 @@ Partner Area CSS
 .filter-title {
   font-weight: 700;
   margin-bottom: 10px;
+}
+/*
+* Теги выбранных фильтров на странице региона
+*/
+.filter-tags {
+  padding: 0 25px;
+}
+.filter-tags__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.filter-tags__item {
+  display: inline-flex;
+  vertical-align: middle;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 3.75px;
+  margin-bottom: 3.75px;
+  background-color: #f5683d;
+  border-color: #ff5421;
+  color: #fff;
+  word-break: break-all;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.filter-tags__item button {
+  position: relative;
+  display: inline-block;
+  margin: 0 -4px 0 8px;
+  padding-left: 16px;
+  border-left: 1px solid #008fa1;
+  border-color: #fff;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAyMSAyMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yLjU5Mi4wNDRsMTguMzY0IDE4LjM2NC0yLjU0OCAyLjU0OEwuMDQ0IDIuNTkyeiIvPjxwYXRoIGQ9Ik0wIDE4LjM2NEwxOC4zNjQgMGwyLjU0OCAyLjU0OEwyLjU0OCAyMC45MTJ6Ii8+PC9nPjwvc3ZnPg==);
+  background-size: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 8px;
+  font-size: 0;
+  line-height: 1;
+  opacity: 0.75;
+  border-radius: 0;
 }
 /*================================================
 Blog Area CSS
@@ -3880,6 +4033,9 @@ Page Banner CSS
   padding-top: 110px;
   padding-bottom: 70px;
 }
+.page-banner-area--country {
+  background-image: url(/images/country-page/country-banner.jpg);
+}
 .page-banner-area::before {
   position: absolute;
   content: "";
@@ -3895,6 +4051,7 @@ Page Banner CSS
 .page-banner-content {
   text-align: center;
 }
+.page-banner-content h1,
 .page-banner-content h2 {
   color: #ffffff;
   margin-bottom: 10px;
@@ -3942,6 +4099,11 @@ Page Banner CSS
 /*================================================
 Car Shop Area CSS
 =================================================*/
+@media (max-width: 600px) {
+  .car-shop-area {
+    padding-top: 0 !important;
+  }
+}
 .car-shop-area__inner {
   display: grid;
   grid-template-columns: 25% 1fr;
@@ -4103,6 +4265,11 @@ Car Shop Area CSS
   grid-row-start: 2;
   grid-row-end: 3;
 }
+.car-shop-catalog--country {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
 @media (max-width: 991px) {
   .car-shop-catalog {
     grid-column-start: 1;
@@ -4201,6 +4368,13 @@ Car Shop Area CSS
   margin-bottom: 0;
   margin-top: 10px;
 }
+@media (max-width: 767px) {
+  .single-car-shop-item .car-shop-content__list {
+    grid-template-columns: auto;
+    grid-auto-flow: row;
+    grid-gap: 0;
+  }
+}
 .single-car-shop-item .car-shop-content__list li {
   color: #161c2d;
   font-size: 16px;
@@ -4213,6 +4387,11 @@ Car Shop Area CSS
 }
 .single-car-shop-item .car-shop-content__list li:nth-child(-n+3) {
   border-right: 1px solid #e1e1e1;
+}
+@media (max-width: 767px) {
+  .single-car-shop-item .car-shop-content__list li:nth-child(-n+3) {
+    border: none;
+  }
 }
 .single-car-shop-item .car-shop-list {
   margin-left: 70px;
@@ -4331,6 +4510,9 @@ Car Shop Area CSS
 }
 .single-car-shop-box:hover .image .icon i {
   margin: 0;
+}
+.car-shop-item {
+  margin-bottom: 20px;
 }
 /*================================================
 Widget Sidebar CSS
