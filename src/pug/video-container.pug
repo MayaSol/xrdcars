@@ -1,0 +1,32 @@
+mixin video-container(props, mods)
+
+  //- Вызов:
+        +car-card({
+            src: "/images/featured-cars/featured-cars-7.jpg",
+            photos: 5,
+            price: "300 000 000",
+            title: "2021 VOLVO XC60",
+            options: [
+                {title: 'flaticon-calendar', value: 2012},
+                {title: 'flaticon-road', value: '15 000'},
+                {title: 'flaticon-power', value: 150},
+                {title: 'flaticon-engine', value: 'Бензин'},
+            ]
+        })
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' video-container--' + modsList[i].trim();
+      }
+    }
+
+    .video(class=allMods)&attributes(attributes)
+        video.video__item(preload="none" muted="muted" width="1920" height="1080")
+            source(src="/video/dummy.mov")
+        .video__poster(data-src="/img/product-main-slider-poster.jpg")
+            img(src="/img/product-main-slider-poster.jpg")
+        .video__btn-play.video__btn-play--filled

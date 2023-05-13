@@ -11,6 +11,10 @@ Choose Area CSS
     max-width: 570px;
     padding-right: 30px;
 
+    @media (max-width: 991px) {
+        padding-right: 0;
+    }
+
     .content {
         h3 {
             font-size: 36px;
@@ -191,8 +195,12 @@ Choose Area CSS
             right: 0;
             top: 0;
             opacity: .4;
-        }
 
+            @media (max-width: 479px) {
+                background-color: $black-color;
+                opacity: 1; 
+            }
+        }
     }
 }
 
@@ -294,6 +302,18 @@ Choose Area CSS
         transform: none;
      }
 
+     @media (max-width: 600px) { 
+        top: 12px;
+        bottom: 12px;
+        right: 15px;
+        left: 15px;
+     }
+
+     @media (max-width: 359px) {
+        right: 8px;
+        left: 8px;
+     }
+
     svg {
         margin-right: 10px;
     }
@@ -315,6 +335,10 @@ Choose Area CSS
             margin-right: 0;
             align-self: end;
             font-size: 13px;
+         }
+
+         @media (max-width: 359px) {
+            width: 130px;
          }
 
         &:last-child {

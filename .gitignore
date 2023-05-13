@@ -1,4 +1,5 @@
 tz/
+build/
 node_modules/
 initial/
 *.sublime-*

@@ -35,6 +35,47 @@ Blog Area CSS
         padding: 10px;
         border-radius: 5px;
 
+        &--full {
+            & > a {
+                max-width: 50%;
+            }
+
+            &::after {
+                content: '';
+                display: table;
+                clear: both;
+            }
+
+            .blog-content {
+
+                @media (max-width: 767px) {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                &__img {
+                    float: left;
+                    max-width: 50%;
+                    margin-right: 30px;
+
+                    @media (max-width: 767px) {
+                        float: none;
+                        max-width: 100%;
+                        order: -1;
+                    }
+                }
+
+                h2,
+                h3,
+                h4 {
+                    margin-bottom: 20px;
+                    a {
+                        display: inline;
+                    }
+                }
+            }
+        }
+
         img {
             border-radius: 5px;
         }

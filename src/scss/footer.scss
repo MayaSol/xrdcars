@@ -313,11 +313,20 @@ Footer Area CSS
 .socials-footer {
     i {
         color: #929ba4;
+
+        &.flaticon-viber::before {
+            font-size: 0.8em;
+        }
     }
 
     .share-link {
 
         a {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-right: 10px;
             cursor: pointer;
 

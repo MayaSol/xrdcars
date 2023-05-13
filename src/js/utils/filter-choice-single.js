@@ -16,8 +16,8 @@ class FilterChoiceSingle {
             return;
         }
         this._element = element;
-        this._tagListId = this._element.dataset && this._element.dataset.tagsId;
-        this._tagsList = this._tagListId && document.getElementById(this._tagListId);
+        this._tagsListId = this._element.dataset && this._element.dataset.tagsId;
+        this._tagsList = this._tagsListId && document.getElementById(this._tagsListId);
         this._config = config || {};
         this._settings = settings || {};
         this._settings.default = this._settings.default || '0'; //начальное значение, фильтр отключен
@@ -27,7 +27,6 @@ class FilterChoiceSingle {
 
     _init() {
         const _this = this;
-        console.log(this);
 
         this._choice = this._element && new Choices(this._element, this._config);
 
@@ -71,18 +70,18 @@ class FilterChoiceSingle {
     }
 
     setTags(value) {
-        console.log('setTags');
-        console.log(value);
-        console.log(this._settings.default);
-        if (value.value == this._settings.default) {
+        if (!this._tagsListId) {
+            return;
+        }
+        let currentValue = value.value ? value.value : value;
+        if (currentValue == this._settings.default) {
             this._tagsList.innerHTML = '';
         }
         else {
-            let value = this._choice.getValue();
-            console.log(value);
+            let choiceValue = this._choice.getValue();
             this._tagsList.innerHTML = 
-                `<li><span data-value=${value.value} class="filter-tags__item">` + 
-                `<span>${value.label}</span>` +
+                `<li><span data-value=${choiceValue.value} class="filter-tags__item">` + 
+                `<span>${choiceValue.label}</span>` +
                 `${DELETE_TAG_BUTTON}` +
                 `</span></li>`
         }

@@ -140,3 +140,79 @@
 .modal-footer {
   border-top: none;
 }
+
+.socials {
+  .share-link {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+.socials-icon {
+  display: block;
+  margin-right: 10px;
+  width: 35px;
+  height: 35px;
+  font-size: 26px;
+  border-radius: 5px;
+
+  i {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      color: $white-color;
+    }
+  }
+
+
+
+  &--whatsapp {
+    background-color: #25D366;
+
+    &:hover {
+      background-color: darken(#25D366, 15%);
+    }
+  }
+
+  &--telegram {
+    background-color: #229ED9;
+
+    &:hover {
+      background-color: darken(#229ED9, 15%);
+    }
+  }
+
+  &--viber {
+    background-color: #8f5db7;
+
+    &:hover {
+      background-color: darken(#8f5db7, 15%);
+    }
+
+    i {
+      font-size: 0.9em;
+    }
+  }
+
+  &--facebook {
+    background-color: #4267B2;
+
+    &:hover {
+      background-color: darken(#4267B2, 15%);
+    }
+  }
+
+  &--vk {
+    background-color: #0077FF;
+
+    &:hover {
+      background-color: darken(#0077FF, 15%);
+    }
+  }
+
+}

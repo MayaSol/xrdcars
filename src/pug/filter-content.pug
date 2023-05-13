@@ -127,33 +127,177 @@ mixin filter-content-page(props, mods)
             }
           },
         ], 'Состояние')(class="filter-condition filter-group" data-tags-id="filter-condition-tags")
-        //- +field-radio([
-        //-   {
-        //-     title: 'Все',
-        //-     mods: '',
-        //-     attrs: {
-        //-       name: 'test',
-        //-       value: 'all',
-        //-       checked: true,
-        //-     }
-        //-   },
-        //-   {
-        //-     title: 'Тест 1',
-        //-     mods: '',
-        //-     attrs: {
-        //-       name: 'test',
-        //-       value: 'test1'
-        //-     }
-        //-   },
-        //-   {
-        //-     title: 'Тест 2',
-        //-     mods: '',
-        //-     attrs: {
-        //-       name: 'test',
-        //-       value: 'test2'
-        //-     }
-        //-   },
-        //- ], 'Тест')(class="filter-test filter-group" data-tags-id="filter-test-tags")
+        +filter-price({id: 'filterPrice'})(class="filter-group")
+        .filter-type.filter-group
+            .filter-title Тип автомобиля
+            select(name="type" id="type" data-tags-id="filter-type-tags")
+                option(value="0" selected) Все
+                option(value="1") Легковые
+                option(value="2") Внедорожники
+                option(value="3") Минивэны
+                option(value="4") Автодома
+                option(value="5") Электро
+        .filter-transmission.filter-group
+            .filter-title Передача
+            select(name="transmission" id="transmission" data-tags-id="filter-transmission-tags")
+                option(value="0" selected) Все
+                option(value="1") Механика
+                option(value="2") Автомат
+        +field-checkbox([
+        {
+            title: '4x4',
+            mods: '',
+            attrs: {
+              name: 'drive',
+              checked: false,
+            }
+        }],'Привод')(class="filter-drive filter-group" data-tags-id="filter-drive-tags")
+        .filter-engine.filter-group
+            .filter-title Двигатель
+            select(name="engine" id="engine" data-tags-id="filter-engine-tags")
+                option(value="0" selected) Все
+                option(value="1") Бензин
+                option(value="2") Дизель
+                option(value="3") Электро
+                option(value="4") Гибрид
+        button.btn.btn--regular.btn--clear-filter.btn--invert(type="button") Сбросить
+        button.btn.btn--submit(type="sumbit") Применить
+
+
+mixin filter-content-countries(props, mods)
+
+    //- Вызов:
+
+    -
+        // список модификаторов
+        var allMods = '';
+        if(typeof(mods) !== 'undefined' && mods) {
+            var modsList = mods.split(',');
+            for (var i = 0; i < modsList.length; i++) {
+            allMods = allMods + ' filter-content--' + modsList[i].trim();
+          }
+        }
+
+        if (!props) {
+          props = {};
+        }
+
+    +filter-main(class=allMods)&attributes(attributes)
+        +filter-year({id: 'filterYear'})
+        +filter-milage({id: 'filterMilage'})(class="filter-group")
+        +field-radio([
+          {
+            title: 'Все',
+            mods: '',
+            attrs: {
+              name: 'condition',
+              value: 'all',
+              checked: true,
+            }
+          },
+          {
+            title: 'Новые',
+            mods: '',
+            attrs: {
+              name: 'condition',
+              value: 'new'
+            }
+          },
+          {
+            title: 'Подержанные',
+            mods: '',
+            attrs: {
+              name: 'condition',
+              value: 'used'
+            }
+          },
+        ], 'Состояние')(class="filter-condition filter-group" data-tags-id="filter-condition-tags")
+        +filter-price({id: 'filterPrice'})(class="filter-group")
+        .filter-type.filter-group
+            .filter-title Тип автомобиля
+            select(name="type" id="type" data-tags-id="filter-type-tags")
+                option(value="0" selected) Все
+                option(value="1") Легковые
+                option(value="2") Внедорожники
+                option(value="3") Минивэны
+                option(value="4") Автодома
+                option(value="5") Электро
+        .filter-transmission.filter-group
+            .filter-title Передача
+            select(name="transmission" id="transmission" data-tags-id="filter-transmission-tags")
+                option(value="0" selected) Все
+                option(value="1") Механика
+                option(value="2") Автомат
+        +field-checkbox([
+        {
+            title: '4x4',
+            mods: '',
+            attrs: {
+              name: 'drive',
+              checked: false,
+            }
+        }],'Привод')(class="filter-drive filter-group" data-tags-id="filter-drive-tags")
+        .filter-engine.filter-group
+            .filter-title Двигатель
+            select(name="engine" id="engine" data-tags-id="filter-engine-tags")
+                option(value="0" selected) Все
+                option(value="1") Бензин
+                option(value="2") Дизель
+                option(value="3") Электро
+                option(value="4") Гибрид
+        button.btn.btn--regular.btn--clear-filter.btn--invert(type="button") Сбросить
+        button.btn.btn--submit(type="sumbit") Применить
+
+
+
+mixin filter-content-mark-main(props, mods)
+
+    //- Вызов:
+
+    -
+        // список модификаторов
+        var allMods = '';
+        if(typeof(mods) !== 'undefined' && mods) {
+            var modsList = mods.split(',');
+            for (var i = 0; i < modsList.length; i++) {
+            allMods = allMods + ' filter-content--' + modsList[i].trim();
+          }
+        }
+
+        if (!props) {
+          props = {};
+        }
+
+    +filter-main(class=allMods)&attributes(attributes)
+        +filter-year({id: 'filterYear'})
+        +filter-milage({id: 'filterMilage'})(class="filter-group")
+        +field-radio([
+          {
+            title: 'Все',
+            mods: '',
+            attrs: {
+              name: 'condition',
+              value: 'all',
+              checked: true,
+            }
+          },
+          {
+            title: 'Новые',
+            mods: '',
+            attrs: {
+              name: 'condition',
+              value: 'new'
+            }
+          },
+          {
+            title: 'Подержанные',
+            mods: '',
+            attrs: {
+              name: 'condition',
+              value: 'used'
+            }
+          },
+        ], 'Состояние')(class="filter-condition filter-group" data-tags-id="filter-condition-tags")
         +filter-price({id: 'filterPrice'})(class="filter-group")
         .filter-type.filter-group
             .filter-title Тип автомобиля

@@ -9,11 +9,24 @@
   display: block;
   margin-bottom: $typo-margin-vertical;
 
+  .filter-country & {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (max-width: 767px) {
+      display: block;
+    }
+  }
+
   &__title {
     @include field-name;
 
     .filter-main & {
       margin-bottom: 10px;
+    }
+
+    .filter-country & {
+      width: 100%;
     }
   }
 
@@ -23,11 +36,73 @@
       margin-top: $typo-margin-vertical;
     }
 
+    .filter-country & {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
     &--error {
 
       #{$block-name}__name-text,
       #{$block-name}__help-text {
         color: $main-color;
+      }
+    }
+
+    &--pict {
+      #{$block-name}__name {
+        margin-right: 0.4em;
+
+        &:hover {
+          #{$block-name}__name-text {
+            border-color: $black-color;
+
+            @media (max-width: 767px) {
+              border-color: transparent;
+            }
+          }
+        }
+      }
+
+      #{$block-name}__name-text {
+        padding: 3px;
+        border: 1px solid transparent;
+
+        @media (max-width: 767px) {
+          padding: 0;
+          padding-left: 30px;
+        }
+
+        &::before {
+          display: none;
+
+          @media (max-width: 767px) {
+            display: inline-block;
+          }
+        }
+
+        span {
+          @include hide-text;
+
+          @media (max-width: 767px) {
+            @include show-text;
+          }
+        }
+
+        svg {
+
+          @media (max-width: 767px) {
+            display: none;
+          }
+        }
+      }
+
+      #{$block-name}__input:checked ~ #{$block-name}__name-text {
+        border-color: $black-color;
+
+        @media (max-width: 767px) {
+          border-color: transparent;
+        }
       }
     }
   }

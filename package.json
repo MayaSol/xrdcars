@@ -94,7 +94,8 @@
     "lodash.clonedeep": "^4.5.0",
     "lodash.throttle": "^4.1.1",
     "nouislider": "^15.7.0",
-    "svg4everybody": "^2.1.8"
+    "svg4everybody": "^2.1.8",
+    "tippy.js": "^6.3.7"
   },
   "husky": {
     "hooks": {

@@ -1,0 +1,55 @@
+mixin monitor-price(props, mods)
+
+  //- Вызов:
+  
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' filter-main--' + modsList[i].trim();
+      }
+    }
+
+    if (!props) {
+      props = {};
+    }
+
+  .modal.fade.monitor-price#monitor-price-modal(aria-hidden="true" tabindex="-1" class=allMods)&attributes(attributes)
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title">Подпишитесь на обновления</div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+              <div class="monitor-price__field field--modal">
+                  <input type="email" class="form-field" placeholder="Электронная почта">
+                  <button type="submit" class="btn btn--modal-submit">
+                    <i class="flaticon-email"></i>
+                    <span>Получать на почту</span>
+                  </button>
+              </div>
+              <div>или в месенджеры:</div>
+              <ul class="monitor-price__others socials-modal">
+                <li>
+                  <button type="text" class="btn--invert"><i class="bx bxl-whatsapp"></i></button>
+                </li>
+                <li>
+                  <button type="text" class="btn--invert"><i class="bx bxl-telegram"></i></button>
+                </li>
+                <li>
+                  <button type="text" class="btn--invert"><i class="flaticon-viber"></i></button>
+                </li>
+                <li>
+                  <button type="text" class="btn--invert"><i class="bx bxl-vk"></i></button>
+                </li>
+              </ul>
+          </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>

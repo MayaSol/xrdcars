@@ -12,6 +12,10 @@
 	background-color: #f6f7f9;
 	transition: 0.5s;
 
+	.single-featured-cars-box & {
+		background-color: transparent;
+	}
+
 	&:hover {
 		transform: translateY(-5px);
 	}
@@ -79,6 +83,13 @@
         .featured-cars-col--center & {
         	justify-content: flex-start;
         }
+
+        .car-shop-catalog & {
+        	@media (max-width: 1199px) {
+        		flex-wrap: wrap;
+        	}
+        }
+
     }
 
     &__item {
@@ -89,6 +100,7 @@
         .featured-cars-col--center & {
         	margin-right: 15px;
         }
+
     }
 
     &__value {

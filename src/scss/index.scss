@@ -1,10 +1,13 @@
-@import "src/scss/default.scss";
 @import "src/scss/_tailwind-colours.scss";
 @import "src/scss/_tailwind-screens.scss";
+@import "src/scss/mixins/form-mixins.scss";
+@import "src/scss/mixins/text-mixins.scss";
+@import "src/scss/default.scss";
 @import "../../node_modules/choices.js/public/assets/styles/choices.min.css";
 @import "../../node_modules/nouislider/dist/nouislider.min.css";
 @import "src/scss/page.scss";
-@import "src/scss/mixins/form-mixins.scss";
+@import "src/scss/video-yt.scss";
+@import "src/scss/btn-play.scss";
 @import "src/scss/range-slider.scss";
 @import "src/scss/field-radio.scss";
 @import "src/scss/field-checkbox.scss";
@@ -25,6 +28,7 @@
 @import "src/scss/choose.scss";
 @import "src/scss/team.scss";
 @import "src/scss/partner.scss";
+@import "src/scss/product-details-area.scss";
 @import "src/scss/filter-main.scss";
 @import "src/scss/filter-year.scss";
 @import "src/scss/filter-milage.scss";
@@ -34,10 +38,15 @@
 @import "src/scss/blog.scss";
 @import "src/scss/footer.scss";
 @import "src/scss/blog.scss";
+@import "src/scss/pagination.scss";
 //region page
 @import "src/scss/page-banner.scss";
 @import "src/scss/car-shop.scss";
 @import "src/scss/widget.scss";
+@import "src/scss/info-tip.scss";
+//car page
+@import "src/scss/car-details.scss";
+@import "src/scss/share.scss";
 //
 @import "src/scss/copyright.scss";
 @import "src/scss/gotop.scss";
@@ -45,6 +54,7 @@
 @import "src/scss/aside-form.scss";
 @import "src/scss/close.scss";
 @import "src/scss/save-search.scss";
+@import "src/scss/monitor-price.scss";
 // @import "src/scss/style.scss";
 @import "src/scss/responsive.scss";
 @import "tailwindcss/components";

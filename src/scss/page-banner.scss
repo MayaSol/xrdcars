@@ -16,6 +16,10 @@ Page Banner CSS
         background-image: url(/images/country-page/country-banner.jpg);
     }
 
+    &--blog {
+        background-image: url(/images/blog/page-banner-blog.jpg);
+    }
+
     &::before {
         position: absolute;
         content: "";
@@ -37,7 +41,7 @@ Page Banner CSS
     h2 {
         color: $white-color;
         margin-bottom: 10px;
-        font-size: 60px;
+        font-size: 55px;
     }
 
     .pages-list {

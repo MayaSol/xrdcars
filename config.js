@@ -17,6 +17,7 @@ let config = {
     'src/scss/_tailwind-screens.scss',
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
+    'tippy.js/dist/tippy.css'
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [
@@ -31,6 +32,7 @@ let config = {
   ],
   'addAssets': {
     'src/fonts/*.{woff,woff2,ttf,svg}': 'fonts/',
+    'src/images/*.{png,jpg,svg}': 'images/',
     'src/images/logo': 'images/logo/',
     'src/images/main-banner': 'images/main-banner/',
     'src/images/recent-cars': 'images/recent-cars/',
@@ -44,6 +46,7 @@ let config = {
     'src/images/advantages': 'images/advantages/',
     'src/images/region-page': 'images/region-page/',
     'src/images/country-page': 'images/country-page/',
+    'src/images/car-details': 'images/car-details/',
     'src/css/utils.css': 'css/',
     'src/js/utils.js': 'js/',
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',

@@ -32,11 +32,21 @@ Models Area CSS
         margin-top: 50px;
 
         .models-content {
-            h3 {
+            h3,
+            h4 {
                 font-size: 30px;
                 margin-bottom: 20px;
                 color: $white-color;
                 text-transform: uppercase;
+
+                a {
+                    color: $white-color;
+                }
+            }
+
+            h4 {
+                font-size: 25px;
+                margin-top: 20px;
             }
 
             .tag {
@@ -48,12 +58,6 @@ Models Area CSS
                 font-weight: 500;
                 font-family: $heading-font-family;
                 border-radius: 30px;
-            }
-
-            h4 {
-                font-size: 25px;
-                margin-top: 20px;
-                color: $white-color;
             }
         }
 

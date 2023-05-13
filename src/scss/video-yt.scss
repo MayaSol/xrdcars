@@ -1,0 +1,67 @@
+// В этом файле должны быть стили для БЭМ-блока video-yt, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.video-yt {
+
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+
+  @media (min-width: $screen-lg) {
+    // width: auto;
+    justify-self: start;
+    // height: 349px;
+  }
+
+  .reviews__item & {
+    width: 100%;
+
+    @media (min-width: $screen-lg) {
+      width: auto;
+    }
+  }
+
+  &__poster {
+    position: relative;
+    z-index: 10;
+
+    @media (min-width: $screen-lg) {
+    height: 100%;
+    }
+
+    &--hidden {
+      opacity: 0;
+     z-index: -1;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__wrapper {
+    @media (min-width: $screen-lg) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // object-fit: contain;
+    // object-position: left center;
+
+    @media (min-width: $screen-lg) {
+      // object-fit: scale-down;
+      // width: auto;
+      // height: auto;
+    }
+  }
+}

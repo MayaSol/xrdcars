@@ -67,6 +67,24 @@
   font-weight: 700;
 }
 
+@mixin field-modal {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+
+  input {
+      width: auto;
+      flex-grow: 1;
+  }
+
+  button {
+      span {
+          font-size: 0;
+      }
+  }
+}
+
 
 @mixin round-check {
 

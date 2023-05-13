@@ -359,7 +359,7 @@ include ../pug/mixins.pug
                                 src: "/images/recent-cars/car-ranking-1.jpg",
                                 photos: 5,
                                 title: '2021 MAZDA CX-30',
-                                price: '250 000 000',
+                                price: '250 000 000 ₽',
                                 options: [
                                     {title: 'flaticon-calendar', value: 2012},
                                     {title: 'flaticon-road', value: '15 000'},
@@ -373,7 +373,7 @@ include ../pug/mixins.pug
                                 src: "/images/recent-cars/car-ranking-2.jpg",
                                 photos: 3,
                                 title: '2021 SUBARU XC-60',
-                                price: '490 000 000',
+                                price: '490 000 000 ₽',
                                 options: [
                                     {title: 'flaticon-calendar', value: 2020},
                                     {title: 'flaticon-road', value: '10 000'},
@@ -387,7 +387,7 @@ include ../pug/mixins.pug
                                 src: "/images/recent-cars/car-ranking-3.jpg",
                                 photos: 4,
                                 title: '2021 NISSAN XX-50',
-                                price: '550 000 000',
+                                price: '550 000 000 ₽',
                                 options: [
                                     {title: 'flaticon-calendar', value: 2017},
                                     {title: 'flaticon-road', value: '10 000'},
@@ -401,7 +401,7 @@ include ../pug/mixins.pug
                                 src: "/images/recent-cars/car-ranking-4.jpg",
                                 photos: 2,
                                 title: '2021 KIA SOUL XC 60',
-                                price: '750 000 000',
+                                price: '750 000 000 ₽',
                                 options: [
                                     {title: 'flaticon-calendar', value: 2017},
                                     {title: 'flaticon-road', value: '10 000'},
@@ -486,7 +486,7 @@ include ../pug/mixins.pug
                                 +car-card({
                                     src: "/images/featured-cars/featured-cars-7.jpg",
                                     photos: 5,
-                                    price: "300 000 000",
+                                    price: "300 000 000 ₽",
                                     title: "2021 VOLVO XC60",
                                     options: [
                                         {title: 'flaticon-calendar', value: 2012},
@@ -501,7 +501,7 @@ include ../pug/mixins.pug
                                 +car-card({
                                     src: "/images/featured-cars/featured-cars-8.jpg",
                                     photos: 4,
-                                    price: "250 000 000",
+                                    price: "250 000 000 ₽",
                                     title: "2021 TOYOTA RAV4",
                                     options: [
                                         {title: 'flaticon-calendar', value: 2012},
@@ -518,7 +518,7 @@ include ../pug/mixins.pug
                                 +car-card({
                                     src: "/images/featured-cars/featured-cars-9.jpg",
                                     photos: 9,
-                                    price: "300 000 000",
+                                    price: "300 000 000 ₽",
                                     title: "2021 MAZDA CX-30",
                                     options: [
                                         {title: 'flaticon-calendar', value: 2012},
@@ -535,7 +535,7 @@ include ../pug/mixins.pug
                                 +car-card({
                                     src: "/images/featured-cars/featured-cars-7.jpg",
                                     photos: 2,
-                                    price: "450 000 000",
+                                    price: "450 000 000 ₽",
                                     title: "2021 NISSAN CX-10",
                                     options: [
                                         {title: 'flaticon-calendar', value: 2012},
@@ -550,7 +550,7 @@ include ../pug/mixins.pug
                                 +car-card({
                                     src: "/images/featured-cars/featured-cars-7.jpg",
                                     photos: 5,
-                                    price: "987 000 000",
+                                    price: "987 000 000 ₽",
                                     title: "2021 VOLVO XC10",
                                     options: [
                                         {title: 'flaticon-calendar', value: 2012},
@@ -615,7 +615,7 @@ include ../pug/mixins.pug
                                     <div class="models-item">
                                         <div class="models-content">
                                             <h3>ХАРАКТЕРИСТИКИ</h3>
-                                            <div class="price-tag">300 000 000</div>
+                                            <div class="price-tag">300 000 000 ₽</div>
                                             <h4>2021 TESLA MODEL SXP-502D</h4>
                                         </div>
         
@@ -673,7 +673,7 @@ include ../pug/mixins.pug
                                     <div class="models-item">
                                         <div class="models-content">
                                             <h3>ХАРАКТЕРИСТИКИ</h3>
-                                            <div class="price-tag car-card__tag">890 000 000</div>
+                                            <div class="price-tag car-card__tag">890 000 000 ₽</div>
                                             <h4>2021 KIA SOUL XC 60</h4>
                                         </div>
         
@@ -731,7 +731,7 @@ include ../pug/mixins.pug
                                     <div class="models-item">
                                         <div class="models-content">
                                             <h3>ХАРАКТЕРИСТИКИ</h3>
-                                            <div class="price-tag car-card__tag">990 000 000</div>
+                                            <div class="price-tag car-card__tag">990 000 000 ₽</div>
                                             <h4>2021 SUBARU XC-60</h4>
                                         </div>
         
@@ -1204,6 +1204,7 @@ include ../pug/mixins.pug
             <!-- End Copy Right Area -->
         </div>
     </div>
+    <!-- Расширенный поиск на главной -->
     <div class="aside-form" id="search-advanced">
         <div class="aside-form__overlay" data-aside-close="data-aside-close"></div>
         <div class="aside-form__content">
@@ -1213,69 +1214,10 @@ include ../pug/mixins.pug
             </div>
             form.form-filter-main
                 +filter-content
-                //- +filter-main
-                //-     +filter-year({id: 'filterYear'})
-                //-     +filter-milage({id: 'filterMilage'})(class="filter-group")
-                //-     +field-radio([
-                //-       {
-                //-         title: 'Все',
-                //-         mods: '',
-                //-         attrs: {
-                //-           name: 'condition',
-                //-           value: 'all',
-                //-           checked: true,
-                //-         }
-                //-       },
-                //-       {
-                //-         title: 'Новые',
-                //-         mods: '',
-                //-         attrs: {
-                //-           name: 'condition',
-                //-           value: 'new'
-                //-         }
-                //-       },
-                //-       {
-                //-         title: 'Подержанные',
-                //-         mods: '',
-                //-         attrs: {
-                //-           name: 'condition',
-                //-           value: 'used'
-                //-         }
-                //-       },
-                //-     ], 'Состояние')(class="filter-condition filter-group")
-                //-     +filter-price({id: 'filterPrice'})(class="filter-group")
-                //-     .filter-type.filter-group
-                //-         .filter-title Тип автомобиля
-                //-         select(name="type" id="type")
-                //-             option(value="1") Легковые
-                //-             option(value="2") Внедорожники
-                //-             option(value="3") Минивэны
-                //-             option(value="4") Автодома
-                //-             option(value="5") Электро
-                //-     .filter-transmission.filter-group
-                //-         .filter-title Передача
-                //-         select(name="transmission" id="transmission")
-                //-             option(value="1") Механика
-                //-             option(value="2") Автомат
-                //-     +field-checkbox([
-                //-     {
-                //-         title: '4x4',
-                //-         mods: '',
-                //-         attrs: {
-                //-           name: 'drive',
-                //-           checked: false,
-                //-         }
-                //-     }],'Привод')(class="filter-drive filter-group")
-                //-     .filter-engine.filter-group
-                //-         .filter-title Двигатель
-                //-         select(name="engine" id="engine")
-                //-             option(value="1") Бензин
-                //-             option(value="2") Дизель
-                //-             option(value="3") Электро
-                //-             option(value="4") Гибрид
                 .btn.btn--submit Применить
         </div>
     </div>
+    <!-- Добавить новый фильтр -->
     <div class="aside-form" id="add-search-for-newsletter">
         <div class="aside-form__overlay" data-aside-close="data-aside-close"></div>
         <div class="aside-form__content">
@@ -1300,6 +1242,7 @@ include ../pug/mixins.pug
     </div>
     <!-- End Go Top Area -->
 
+    <!-- Модалка Подписки на почту -->
     <div class="modal fade" id="newsletter-email-modal" aria-hidden="true" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">

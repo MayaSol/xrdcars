@@ -120,6 +120,8 @@ $field-border-radius: 3px;
 $field-border-color: hsl(0, 0%, 70%);
 $opacity: 0.2;
 
+$path-images: '/images';
+
 
 body {
     display: flex;           // Исправляем баг в IE для min-height and flexbox (flex-direction:column)
@@ -241,46 +243,100 @@ i {
 
 }
 
-.btn {
-  @include btn;
+@mixin btn-modal-submit {
+    @include btn-regular;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    padding: 0;
+    right: 0;
+    top: 0;
 }
 
+.btn {
+  @include btn;
 
-  // &--submit,
-  // &--regular {
-  //   width: 100%;
-  //   height: 52px;
-  //   padding: 0 30px;
-  //   line-height: 50px;
-  //   font-size: 16px;
-  //   font-weight: 500;
-  //   background-color: #161c2d;
-  //   color: #fff;
-  //   border: none;
-  //   border-radius: 8px;
-  //   -webkit-transition: 0.5s;
-  //   transition: 0.5s;
-  //   cursor: pointer;
+    &--show-modal {
+        font-size: 18px;
+        font-weight: 700;
+        color: $paragraph-color;
 
-  //   &:hover,
-  //   &:focus,
-  //   &:active {
-  //       background-color: #ff5421;
-  //       color: #fff;
-  //   }
-  // }
+        &:hover,
+        &:focus,
+        &:active {
+            color: $main-color;
+        }
+    }
 
-  .btn--submit,
-  .btn--regular {
+    &--bottom-line {
+        position: relative;
+
+        &::before {
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            content: "";
+            transition: 0.5s;
+            background-color: #afadb0;
+        }
+
+        &::after {
+            width: 0;
+            height: 1px;
+            position: absolute;
+            left: 0;
+            transition: 0.5s;
+            bottom: 0;
+            content: "";
+            background-color: #ff5421;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+
+    &--modal-submit {
+        @include btn-modal-submit;
+        
+        .monitor-price__field & {
+            width: 50px;
+        }
+    }
+}
+
+.btn--submit,
+.btn--regular {
     @include btn-regular;
-  }
+}
 
-  .btn--invert {
+.btn--invert {
     @include btn-invert;
-  }
+}
 
-// }
+.form-group {
 
+    label {
+        font-size: $font-size;
+        font-weight: 600;
+        color: $paragraph-color;
+        margin-bottom: 8px;
+    }
+    
+    .form-control {
+        transition: $transition;
+
+        &:focus {
+            outline: 0;
+            border-color: $main-color;
+            box-shadow: none;
+        }
+    }
+}
 
 .d-table {
     width: 100%;
@@ -448,4 +504,36 @@ Owl Carousel Custom CSS
             }
         }
     }
+}
+
+
+/*================================================
+Modal Elements
+=================================================*/
+@mixin socials-modal {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+    list-style: none;
+
+    button {
+        @include btn-invert;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        margin-right: 10px;
+        padding: 0;
+        font-size: 30px;
+    }
+}
+
+
+.socials-modal {
+    @include socials-modal;
+}
+
+.field--modal {
+    @include field-modal;
 }

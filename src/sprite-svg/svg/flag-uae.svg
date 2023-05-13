@@ -1,0 +1,31 @@
+<svg
+   width="36"
+   height="26"
+   viewBox="0 0 36 26"
+   aria-hidden="true"
+   role="img"
+   class="iconify iconify--twemoji"
+   preserveAspectRatio="xMidYMid"
+   version="1.1"
+   id="svg236"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs240" />
+  <path
+     fill="#068241"
+     d="M 32,0 H 9 V 9 H 36 V 4 A 4,4 0 0 0 32,0 Z"
+     id="path228" />
+  <path
+     fill="#eeeeee"
+     d="m 9,9 h 27 v 8 H 9 Z"
+     id="path230" />
+  <path
+     fill="#141414"
+     d="m 9,26 h 23 a 4,4 0 0 0 4,-4 V 17 H 9 Z"
+     id="path232" />
+  <path
+     fill="#ec2028"
+     d="M 4,0 A 4,4 0 0 0 0,4 v 18 a 4,4 0 0 0 4,4 H 9 V 0 Z"
+     id="path234" />
+</svg>

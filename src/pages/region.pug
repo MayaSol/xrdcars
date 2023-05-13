@@ -275,7 +275,7 @@ include ../pug/mixins.pug
 
                             <div class="widget widget_filter_results" id="advanced-search-page-filter">
                                 form
-                                    +filter-content-page()(id="filter-aside")
+                                    +filter-content-page()(id="filter-aside" class="collapse show")
                             </div>
                             <div class="filter-tags">
                                 <ul class="filter-tags__list" id="filter-condition-tags">
@@ -1021,8 +1021,6 @@ include ../pug/mixins.pug
             </section>
             <!-- End Car Ranking Area -->
 
-
-
             <!-- Start Blog Area -->
             <section class="blog-area pt-100 pb-70">
                 <div class="container">
@@ -1297,12 +1295,30 @@ include ../pug/mixins.pug
                 </div>
             </div>
             <!-- End Copy Right Area -->
+
+            <!-- Добавить новый фильтр -->
+            <div class="aside-form" id="add-search-for-newsletter">
+                <div class="aside-form__overlay" data-aside-close="data-aside-close"></div>
+                <div class="aside-form__content">
+                    <div class="aside-form__header">
+                        <div class="aside-form__title">Добавить новый фильтр</div>
+                        <button class="btn close aside-form__close" type="button" aria-label="Close modal" title="Закрыть" data-aside-close="data-aside-close"></button>
+                    </div>
+                    +filter-content
+                    <div class="aside-form__footer">
+                        <div class="section-btn">
+                            <button class="btn default-btn" id="search-advanced-submit"> Добавить новый фильтр
+                                <span style="top: -507px; left: -852.15px;"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
-
     +save-search()
-
 
     <!-- Start Go Top Area -->
     <div class="go-top">
@@ -1310,6 +1326,26 @@ include ../pug/mixins.pug
     </div>
     <!-- End Go Top Area -->
 
+    <!-- Модалка Подписки на почту -->
+    <div class="modal fade" id="newsletter-email-modal" aria-hidden="true" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+                <label>
+                    <input type="email" class="form-field" placeholder="Электронная почта">
+                </label>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="disabled">Получать на почту</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="/js/utils.js"></script>
     <script src="/js/main.js"></script>

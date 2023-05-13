@@ -1,0 +1,335 @@
+/*================================================
+Products Details Area CSS
+=================================================*/
+.products-details-tabs {
+
+    .nav {
+        margin-bottom: 30px;
+        list-style-type: none;
+        display: block;
+        text-align: center;
+        background-color: $black-color;
+        padding: 20px;
+
+        @media (max-width: 479px) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            display: inline-block;
+            margin-right: 30px;
+
+            @media (max-width: 479px) {
+                margin-right: 0;
+            }
+
+            &:nth-child(-n+2) {
+                @media (max-width: 479px) {
+                    width: 50%;
+                }
+            }
+
+            &:last-child {
+                margin-right: 0;
+                @media (max-width: 479px) {
+                    width: 100%;
+                    margin-top: 10px;
+                }
+            }
+
+            .nav-link {
+                display: inline-block;
+                border: none;
+                padding: 0;
+                background-color: transparent;
+                position: relative;
+                padding-bottom: 8px;
+                font-size: 30px;
+                font-weight: bold;
+                color: $white-color;
+
+                @media (max-width: 1199px) {
+                    font-size: 24px;
+                }
+
+                @media (max-width: 479px) {
+                    padding-bottom: 4px;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 0;
+                    height: 3px;
+                    background-color: $main-color;
+                    transition: $transition;
+                    bottom: -2px;
+                }
+
+                &:hover,
+                &.active {
+                    color: $white-color;
+
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .tab-pane {
+        ul {
+            padding-left: 0;
+            list-style-type: none;
+            margin-top: 20px;
+            margin-bottom: 0;
+
+            li {
+                margin-bottom: 12px;
+                position: relative;
+                color: $paragraph-color;
+                padding-left: 15px;
+                font-weight: 500;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 8px;
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background-color: $paragraph-color;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .products-reviews {
+            h3 {
+                display: inline-block;
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .row {
+                overflow: hidden;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .side {
+                float: left;
+                width: 9%;
+                margin-top: 10px;
+
+                div {
+                    font-weight: bold;
+                }
+            }
+
+            .middle {
+                margin-top: 14px;
+                float: left;
+                width: 82%;
+            }
+
+            .right {
+                text-align: right;
+            }
+
+            .bar-container {
+                width: 100%;
+                background-color: #f1f1f1;
+                text-align: center;
+                color: $white-color;
+                border-radius: 5px;
+            }
+
+            .bar-5 {
+                width: 70%;
+                height: 18px;
+                background-color: $main-color;
+                border-radius: 5px;
+            }
+
+            .bar-4 {
+                width: 20%;
+                height: 18px;
+                background-color: $main-color;
+                border-radius: 5px;
+                border-radius: 5px;
+            }
+
+            .bar-3 {
+                width: 5%;
+                height: 18px;
+                background-color: $main-color;
+                border-radius: 5px;
+            }
+
+            .bar-2 {
+                width: 3%;
+                height: 18px;
+                background-color: $main-color;
+                border-radius: 5px;
+            }
+
+            .bar-1 {
+                width: 2%;
+                height: 18px;
+                background-color: $main-color;
+                border-radius: 5px;
+            }
+        }
+
+        .products-review-form {
+            margin-top: 45px;
+
+            h3 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .review-title {
+                position: relative;
+
+                .rating {
+                    display: inline-block;
+
+                    .bx.bxs-star {
+                        color: #ffba0a;
+                    }
+
+                    i {
+                        color: #ebebeb;
+                        font-size: 16px;
+                        margin-right: -1px;
+                    }
+                }
+
+                .default-btn {
+                    position: absolute;
+                    right: 0;
+                    bottom: 50%;
+                    transform: translateY(50%);
+                    color: $white-color !important;
+                    padding: 10px 25px;
+
+                    span {
+                        background-color: $black-color;
+                    }
+                }
+            }
+
+            .review-comments {
+                margin-top: 35px;
+
+                .review-item {
+                    margin-top: 30px;
+                    position: relative;
+                    border-top: 1px dashed #eeeeee;
+                    padding-top: 30px;
+
+                    .rating {
+                        .bx.bxs-star {
+                            color: #ffba0a;
+                        }
+
+                        i {
+                            font-size: $font-size;
+                            color: #ebebeb;
+                            margin-right: -1px;
+                        }
+                    }
+
+                    h3 {
+                        font-size: 18px;
+                        margin-top: 8px;
+                        margin-bottom: 8px;
+                    }
+
+                    span {
+                        margin-bottom: 10px;
+                        font-size: $font-size;
+                        display: block;
+
+                        strong {
+                            font-weight: 500;
+                        }
+                    }
+
+                    p {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .review-form {
+                margin-top: 30px;
+
+                h3 {
+                    font-size: 25px;
+                    margin-bottom: 20px;
+                }
+
+                form {
+                    .form-group {
+                        margin-bottom: 15px;
+
+                        .form-control {
+                            height: 55px;
+                            color: $black-color;
+                            box-shadow: unset !important;
+                            border: 1px solid #eeeeee;
+                            background-color: #eeeeee;
+                            transition: $transition;
+                            border-radius: 3px;
+                            padding: 1px 0 0 15px;
+                            font-size: $font-size;
+                            font-weight: 600;
+
+                            &::placeholder {
+                                color: #7e7e7e;
+                                transition: $transition;
+                            }
+
+                            &:focus {
+                                border-color: $main-color;
+                                background-color: transparent;
+
+                                &::placeholder {
+                                    color: transparent;
+                                }
+                            }
+                        }
+
+                        textarea {
+                            &.form-control {
+                                height: auto;
+                                padding-top: 15px;
+                            }
+                        }
+                    }
+
+                    .default-btn {
+                        color: $white-color !important;
+                        cursor: pointer;
+
+                        span {
+                            background-color: $black-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

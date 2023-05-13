@@ -183,7 +183,7 @@ include ../pug/mixins.pug
 
                             <div class="widget widget_filter_results" id="advanced-search-page-filter">
                                 form
-                                    +filter-content-page()(id="filter-aside")
+                                    +filter-content-countries()(id="filter-aside" class="collapse show")
                             </div>
                             <div class="filter-tags">
                                 <ul class="filter-tags__list" id="filter-condition-tags">
@@ -351,10 +351,54 @@ include ../pug/mixins.pug
                                         ]
                                     },"dark")
                                 </div>
+
+
+                                <div class="col-lg-4 col-md-6 car-shop-item">
+                                    +car-card({
+                                        src: "/images/recent-cars/car-ranking-1.jpg",
+                                        photos: 5,
+                                        title: '2021 MAZDA CX-30',
+                                        price: '250 000 000',
+                                        options: [
+                                            {title: 'flaticon-calendar', value: 2012},
+                                            {title: 'flaticon-road', value: '15 000'},
+                                            {title: 'flaticon-power', value: 150},
+                                            {title: 'flaticon-engine', value: 'Бензин'},
+                                        ]
+                                    },"dark")
+                                </div>
+                                <div class="col-lg-4 col-md-6 car-shop-item">
+                                    +car-card({
+                                        src: "/images/recent-cars/car-ranking-2.jpg",
+                                        photos: 5,
+                                        title: '2021 MAZDA CX-30',
+                                        price: '250 000 000',
+                                        options: [
+                                            {title: 'flaticon-calendar', value: 2020},
+                                            {title: 'flaticon-road', value: '10 000'},
+                                            {title: 'flaticon-bed', value: 4},
+                                            {title: 'flaticon-wheels-drive', value: '4x4'},
+                                        ]
+                                    },"dark")
+                                </div>
+                                <div class="col-lg-4 col-md-6 car-shop-item">
+                                    +car-card({
+                                        src: "/images/recent-cars/car-ranking-3.jpg",
+                                        photos: 3,
+                                        title: '2021 SUBARU XC-60',
+                                        price: '490 000 000',
+                                        options: [
+                                            {title: 'flaticon-calendar', value: 2017},
+                                            {title: 'flaticon-road', value: '10 000'},
+                                            {title: 'flaticon-power', value: 200},
+                                            {title: 'flaticon-wheels-drive', value: '4x4'},
+                                        ]
+                                    },"dark")
+                                </div>
+
                             </div>
 
-
-                            <div class="col-lg-12 col-md-12">
+                            <div class="col-lg-12 col-md-12 pagination-area__wrapper">
                                 <div class="pagination-area">
                                     <button class="btn btn--regular btn--invert btn--show-more">Показать ещё</button>
                                 </div>
@@ -370,25 +414,13 @@ include ../pug/mixins.pug
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="single-blog">
-                                <a href="blog-details.html"><img src="/images/blog/blog-1.jpg" alt="image"></a>
-
+                            <div class="single-blog single-blog--full">
                                 <div class="blog-content">
+                                    <a href="blog-details.html" class="blog-content__img"><img src="/images/blog/blog-1.jpg" alt="image"></a>
                                     <h3>
                                         <a href="blog-details.html">WHY CROSSOVERS ARE BETTER THAN HATCHBACK</a>
                                     </h3>
-                                    <ul class="post-meta">
-                                        <li>
-                                            <i class="flaticon-calendar"></i> Nov 20, 2021
-                                        </li>
-                                    </ul>
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est lorem ipsum dolor sit amet.</p>
-
-                                    <div class="blog-btn">
-                                        <a href="blog-details.html" class="default-btn"> Read More
-                                            <span></span>
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
 

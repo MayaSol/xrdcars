@@ -3,9 +3,11 @@ Car Shop Area CSS
 =================================================*/
 .car-shop-area {
 
-    @media (max-width: 600px) {
-        padding-top: 0 !important;
-    }
+    // padding-top: 50px;
+
+    // @media (max-width: 600px) {
+    //     padding-top: 0 !important;
+    // }
 
     &__inner {
         display: grid;
@@ -82,7 +84,7 @@ Car Shop Area CSS
 
     &__order {
         margin-left: auto;
-        min-width: 32%;
+        min-width: 36%;
 
         @media (max-width: 991px) {
             min-width: 50%;
@@ -124,11 +126,20 @@ Car Shop Area CSS
             border-radius: 0;
             font-weight: 500;
 
+            @media (max-width: 359px) {
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+
             &::after {
                 border-color: $main-color;
                 height: 8px;
                 width: 8px;
                 right: 20px;
+
+                @media (max-width: 359px) {
+                    right: 15px;
+                }
             }
 
             .list {
@@ -188,7 +199,7 @@ Car Shop Area CSS
 
     &--country {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         margin-top: 30px;
     }
 
