@@ -13,4 +13,6 @@ require('./filter-price.js');
 require('./filter-others.js');
 require('./car-shop.js');
 require('./video-yt.js');
+require('./contacts.js');
+require('./searches.js');
 require('./script.js');

@@ -36,6 +36,9 @@ Blog Area CSS
         border-radius: 5px;
 
         &--full {
+            padding-top: 20px;
+            padding-bottom: 20px;
+
             & > a {
                 max-width: 50%;
             }
@@ -47,6 +50,7 @@ Blog Area CSS
             }
 
             .blog-content {
+                padding: 0 !important;
 
                 @media (max-width: 767px) {
                     display: flex;
@@ -57,6 +61,7 @@ Blog Area CSS
                     float: left;
                     max-width: 50%;
                     margin-right: 30px;
+                    margin-bottom: 20px;
 
                     @media (max-width: 767px) {
                         float: none;
@@ -65,13 +70,16 @@ Blog Area CSS
                     }
                 }
 
-                h2,
-                h3,
-                h4 {
+                &__title {
+                    margin-top: 0;
                     margin-bottom: 20px;
                     a {
                         display: inline;
                     }
+                }
+
+                p:last-child {
+                    margin-bottom: 0;
                 }
             }
         }

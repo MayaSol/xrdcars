@@ -1,3 +1,32 @@
+mixin filter-main-mark()
+
+  .filter-main__mark.filter-group
+    .filter-title Марка
+    select.filter-main__mark-select(name="mark" id="mark" multiple)
+      option(value="108" data-custom="{'num': '4'}") Audi
+      option(value="117" data-custom="{'num': '2'}") BMW
+      option(value="111" data-custom="{'num': '3'}") DW Hower
+      option(value="105" data-custom="{'num': '1'}") Citroen
+      option(value="120" data-custom="{'num': '5'}") Geely
+      option(value="128" data-custom="{'num': '4'}") Haval
+      option(value="103" data-custom="{'num': '4'}") Hyundai
+      option(value="112" data-custom="{'num': '4'}") Kia
+
+
+mixin filter-main-model()
+
+  .filter-main__model.filter-group
+    .filter-title Модель
+    select.filter-main__model-select(name="model" id="model" multiple)
+      optgroup(label="Audi")
+        option(value="a6" data-custom="{'num':'1'}" disabled) A6
+        option(value="a7" data-custom="{'num':'2'}" disabled) A7
+      optgroup(label="BMW")
+        option(value="x3" data-num="2" data-custom="{'num':'2'}" disabled) X3
+      optgroup(label="Citroen")
+        option(value="c5-aircross" data-custom="{'num':'2'}" disabled) C5 Aircross
+        option(value="c4" data-custom="{'num':'2'}" disabled) C4
+
 mixin filter-main(props, mods)
 
   //- Вызов:
@@ -17,29 +46,8 @@ mixin filter-main(props, mods)
     }
 
   .filter-main(class=allMods)&attributes(attributes)
-    .filter-main__mark.filter-group
-      .filter-title Марка
-      select.filter-main__mark-select(name="mark" id="mark" multiple)
-        option(value="108" data-custom="{'num': '4'}") Audi
-        option(value="117" data-custom="{'num': '2'}") BMW
-        option(value="111" data-custom="{'num': '3'}") DW Hower
-        option(value="105" data-custom="{'num': '1'}") Citroen
-        option(value="120" data-custom="{'num': '5'}") Geely
-        option(value="128" data-custom="{'num': '4'}") Haval
-        option(value="103" data-custom="{'num': '4'}") Hyundai
-        option(value="112" data-custom="{'num': '4'}") Kia
-
-    .filter-main__model.filter-group
-      .filter-title Модель
-      select.filter-main__model-select(name="model" id="model" multiple)
-        optgroup(label="Audi")
-          option(value="a6" data-custom="{'num':'1'}" disabled) A6
-          option(value="a7" data-custom="{'num':'2'}" disabled) A7
-        optgroup(label="BMW")
-          option(value="x3" data-num="2" data-custom="{'num':'2'}" disabled) X3
-        optgroup(label="Citroen")
-          option(value="c5-aircross" data-custom="{'num':'2'}" disabled) C5 Aircross
-          option(value="c4" data-custom="{'num':'2'}" disabled) C4
+    +filter-main-mark
+    +filter-main-model
     block
 
 

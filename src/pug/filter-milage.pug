@@ -1,3 +1,14 @@
+mixin filter-milage-selects
+
+  .filter-milage__selects.filter-selects
+    .filter-milage__from.filter-selects__from
+      select(name="milage-from" id="milageFrom")
+
+    .filter-milage__to.filter-selects__to
+      select(name="milage-to" id="milageTo")
+
+
+
 mixin filter-milage(props, mods)
 
   //- Вызов:
@@ -25,12 +36,7 @@ mixin filter-milage(props, mods)
         .range__value-item.range__value-item--to
           input.range__input(type="text")
       .filter-milage__slider.range-slider(id= props.id)
-    .filter-milage__selects.filter-selects
-      .filter-milage__from.filter-selects__from
-        select(name="milage-from" id="milageFrom")
-
-      .filter-milage__to.filter-selects__to
-        select(name="milage-to" id="milageTo")
+    +filter-milage-selects
 
 
 

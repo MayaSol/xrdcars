@@ -189,6 +189,12 @@ Car Shop Area CSS
             margin-bottom: 0 !important;
         }
     }
+
+    #filter-aside.collapse {
+        @media (min-width: 992px) {
+            display: block !important;
+        }
+    }
 }
 
 .car-shop-catalog {
@@ -205,8 +211,8 @@ Car Shop Area CSS
 
     @media (max-width: 991px) {
         grid-column-start: 1;
-        grid-row-start: 3;
-        grid-row-end: 4;
+        grid-row-start: 4;
+        grid-row-end: 5;
     }
 }
 
@@ -216,6 +222,14 @@ Car Shop Area CSS
     padding: 10px;
     border-radius: 5px;
     transition: $transition;
+
+    &--fav {
+        .icon {
+            i {
+                background-color: $black-color !important;
+            }
+        }
+    }
 
     .car-shop-image {
         position: relative;

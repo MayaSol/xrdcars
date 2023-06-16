@@ -1,0 +1,169 @@
+.faq-accordion {
+
+	&.searches-list {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		margin-left: 0;
+		margin-right: 0;
+
+		.searches-list {
+
+
+			&__title {
+				display: flex;
+				align-items: center;
+				padding-right: 50px;
+				text-transform: none;
+
+				@media (max-width: 767px) {
+					flex-wrap: wrap;
+				}
+
+				i {
+					font-size: 26px;
+				}
+
+				&.active i::before {
+					content: "\ea43";
+				}
+			}
+
+			&__name {
+				@media (max-width: 767px) {
+					width: 100%;
+					margin-bottom: 10px;
+				}
+			}
+
+			&__subscribe {
+				margin-left: auto;
+				margin-right: 10px;
+				font-size: 16px;
+				font-weight: 400;
+			}
+
+			&__subscribe-wrapper {
+				display: flex;
+				align-items: center;
+				padding: 20px 0;
+
+				@media (max-width: 767px) {
+					flex-direction: column;
+					align-items: start;
+
+					.form-field {
+						margin-bottom: 10px;
+					}
+
+					.newsletter-share-link {
+						margin-top: 10px;
+					}
+
+					& > span {
+						margin-left: 10px;
+					}
+				}
+			}
+
+			&__share-email {
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				line-height: 0;
+				transform: translateY(-50%);
+
+				i {
+					position: relative;
+					display: inline-block;
+					height: 32px;
+					width: 32px;
+					line-height: 50px;
+					font-size: 26px;
+					background-color: #ff764d;
+					color: #ffffff;
+					text-align: center;
+					border-radius: 50%;
+					transition: 0.5s;
+
+					&::before {
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						font-size: 20px;
+						line-height: 1;
+						transform: translate(-50%, -50%);
+					}
+
+					&:hover {
+						background-color: #fff;
+						color: #ff5421;
+						transform: translateY(-2px);
+					}
+				}
+			}
+
+			&__form {
+				label {
+					position: relative;
+					width: 320px;
+				}
+
+				.form-field {
+					padding: 20px;
+					height: auto;
+				}
+
+				margin-right: 10px;
+			}
+
+			&__checkbox {
+				margin-left: auto;
+				margin-bottom: 0;
+				font-size: 16px;
+
+				@media (max-width: 767px) {
+					margin-left: 0;
+				}
+			}
+		}
+
+	}
+
+	.field-checkbox__name {
+		padding-left: 0;
+		padding-right: 35px;
+	}
+
+	.field-checkbox__name-text {
+
+		&::before {
+			content: "\ea42";
+			right: 5px;
+			left: auto;
+			top: 50%;
+			width: auto;
+			height: auto;
+			border: none;
+			border-radius: 0;
+			font-family: boxicons !important;
+	    	font-weight: 400;
+	    	font-size: 30px;
+	    	line-height: 1;
+	    	color: $main-color;
+	    	transform: translateY(-50%);
+		}
+
+	}
+
+	input:checked ~ .field-checkbox__name-text::before {
+		content: "\ea43";
+		background-color: transparent;
+	}
+
+	.newsletter-share-link a {
+		@include btn-msgr;
+		margin-left: 10px;
+	}
+
+}
+

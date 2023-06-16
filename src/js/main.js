@@ -77,7 +77,6 @@ jQuery(function($) {
     function setUpOwlCarousel(owlElement, config) {
         return function() {
             if (document.documentElement.clientWidth < 768 && prevClientWidth >= 768) {
-                console.log('1');
                 owlElement.addClass('owl-carousel');
                 owlElement.addClass('owl-theme');
                 owlElement.owlCarousel({
@@ -93,7 +92,6 @@ jQuery(function($) {
                     ],
                 });
             } else if (document.documentElement.clientWidth >= 768 && prevClientWidth < 768) {
-                console.log('2');
                 owlElement.removeClass('owl-carousel owl-theme owl-loaded');
                 owlElement.owlCarousel('destroy');
                 owlElement.find('.owl-stage-outer').children().unwrap();
@@ -413,6 +411,15 @@ jQuery(function($) {
         	focusOnSelect: true,
         	arrows: true,
         	autoplay: false,
+            responsive: [
+                {
+                  breakpoint: 768,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                  }
+                },
+            ]
         });
     } catch (e) {
         console.log(e);
@@ -493,7 +500,6 @@ jQuery(function($) {
 
             // }
         }
-        console.log(info);
 
         function setTippy() {
 

@@ -255,6 +255,43 @@ i {
     top: 0;
 }
 
+@mixin btn-msgr {
+    // position: absolute;
+    // right: 10px;
+    // top: 50%;
+    // line-height: 0;
+    // transform: translateY(-50%);
+
+    i {
+        position: relative;
+        display: inline-block;
+        height: 32px;
+        width: 32px;
+        line-height: 50px;
+        font-size: 26px;
+        background-color: #ff764d;
+        color: #ffffff;
+        text-align: center;
+        border-radius: 50%;
+        transition: 0.5s;
+
+        &::before {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            font-size: 20px;
+            line-height: 1;
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover {
+            background-color: #fff;
+            color: #ff5421;
+            transform: translateY(-2px);
+        }
+    }
+}
+
 .btn {
   @include btn;
 

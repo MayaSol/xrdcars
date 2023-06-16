@@ -4,11 +4,14 @@
 
 .filter-tags {
 	padding: 0 25px;
+    font-size: 0;
 
     &__list {
+    	display: inline-block;
         margin: 0;
         padding: 0;
         list-style: none;
+        font-size: 16px;
     }
 
     &__item {
@@ -44,5 +47,18 @@
 			opacity: .75;
 			border-radius: 0;
 		}
+    }
+
+    .car-shop-area & {
+    	display: none;
+    	grid-row-start: 3;
+    	grid-row-end: 4;
+    	grid-column-start: 1;
+    	grid-column-end: 3;
+        margin-top: 20px;
+
+    	@media (max-width: 991px) {
+    		display: block;
+    	}
     }
 }

@@ -70,7 +70,7 @@ class FilterChoiceSingle {
     }
 
     setTags(value) {
-        if (!this._tagsListId) {
+        if (!this._tagsList) {
             return;
         }
         let currentValue = value.value ? value.value : value;
@@ -78,6 +78,9 @@ class FilterChoiceSingle {
             this._tagsList.innerHTML = '';
         }
         else {
+            console.log('filter-choice-single.js');
+            console.log(this);
+            console.log(this._tagsList);
             let choiceValue = this._choice.getValue();
             this._tagsList.innerHTML = 
                 `<li><span data-value=${choiceValue.value} class="filter-tags__item">` + 

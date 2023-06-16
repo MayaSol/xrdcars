@@ -32,10 +32,17 @@
     overflow-y: auto;
     transition: right $transition, top $transition;
 
+    #choose-car & {
+      max-width: 1000px;
+      
+      @media (min-width: $screen-md) {
+        padding: 20px 40px;
+      }
+    }
+
     @media (min-width: $screen-md) {
       padding: 30px 70px;
     }
-
 
     #{$block-name}--show & {
       right: 0;
@@ -45,6 +52,7 @@
       top: 51px;
       padding-top: 30px;
     }
+
   }
 
 
@@ -60,6 +68,10 @@
 
     @media (max-width: 767px) {
       font-size: 25px;
+    }
+
+    #choose-car & {
+      font-size: 36px;
     }
   }
 

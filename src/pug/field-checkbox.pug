@@ -60,3 +60,30 @@ mixin field-checkbox(checkboxes, title)
         if(typeof(checkbox.helpText) !== 'undefined' && checkbox.helpText)
           .field-checkbox__help-text-wrap
             .field-checkbox__help-text!= checkbox.helpText
+
+
+
+
+//- Все примеси в этом файле должны начинаться c имени блока (field-checkbox)
+
+mixin field-checkbox-searches(checkboxes, title)
+
+  .field-checkbox&attributes(attributes)
+    if(typeof(title) !== 'undefined' && title)
+      .field-checkbox__title!= title
+    each checkbox in checkboxes
+      -
+        var allMods = '';
+        if(typeof(checkbox.mods) !== 'undefined' && checkbox.mods) {
+          var modsList = checkbox.mods.split(',');
+          for (var i = 0; i < modsList.length; i++) {
+            allMods = allMods + ' field-checkbox__input-wrap--' + modsList[i].trim();
+          }
+        }
+      .field-checkbox__input-wrap(class=allMods)
+        .field-checkbox__name
+          input.field-checkbox__input(type='checkbox')&attributes(checkbox.attrs)
+          span.field-checkbox__name-text!= checkbox.title
+        if(typeof(checkbox.helpText) !== 'undefined' && checkbox.helpText)
+          .field-checkbox__help-text-wrap
+            .field-checkbox__help-text!= checkbox.helpText

@@ -333,3 +333,80 @@ mixin filter-content-mark-main(props, mods)
                 option(value="4") Гибрид
         button.btn.btn--regular.btn--clear-filter.btn--invert(type="button") Сбросить
         button.btn.btn--submit(type="sumbit") Применить
+
+
+
+mixin filter-content-choose(props, mods)
+
+    //- Вызов:
+
+    -
+        // список модификаторов
+        var allMods = '';
+        if(typeof(mods) !== 'undefined' && mods) {
+            var modsList = mods.split(',');
+            for (var i = 0; i < modsList.length; i++) {
+            allMods = allMods + ' filter-content--' + modsList[i].trim();
+          }
+        }
+
+        if (!props) {
+          props = {};
+        }
+
+    .filter-choose(class=allMods)&attributes(attributes)
+        .filter-main(class=allMods)&attributes(attributes)
+            .filter-type.filter-group
+              .filter-title Тип автомобиля
+              select(name="type" id="type")
+                  option(value="0" selected) Все
+                  option(value="1") Легковые
+                  option(value="2") Внедорожники
+                  option(value="3") Минивэны
+                  option(value="4") Автодома
+                  option(value="5") Электро
+            +filter-main-mark
+            +filter-main-model
+            #filterYear.filter-year
+                .filter-title Год выпуска
+                +filter-year-selects
+            #filterMilage.filter-milage
+                .filter-title Пробег
+                +filter-milage-selects
+            #filterPrice.filter-price
+                .filter-title Цена
+                +filter-price-selects
+            <div class="filter-more">
+                <button class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Указать больше параметров <i class="bx bx-chevron-down"></i>
+                </button>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        .filter-transmission.filter-group
+                            .filter-title Передача
+                            select(name="transmission" id="transmission")
+                                option(value="0" selected) Все
+                                option(value="1") Механика
+                                option(value="2") Автомат
+                        +field-checkbox([
+                        {
+                            title: '4x4',
+                            mods: '',
+                            attrs: {
+                              name: 'drive',
+                              checked: false,
+                            }
+                        }],'Привод')(class="filter-drive filter-group")
+                        .filter-engine.filter-group
+                            .filter-title Двигатель
+                            select(name="engine" id="engine")
+                                option(value="0" selected) Все
+                                option(value="1") Бензин
+                                option(value="2") Дизель
+                                option(value="3") Электро
+                                option(value="4") Гибрид
+                    </div>
+                </div>
+            </div>
+            .filter-choose__btns
+                button.btn.btn--submit(type="sumbit") Подобрать
+

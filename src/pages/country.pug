@@ -185,19 +185,20 @@ include ../pug/mixins.pug
                                 form
                                     +filter-content-countries()(id="filter-aside" class="collapse show")
                             </div>
-                            <div class="filter-tags">
-                                <ul class="filter-tags__list" id="filter-condition-tags">
-                                </ul>
-                                <ul class="filter-tags__list" id="filter-type-tags">
-                                </ul>
-                                <ul class="filter-tags__list" id="filter-transmission-tags">
-                                </ul>
-                                <ul class="filter-tags__list" id="filter-drive-tags">
-                                </ul>
-                                <ul class="filter-tags__list" id="filter-engine-tags">
-                                </ul>
-                            </div>
                         </aside>
+                        
+                        <div class="filter-tags">
+                            <ul class="filter-tags__list" id="filter-condition-tags">
+                            </ul>
+                            <ul class="filter-tags__list" id="filter-type-tags">
+                            </ul>
+                            <ul class="filter-tags__list" id="filter-transmission-tags">
+                            </ul>
+                            <ul class="filter-tags__list" id="filter-drive-tags">
+                            </ul>
+                            <ul class="filter-tags__list" id="filter-engine-tags">
+                            </ul>
+                        </div>
 
                         <div class="car-shop-filter-options">
                             <div class="car-shop-filter-options__save-search">
@@ -208,10 +209,10 @@ include ../pug/mixins.pug
                             </div>
                             <div class="car-shop-filter-options__order">
                                 <div class="car-shop-ordering-list">
-                                    <select class="nice-select">
-                                        <option>По возрастанию цены</option>
-                                        <option>По убыванию цены</option>
-                                        <option>По наименованию</option>
+                                    <select id="input-sort" class="nice-select">
+                                        <option value="http://cars.lab01.ru/auto/?sort=p.date_added&amp;order=DESC&amp;bfilter=price:1500000-100000000;a12:2017-2023;a14:0-100000;" selected="selected">По новизне</option>
+                                        <option value="http://cars.lab01.ru/auto/?sort=p.price&amp;order=ASC&amp;bfilter=price:1500000-100000000;a12:2017-2023;a14:0-100000;">По цене</option>
+                                        <option value="http://cars.lab01.ru/auto/?sort=pd.name&amp;order=ASC&amp;bfilter=price:1500000-100000000;a12:2017-2023;a14:0-100000;">По названию</option>
                                     </select>
                                 </div>
                             </div>
@@ -417,9 +418,12 @@ include ../pug/mixins.pug
                             <div class="single-blog single-blog--full">
                                 <div class="blog-content">
                                     <a href="blog-details.html" class="blog-content__img"><img src="/images/blog/blog-1.jpg" alt="image"></a>
-                                    <h3>
+                                    <h3 class="blog-content__title">
                                         <a href="blog-details.html">WHY CROSSOVERS ARE BETTER THAN HATCHBACK</a>
                                     </h3>
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est lorem ipsum dolor sit amet.</p>
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est lorem ipsum dolor sit amet.</p>
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est lorem ipsum dolor sit amet.</p>
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est lorem ipsum dolor sit amet.</p>
                                 </div>
                             </div>

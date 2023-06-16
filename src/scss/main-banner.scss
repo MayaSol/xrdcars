@@ -131,33 +131,38 @@ Main Banner Area CSS
 
     .banner-category-list-tab {
         .tabs {
+            display: flex;
             text-align: left;
             padding-left: 0;
             list-style-type: none;
             margin-bottom: 0;
             margin-left: 15px;
             margin-top: 40px;
+        }
 
-            li {
-                display: inline-block;
-                margin-left: -2px;
-                margin-right: -2px;
+        .field-radio__input-wrap {
+            margin-top: 0 !important;
+        }
 
-                a {
-                    font-size: $font-size;
-                    background-color: $white-color;
-                    color: $black-color;
-                    padding: 10px 35px;
-                    font-weight: 600;
-                }
+        .field-radio__name {
+            margin: 0;
+        }
 
-                &.current {
-                    a {
-                        background-color: $main-color;
-                        color: $white-color;
-                    }
-                }
+        .field-radio__name-text {
+            font-size: $font-size;
+            background-color: $white-color;
+            color: $black-color;
+            padding: 10px 35px;
+            font-weight: 600;
+
+            &::before {
+                display: none;
             }
+        }
+
+        .field-radio__input:checked ~ .field-radio__name-text {
+            background-color: #ff5421;
+            color: #fff;
         }
 
         .tab_content {
@@ -347,13 +352,17 @@ Main Banner Area CSS
                         border-radius: 50%;
                         transition: $transition;
 
-                        &:hover {
-                            background-color: $main-color;
-                            color: $white-color;
+                        &.flaticon-commerse {
+                            font-size: 26px;
                         }
 
                         &.flaticon-electriccar {
-                            font-size: 34px;
+                            font-size: 36px;
+                        }
+
+                        &:hover {
+                            background-color: $main-color;
+                            color: $white-color;
                         }
                     }
                 }
@@ -570,7 +579,15 @@ Main Banner Area CSS
                             height: 50px;
                             width: 50px;
                             line-height: 50px;
-                            font-size: 30px;
+                            font-size: 36px;
+
+                            &.flaticon-electriccar {
+                                font-size: 30px;
+                            }
+
+                            &.flaticon-commerse {
+                                font-size: 22px;
+                            }
                         }
                     }
                 }

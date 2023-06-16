@@ -116,6 +116,16 @@
   transform: rotate(-135deg);
 }
 
+.choices__item.has-no-choices {
+  word-break: keep-all;
+}
+
+@media (min-width: 640px) {
+  .choices__list--dropdown .choices__item--selectable, .choices__list[aria-expanded] .choices__item--selectable {
+    padding-right: 0;
+  }
+}
+
 .form-field {
   background-color: #fff;
   height: 50px;
@@ -146,6 +156,23 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
+    .contact-info-box & {
+      font-size: 28px;
+      justify-content: center;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+      }
+
+      .flaticon-viber {
+        font-size: 22px;
+      }
+    }
   }
 }
 
@@ -215,4 +242,9 @@
     }
   }
 
+}
+
+.form-check-label {
+  font-weight: 300;
+  font-size: 15px;
 }

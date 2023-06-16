@@ -25,10 +25,23 @@ class FilterRange {
 
     _init() {
         const _this = this;
-        this._rangeSlider = new rangeSlider(
-            this._element, 
-            this._rangeConfig
-        );
+        //  Значения От и До
+        if (this._inputFrom.value) {
+            this._rangeConfig.range.min = +this._inputFrom.value;
+            this._rangeConfig.start[0] = +this._inputFrom.value;
+        }
+        if (this._inputTo.value) {
+            this._rangeConfig.range.max = +this._inputTo.value;
+            this._rangeConfig.start[1] = +this._inputTo.value;
+        }
+        //  Если есть range input
+        if (this._inputFrom) {
+            this._rangeSlider = new rangeSlider(
+                this._element, 
+                this._rangeConfig
+            );
+        }
+        // Если есть селекты От и До
         if (this._selectFrom && this._selectTo) {
 
             this._choicesConfigFrom = {
@@ -38,7 +51,6 @@ class FilterRange {
             this._choicesConfigTo = {...this._choicesConfigFrom};
 
             if (this._values) {
-                console.log(this._values);
                 this._choiceListFrom = this._values.map((value) => {
                     return {
                         value: value,
@@ -47,15 +59,11 @@ class FilterRange {
                         disabled: false
                     };
                 });
-                // console.log(this._choicesConfigFrom);
                 this._choicesConfigFrom.choices = cloneDeep(this._choiceListFrom);
                 this._choicesConfigFrom.choices[0].selected = true;
-                console.log(this._choicesConfigFrom);
-                // console.log(this._choicesConfigTo);
                 this._choiceListTo = this._choiceListFrom;
                 this._choiceListTo[this._choiceListTo.length-1].selected = true;
                 this._choicesConfigTo.choices = this._choiceListTo;
-                console.log(this._choicesConfigTo);
             }
             this._choiceFrom = new Choices(
                 this._selectFrom, 
@@ -67,9 +75,12 @@ class FilterRange {
             );
         }
 
-        this._element.addEventListener('clear-filter', function(event) {
-            _this._cleanFilter();
-        } );
+        //  Если есть range input
+        if (this._inputFrom) {
+            this._element.addEventListener('clear-filter', function(event) {
+                _this._cleanFilter();
+            } );
+        }
 
     } //_init
 

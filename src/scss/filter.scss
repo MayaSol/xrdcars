@@ -1,0 +1,63 @@
+#choose-car .filter-more {
+	grid-column-start: 1;
+	grid-column-end: 4;
+
+	.btn {
+		display: flex;
+		align-items: center;
+		font-size: 20px;
+		margin-bottom: 20px;
+
+		i {
+			margin-left: 5px;
+			transform: rotate(180deg);
+		}
+
+		&.collapsed i {
+			transform: rotate(0deg);
+		}
+
+		&:focus {
+			box-shadow: none;
+		}
+
+	}
+
+	.accordion-body {
+		padding: 0;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 20px;
+
+		@media (max-width: 479px) {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	.filter-drive {
+		justify-content: center;
+
+		.field-checkbox__input-wrap {
+			display: flex;
+			align-items: center;
+			height: 44px;
+		}
+	}
+}
+
+.filter-choose {
+	&__btns {
+		display: flex;
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+
+	.filter-group {
+		@media (max-width: 479px) {
+			margin-bottom: 10px;
+		}
+	}
+
+}
+

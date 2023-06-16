@@ -1,0 +1,75 @@
+/*================================================
+FAQ Area CSS
+=================================================*/
+.faq-area {
+    .section-title {
+        h2 {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.faq-accordion {
+    max-width: 930px;
+    margin: auto;
+
+    .accordion-item {
+        display: block;
+        margin-bottom: 30px;
+        border: none;
+        background-color: transparent;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .accordion-title {
+        padding: 25px 40px 25px 25px;
+        color: $black-color;
+        position: relative;
+        display: block;
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        background: #f6f7f9;
+
+        i {
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: $main-color;
+            font-size: 20px;
+            transition: $transition;
+        }
+
+        &.active {
+            i {
+                &::before {
+                    content: "\eaed";
+                    color: $main-color;
+                }
+            }
+        }
+    }
+
+    .accordion-content {
+        display: none;
+        padding: 20px 0 20px 0;
+
+        p {
+            color: $paragraph-color;
+            font-weight: 400;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        &.show {
+            display: block;
+        }
+    }
+}

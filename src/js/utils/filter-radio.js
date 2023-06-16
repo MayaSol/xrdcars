@@ -25,13 +25,12 @@ class FilterRadio {
 
     _init() {
         const _this = this;
-        console.log(this);
 
         if (this._tagsList) {
             // При изменении значения добавляем тег в список тегов c id в data-tags-id
             this._element.addEventListener('change', function(event) {
-                console.log('condition filter change');
-                console.log(event.target);
+                // console.log('condition filter change');
+                // console.log(event.target);
                 if (event.target.classList.contains('field-radio__input')) {
                     if (event.target.value === 'all') {
                         _this._tagsList.innerHTML = '';
@@ -51,11 +50,8 @@ class FilterRadio {
 
             // По клику на кнопку в элементе тега, устанавливаем начальное значение, при котором фильтр отключен
             this._tagsList.addEventListener('click', function(event) {
-                console.log('click: ' + (event.target.classList && event.target.classList[0]));
-                console.log(event.target.classList.contains(DELETE_TAG_BUTTON_CLASS));
-                console.log(closest(event.target, DELETE_TAG_BUTTON_CLASS));
+                // console.log('click: ' + (event.target.classList && event.target.classList[0]));
                 if (event.target.classList.contains(DELETE_TAG_BUTTON_CLASS) || closest(event.target, `.${DELETE_TAG_BUTTON_CLASS}`)) {
-                    console.log('1!');
                     _this._setDefault();
                 }
             });
@@ -75,7 +71,7 @@ class FilterRadio {
     }
 
     refresh() {
-        console.log(this._element);
+        // console.log(this._element);
         let inputs = this._element.querySelectorAll('input');
         for (let input of inputs) {
             if (input.checked) {

@@ -32,7 +32,7 @@ let config = {
   ],
   'addAssets': {
     'src/fonts/*.{woff,woff2,ttf,svg}': 'fonts/',
-    'src/images/*.{png,jpg,svg}': 'images/',
+    'src/images/*.{png,jpg,svg,gif}': 'images/',
     'src/images/logo': 'images/logo/',
     'src/images/main-banner': 'images/main-banner/',
     'src/images/recent-cars': 'images/recent-cars/',
@@ -47,6 +47,7 @@ let config = {
     'src/images/region-page': 'images/region-page/',
     'src/images/country-page': 'images/country-page/',
     'src/images/car-details': 'images/car-details/',
+    'src/images/article': 'images/article/',
     'src/css/utils.css': 'css/',
     'src/js/utils.js': 'js/',
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',

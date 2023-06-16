@@ -6,6 +6,42 @@
 		padding: 20px 0;
 	}
 
+	#choose-car & {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 20px;
+
+		@media (max-width: 767px) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media (max-width: 479px) {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	&__mark {
+		#choose-car & {
+			@media (max-width: 767px) {
+				grid-row-start: 2;
+				grid-row-end: 3;
+				grid-column-start: 1;
+				grid-column-end: 2;
+			}
+		}
+	}
+
+	&__model {
+		#choose-car & {
+			@media (max-width: 767px) {
+				grid-row-start: 2;
+				grid-row-end: 3;
+				grid-column-start: 2;
+				grid-column-end: 3;
+			}
+		}
+	}
 
 	&__mark,
 	&__model {
@@ -14,7 +50,7 @@
 		.choices__list--dropdown .choices__item {
 			display: flex;
 			padding-right: 10px;
-			
+
 			i {
 				margin-right: 10px;
 			}
@@ -66,3 +102,54 @@
 	font-weight: 700;
 	margin-bottom: 10px;
 }
+
+
+#choose-car #filterYear,
+#choose-car #filterMilage,
+#choose-car #filterPrice  {
+	.filter-selects {
+		display: flex;
+
+		&__from {
+			margin-right: 10px;
+		}
+	}
+}
+
+#choose-car #filterYear {
+	@media (max-width: 767px) {
+		grid-row-start: 1;
+		grid-row-end: 2;
+		grid-column-start: 2;
+		grid-column-end: 3;
+	}
+}
+
+#choose-car #filterMilage {
+	@media (max-width: 767px) {
+		grid-row-start: 3;
+		grid-row-end: 4;
+		grid-column-start: 1;
+		grid-column-end: 2;
+	}
+}
+
+#choose-car #filterPrice {
+	@media (max-width: 767px) {
+		grid-row-start: 3;
+		grid-row-end: 4;
+		grid-column-start: 2;
+		grid-column-end: 3;
+	}
+}
+
+
+
+#choose-car #filterMilage .filter-selects {
+	display: flex;
+}
+
+#choose-car #filterPrice .filter-selects {
+	display: flex;
+}
+

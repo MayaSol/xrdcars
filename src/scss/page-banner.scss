@@ -20,6 +20,10 @@ Page Banner CSS
         background-image: url(/images/blog/page-banner-blog.jpg);
     }
 
+    &--article {
+        background-image: url(/images/article/page-banner-article.jpg);
+    }
+
     &::before {
         position: absolute;
         content: "";

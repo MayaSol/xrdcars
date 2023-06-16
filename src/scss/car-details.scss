@@ -16,7 +16,30 @@ Car Details Area CSS
         .slick-slide {
             img {
                 width: 100%;
+                height: 100%;
+                object-fit: contain;
                 border-radius: 5px;
+            }
+
+            height: 626px;
+
+            @media (max-width: 1399px) {
+                height: 666px;
+            }
+            @media (max-width: 1199px) {
+                height: 446px;
+            }
+            @media (max-width: 991px) {
+                height: 500px;
+            }
+            @media (max-width: 767px) {
+                height: 365px;
+            }
+            @media (max-width: 480px) {
+                height: 320px;
+            }
+            @media (max-width: 380px) {
+                height: 245px;
             }
         }
     }
@@ -48,11 +71,15 @@ Car Details Area CSS
         }
 
         .slick-slide {
+            height: 80px;
             margin: 0 5px;
             cursor: pointer;
 
             img {
                 width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
                 border-radius: 5px;
             }
         }
@@ -314,9 +341,6 @@ Car Details Area CSS
     grid-column-start: 2;
     grid-column-end: 3;
 
-    @media (max-width: 991px) {
-        order: 1;
-    }
 
     h3 {
         font-size: 24px;
@@ -372,10 +396,6 @@ Car Details Area CSS
     background-color: $gray-bg;
     padding: 20px;
 
-    @media (max-width: 991px) {
-        order: 2;
-    }
-
     .socials {
         margin-top: 15px;
     }
@@ -385,7 +405,8 @@ Car Details Area CSS
 .car-details-phone {
     display: flex;
     align-items: center;
-    font-size: 18px;
+    font-size: 22px;
+    font-weight: 700;
 
 
     i {
@@ -453,4 +474,17 @@ Car Details Area CSS
     grid-column-end: 2;
     padding: 20px;
     background-color: $gray-bg;
+
+    @media (max-width: 479px) {
+        // .ya-share2__container_shape_round.ya-share2__container_size_l .ya-share2__badge .ya-share2__icon:not(.ya-share2__icon_messenger-contact):not(.ya-share2__icon_more):not(.ya-share2__icon_copy) {
+        //     background-size: 30px 30px;
+        // }
+
+        .ya-share2__container_size_l .ya-share2__badge .ya-share2__icon {
+            height: 40px;
+            width: 40px;
+            background-size: 32px 32px !important;
+        }
+
+    }
 }

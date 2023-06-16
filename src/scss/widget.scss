@@ -32,6 +32,11 @@ Widget Sidebar CSS
         }
     }
 
+    #filter-aside .widget_search {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .widget_search {
         background-color: #f6f7f9;
         padding: 25px 25px 25px;

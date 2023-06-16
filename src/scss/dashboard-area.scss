@@ -1,0 +1,292 @@
+
+/*================================================
+Dashboard Area CSS
+=================================================*/
+.dashboard-profile {
+    .profile-box {
+        background-color: #f6f7f9;
+        padding: 50px;
+
+        .profile-icon {
+            text-align: center;
+            position: relative;
+
+            a {
+                i {
+                    display: inline-block;
+                    height: 200px;
+                    width: 200px;
+                    line-height: 200px;
+                    background-color: #ebebeb;
+                    color: $white-color;
+                    font-size: 120px;
+                    text-align: center;
+                    border-radius: 50%;
+                    transition: $transition;
+
+                    &:hover {
+                        background-color: $main-color;
+                    }
+                }
+            }
+
+            .camera-icon {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                a {
+                    i {
+                        display: inline-block;
+                        height: 60px;
+                        width: 60px;
+                        line-height: 60px;
+                        background-color: $black-color;
+                        color: $white-color;
+                        font-size: 25px;
+                        text-align: center;
+                        border-radius: 50%;
+                        transition: $transition;
+
+                        &:hover {
+                            background-color: $main-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .profile-info {
+        .info-list {
+            padding-left: 0;
+            margin-bottom: 0;
+
+            li {
+                list-style-type: none;
+                font-size: 18px;
+                font-weight: 600;
+                transition: $transition;
+
+                a {
+                    color: $black-color;
+                    display: inline-block;
+                    border-bottom: 1px solid #f6f7f9;
+                    padding: 18px 35px;
+                    transition: $transition;
+                    width: 100%;
+                    position: relative;
+                    z-index: 1;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        width: 0%;
+                        height: 100%;
+                        background-color: $main-color;
+                        transition: $transition;
+                        top: 0;
+                        z-index: -1;
+                    }
+
+                    &:hover,
+                    &.active {
+                        color: $white-color;
+                        border: none;
+
+                        &::before {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dashboard-title {
+    h3 {
+        font-size: 36px;
+        margin-bottom: 0;
+    }
+}
+
+.message-form {
+    margin-top: 30px;
+
+    form {
+        .form-group {
+            margin-bottom: 25px;
+
+            label {
+                display: block;
+                margin-bottom: 8px;
+                color: $paragraph-color;
+                font-weight: bold;
+                font-size: $font-size;
+            }
+
+            .form-control {
+                height: 150px;
+                padding: 15px;
+                line-height: initial;
+                color: $black-color;
+                background-color: #f6f7f9;
+                border: 1px solid #ebebeb;
+                border-radius: 5px;
+                box-shadow: unset;
+                transition: $transition;
+                font-size: 15px;
+                font-weight: 400;
+
+                &:focus {
+                    border: 1px solid $main-color;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+.dashboard-form {
+    margin-top: 30px;
+
+    form {
+        .form-group {
+            margin-bottom: 20px;
+
+            label {
+                display: block;
+                margin-bottom: 8px;
+                color: $paragraph-color;
+                font-weight: bold;
+                font-size: $font-size;
+            }
+
+            .form-control {
+                height: 60px;
+                padding: 15px;
+                line-height: initial;
+                color: $black-color;
+                background-color: #f6f7f9;
+                border: 1px solid #ebebeb;
+                border-radius: 5px;
+                box-shadow: unset;
+                transition: $transition;
+                font-size: 15px;
+                font-weight: 400;
+
+                &:focus {
+                    border: 1px solid $main-color;
+                    background-color: transparent;
+                }
+            }
+
+            textarea {
+                &.form-control {
+                    height: 120px !important;
+                }
+            }
+
+            .nice-select {
+                background-color: #f6f7f9;
+                border: 1px solid #ebebeb;
+                height: 60px;
+                line-height: 58px;
+                color: $paragraph-color;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 0;
+                padding-bottom: 0;
+                font-size: 15px;
+                border-radius: 5px;
+
+                &::after {
+                    border-color: $main-color;
+                    height: 8px;
+                    width: 8px;
+                    right: 20px;
+                }
+
+                .list {
+                    background-color: $white-color;
+                    box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+                    border-radius: 0;
+                    width: 100%;
+                    max-width: 100%;
+                    height: 200px;
+                    overflow-y: scroll;
+                    margin-top: 0;
+                    margin-bottom: 0;
+
+                    .option {
+                        line-height: 40px;
+                        min-height: 40px;
+                        color: $paragraph-color;
+                        padding-left: 15px;
+                        padding-top: 5px;
+                        padding-right: 15px;
+
+                        &.selected {
+                            background-color: $main-color !important;
+                            color: $white-color;
+                            font-weight: normal;
+                        }
+                    }
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+            }
+
+            .form-control-file {
+                height: 150px;
+                padding: 15px;
+                line-height: initial;
+                color: $black-color;
+                background-color: #f6f7f9;
+                border: 1px solid #ebebeb;
+                border-radius: 5px;
+                box-shadow: unset;
+                transition: $transition;
+                font-size: 15px;
+                font-weight: 400;
+                width: 100%;
+                cursor: pointer;
+                outline: 0;
+
+                &:focus {
+                    border: 1px solid $main-color;
+                    background-color: transparent;
+                }
+            }
+        }
+
+        h4 {
+            font-size: 25px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .map {
+            margin-bottom: 20px;
+
+            iframe {
+                border: none;
+                width: 100%;
+                height: 250px;
+            }
+        }
+
+        .form-check {
+            margin-bottom: 15px;
+        }
+
+        .default-btn {
+            margin-top: 10px;
+            padding: 15px 50px;
+        }
+    }
+}

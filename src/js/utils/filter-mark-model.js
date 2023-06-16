@@ -141,12 +141,12 @@ class FilterMarkModel {
         this._modelChoice.setChoices(this._modelChoicesData, 'value', 'label', true);
         // Все возможные группы моделей
         this._allModelGroups = this._modelChoice._currentState.groups;
-        console.log('allModelGroups')
-        console.log(this._allModelGroups);
+        // console.log('allModelGroups')
+        // console.log(this._allModelGroups);
         // Все возможные модели
         this._allModelChoices = [...this._modelChoice._currentState.choices];
-        console.log('allModelChoices');
-        console.log(this._allModelChoices);
+        // console.log('allModelChoices');
+        // console.log(this._allModelChoices);
         //
         this._renderModels(this._markChoice, this._modelChoice,this._allModelChoices,this._allModelGroups, null);
         // Удаление выбора по клику на выбранный пункт в выпадающем списке
@@ -161,13 +161,13 @@ class FilterMarkModel {
             }
         });
         this._markChoice.passedElement.element.addEventListener('change', function(e) {
-            console.log('selected MARKS change');
-            console.log(e);
+            // console.log('selected MARKS change');
+            // console.log(e);
             _this._renderModels(_this._markChoice,_this._modelChoice,_this._allModelChoices,_this._allModelGroups,e.detail.value);
         });
 
-        console.log('this._markChoice.passedElement.element');
-        console.log(this._markChoice.passedElement.element);
+        // console.log('this._markChoice.passedElement.element');
+        // console.log(this._markChoice.passedElement.element);
 
         this._markChoice.passedElement.element.addEventListener('clear-filter', function(event) {
             _this._clearMarks();
@@ -176,7 +176,6 @@ class FilterMarkModel {
 
 
     _clearMarks() {
-        console.log('clear mark model filter');
         this._markChoice.clearStore();
         this._markChoice.setChoices(this._markChoicesData, 'value', 'label', true);
         this._modelChoice.clearStore();
@@ -226,16 +225,14 @@ class FilterMarkModel {
                 choices.push(choicesItem);
             }
         }
-        console.log('choices');
-        console.log(choices);
+        // console.log('choices');
+        // console.log(choices);
         return choices;
     }
     //
     // Перезапоняем список моделей в соответствии со списком марок
     //
     _renderModels(markChoice, modelChoice, allChoices, allGroups, lastChangedMarkValue) {
-        console.log('lastChangedMarkValue');
-        console.log(lastChangedMarkValue);
         // lastChangedMarkValue - Последняя марка добавленная/удаленная из списка марок
         var lastChangedMarkLabel = this._allMarkChoices.reduce((acc,curr) => {
             if (curr.value == lastChangedMarkValue) {
@@ -244,10 +241,8 @@ class FilterMarkModel {
             else {
                 return acc + '';
             }
-            console.log(acc);
+            // console.log(acc);
         },'');
-        console.log('lastChangedMarkLabel');
-        console.log(lastChangedMarkLabel);
         //  Выбранные марки в селекте Марки
         var selectedMarksAll = Array.prototype.slice.call(markChoice.passedElement.element.selectedOptions)
             .map((item) => {
@@ -260,14 +255,14 @@ class FilterMarkModel {
                     'label': item.label.toUpperCase()
                 }
             });
-        console.log('selectedMarksAll');
-        console.log(selectedMarksAll);
-        console.log('lastChangedMarkLabel');
-        console.log(lastChangedMarkLabel);
+        // console.log('selectedMarksAll');
+        // console.log(selectedMarksAll);
+        // console.log('lastChangedMarkLabel');
+        // console.log(lastChangedMarkLabel);
         //  Массив label выбранных марок
         var selectedMarksLbls = selectedMarksAll.map(item => item.label.toUpperCase());
-        console.log('selectedMarksLbls');
-        console.log(selectedMarksLbls);
+        // console.log('selectedMarksLbls');
+        // console.log(selectedMarksLbls);
         // Группы для выбранных марок
         var selectedGroups = allGroups.filter((group) => {
             let result = selectedMarksLbls.find((mark) => {
@@ -275,16 +270,16 @@ class FilterMarkModel {
             })
             return result;
         })
-        console.log('selectedGroups');
-        console.log(selectedGroups);
+        // console.log('selectedGroups');
+        // console.log(selectedGroups);
         // Список выбранных моделей 
         var selectedModels = modelChoice._currentState.items
             .map((item) => {
                 return item.label.toUpperCase();
                 }
             );
-        console.log('selectedModels');
-        console.log(selectedModels);
+        // console.log('selectedModels');
+        // console.log(selectedModels);
         // Новые данные для селекта Моделей
         var newChoiceData = [];
         for (let group of selectedGroups) {
@@ -318,8 +313,8 @@ class FilterMarkModel {
             newChoiceData.push(item);
         }
         //
-        console.log('newChoiceData');
-        console.log(newChoiceData);
+        // console.log('newChoiceData');
+        // console.log(newChoiceData);
         modelChoice.clearStore();
         modelChoice.setChoices(newChoiceData,'value','label',true);
     }

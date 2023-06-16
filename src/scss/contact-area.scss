@@ -1,0 +1,93 @@
+/*================================================
+Contact Area CSS
+=================================================*/
+.contact-form {
+    .title {
+        margin-bottom: 30px;
+
+        h3 {
+            font-size: 36px;
+            margin-bottom: 0;
+        }
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: $paragraph-color;
+            font-weight: 500;
+            font-size: $font-size;
+        }
+
+        .form-control {
+            height: 60px;
+            padding: 0 0 0 15px;
+            line-height: initial;
+            color: $black-color;
+            background-color: #f6f7f9;
+            border: 1px solid #ebebeb;
+            border-radius: 5px;
+            box-shadow: unset;
+            transition: $transition;
+            font-size: 15px;
+            font-weight: 400;
+
+            &:focus {
+                border: 1px solid $main-color;
+                background-color: transparent;
+            }
+        }
+    }
+
+    textarea.form-control {
+        height: auto !important;
+        padding: 15px !important;
+    }
+
+    .help-block {
+        &.with-errors {
+            ul {
+                color: red;
+                margin-bottom: 0;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .form-check {
+        margin-bottom: 10px;
+        font-weight: 400;
+        color: $paragraph-color;
+
+        a {
+            color: $main-color;
+        }
+    }
+
+    #msgSubmit {
+        margin: 0;
+        font-size: 1.3rem;
+
+        &.text-danger,
+        &.text-success {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    }
+
+    .default-btn {
+        margin-top: 10px;
+        padding: 15px 45px;
+    }
+}
+
+.contact-map {
+    iframe {
+        border: none;
+        width: 100%;
+        height: 670px;
+    }
+}

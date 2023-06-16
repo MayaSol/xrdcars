@@ -1,0 +1,100 @@
+/*================================================
+Contact Info Area CSS
+=================================================*/
+.contact-info-box {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-gap: 0 20px;
+    height: 100%;
+    position: relative;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    z-index: 1;
+    background-color: #f6f7f9;
+
+    .icon {
+        position: relative;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        align-self: center;
+        width: 80px;
+        height: 80px;
+        background-color: $main-color;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 50px;
+        color: $white-color;
+        transition: $transition;
+
+        @media (max-width: 1300px) {
+            width: 60px;
+            height: 60px;
+            font-size: 36px;
+        }
+
+        i {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+
+    &__title {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        margin-bottom: 10px;
+        font-size: 25px;
+    }
+
+    &__data {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        align-self: center;
+    }
+
+    p {
+        margin-bottom: 0;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+        a {
+            color: $paragraph-color;
+
+            &:hover {
+                color: $main-color;
+            }
+        }
+    }
+    &:hover {
+        .icon {
+            background-color: $black-color;
+            color: $white-color;
+        }
+    }
+}
+
+.contact-info-schedule {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+
+    &__inner {
+        display: inline-block;
+    }
+}
+

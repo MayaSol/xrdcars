@@ -1,0 +1,547 @@
+include ../pug/mixins.pug
+
+<!doctype html>
+<html class="page" lang="zxx">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/utils.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>XRDCARS</title>
+    <link rel="icon" type="/image/png" href="images/favicon.png">
+     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=bd455aa8-6a1c-4570-a04d-5a21c9e76f7e" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="page__inner">
+        <div class="page__content">
+            <!-- Start Navbar Area -->
+            <div class="navbar-area">
+                <div class="main-responsive-nav">
+                    <div class="container">
+                        <div class="main-responsive-menu">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="/images/logo/black-logo.svg" alt="image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-navbar">
+                    <div class="container-fluid">
+                        <nav class="navbar navbar-expand-md">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="/images/logo/white-logo.svg" class="white-logo" alt="image">
+                                <img src="/images/logo/black-logo.svg" class="black-logo" alt="image">
+                            </a>
+                            <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link active">
+                                            <span>Каталог</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="about-us.html" class="nav-link">
+                                            <span>О компании</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="new-cars.html" class="nav-link">
+                                            <span>Отзывы</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <span>Услуги</span>
+                                            <i class='bx bx-chevron-down'></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item">
+                                                <a href="about-us.html" class="nav-link">
+                                                    <span>Растаможка</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="our-team.html" class="nav-link">
+                                                    <span>Доставка</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <span>Оплата</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="auto-loan-calculator.html" class="nav-link">
+                                                    <span>Гарантии</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <span>Помощь</span>
+                                            <i class='bx bx-chevron-down'></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item">
+                                                <a href="index.html" class="nav-link">
+                                                    <span>Как купить</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="index-2.html" class="nav-link">
+                                                    <span>Вопрос-ответы</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="index-2.html" class="nav-link">
+                                                    <span>Блог</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <span>Контакты</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item option-item option-item--phone">
+                                        <a class="nav-link" href='tel:+71234567890'>+7 (123) 456-78-90</a>
+                                    </li>
+                                    <li class="nav-item option-item option-item--fav">
+                                        <a class="nav-link">
+                                            <i class='flaticon-love'></i>
+                                            <span>Избранное</span>
+                                            <i class='bx bx-chevron-down'></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item">
+                                                <a href="about-us.html" class="nav-link">
+                                                    <span>Поиски</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="our-team.html" class="nav-link">
+                                                    <span>Подписки</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="option-item option-item--choose-avto">
+                                        <a href="submit-vehicle.html" class="navbar-btn"> Подобрать авто
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- End Navbar Area -->
+
+            <!-- Start Page Banner -->
+            <div class="page-banner-area page-banner-area--article">
+                <div class="d-table">
+                    <div class="d-table-cell">
+                        <div class="container">
+                            <div class="page-banner-content">
+                                <h1>Статья</h1>
+
+                                <ul class="pages-list">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>Pages</li>
+                                    <li><span>Статья</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Page Banner -->
+    
+            <!-- Start Contact Info Area -->
+            <section class="contact-info-area pt-100 pb-70">
+                <div class="container">
+                    <div class="row contact-info-all">
+                        <div class="col-xl-3 col-lg-6 mb-3 mb-xl-0 conact-info-col">
+                            <div class="contact-info-box">
+                                <div class="icon">
+                                    <i class='flaticon-pin'></i>
+                                </div>
+                                <h3 class="contact-info-box__title">Адрес:</h3>
+                                <div class="contact-info-box__data">
+                                    <p>2364 Oakdale Avenue Clearwater, FL 34620, New York, USA</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 mb-3 mb-xl-0 conact-info-col">
+                            <div class="contact-info-box">
+                                <div class="icon">
+                                    <i class='flaticon-call'></i>
+                                </div>
+                                <h3 class="contact-info-box__title">Телефоны:</h3>
+                                <div class="contact-info-box__data">
+                                    <p><a href="tel:15143126677">+1 (514) 312-6677</a></p>
+                                    <p><a href="tel:15143125566">+1 (514) 312-5566</a></p>
+                                    <p><a href="tel:15143125566">+1 (514) 312-5566</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 mb-3 mb-xl-0 conact-info-col">
+                            <div class="contact-info-box">
+                                <div class="icon">
+                                    <i class='flaticon-email'></i>
+                                </div>
+                                <h3 class="contact-info-box__title">Email:</h3>
+                                <div class="contact-info-box__data">
+                                    <p><a href="mailto:support@mund.com">support@mund.com</a></p>
+                                    <p><a href="mailto:info@mundmotors.com">info@mundmotors.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 mb-3 mb-xl-0 conact-info-col">
+                            <div class="contact-info-box">
+                                <div class="icon">
+                                    <i class='flaticon-user-add'></i>
+                                </div>
+                                <h3 class="contact-info-box__title">Ещё:</h3>
+                                <div class="contact-info-box__data">
+                                    <div class="socials">
+                                      <div class="share-link">
+                                        <a href="#" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+                                        <a href="#" target="_blank"><i class="bx bxl-telegram"></i></a>
+                                        <a href="#" target="_blank"><i class="flaticon-viber"></i></a>
+                                        <a href="#" target="_blank"><i class="bx bxl-vk"></i></a>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-info-schedule">
+                        <span>Время работы: <b>ежедневно с 10:00 до 18:00</b></span>
+                    </div>
+                </div>
+            </section>
+            <!-- End Contact Info Area -->
+
+        <!-- Start Contact Area -->
+        <section class="contact-area pb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="contact-form">
+                            <div class="title">
+                                <h3>Связаться с нами</h3>
+                            </div>
+
+                            <form id="contactForm">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="form-group">
+                                            <label>Ваше имя</label>
+                                            <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="form-group">
+                                            <label>Телефон</label>
+                                            <input type="text" name="phone_number" id="phone_number" required data-error="Please enter your number" class="form-control">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <label>Текст</label>
+                                            <textarea name="message" class="form-control" id="message" cols="30" rows="5" required data-error="Write your message"></textarea>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="checkme" checked><label class="form-check-label" for="checkme"><span>Согласие на обработку моих </span><a href="privacy-policy.html">персональных данных</a></label></div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <button type="submit" class="default-btn"> Отправить сообщение
+                                            <span></span>
+                                        </button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="contact-map" id="contact-map">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Contact Area -->
+
+        </div>
+        <div class="page__footer-wrapper">
+            <!-- Start Footer Area -->
+            <!-- Start Newsletter Area -->
+            <div class="newsletter-area">
+                <div class="container">
+                    <div class="newsletter-inner-box">
+                        <div class="row align-items-center">
+                            <div class="col-xl-4">
+                                <div class="newsletter-content">
+                                    <h3>Подписаться на обновления</h3>
+                                    <p>Получайте уведомления о новых поступлениях первым!</p>
+                                </div>
+                            </div>
+                            <div class="newsletter-list newsletter-list--default">
+                                <div class="newsletter-item newsletter-item--right newsletter-item--my-search">
+                                    <select id="newsletter-my-search">
+                                        <option value="1">BMW из Европы</option>
+                                        <option value="2">Chevrolet Tahoe 2020-2023</option>
+                                        <option value="3">Ford Mustang 2020-2023</option>
+                                        <option value="4">Автодом</option>
+                                    </select>
+                                </div>
+                                <div class="newsletter-item newsletter-item--left newsletter-item--default">
+                                    <select class="js-choice" id="newsletter">
+                                        <option value>Выбрать цель подписки</option>
+                                        <option value="1">На все обновления</option>
+                                        <option value="2">Из моего списка поисков</option>
+                                        <option value="3">Добавить новый фильтр</option>
+                                    </select>
+                                </div>
+                                </div>
+                            <div class="col-lg-3 newsletter-socials socials">
+                                <div class="newsletter-share-link">
+                                    <a id="newsletter-share-email" target="_blank"><i class='bx bx-envelope'></i></a>
+                                    <a href="#" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                                    <a href="#" target="_blank"><i class='bx bxl-telegram'></i></a>
+                                    <a href="#" target="_blank"><i class='flaticon-viber'></i></a>
+                                    <a href="#" target="_blank"><i class='bx bxl-vk'></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Newsletter Area -->
+            <footer class="footer-area pb-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-footer-widget">
+                                <div class="logo-widget">
+                                    <a href="index.html">
+                                        <img src="/images/logo/white-logo.svg" alt="image">
+                                    </a>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-footer-widget">
+                                <h3>Полезные ссылки</h3>
+                                <ul class="quick-links">
+                                    <li>
+                                        <a href="#"><i class='bx bxs-chevrons-right'></i>О нас</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class='bx bxs-chevrons-right'></i>Как заказать</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class='bx bxs-chevrons-right'></i>Оплата</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class='bx bxs-chevrons-right'></i>Доставка</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class='bx bxs-chevrons-right'></i>Таможня</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-footer-widget">
+                                <h3>Мы на связи</h3>
+                                <ul class="footer-info">
+                                    <li>
+                                        <span>Адрес:</span>
+                                        <span>2364 Oakdale Avenue Clearwater, <br> FL 34620, New York, USA</span>
+                                    </li>
+                                    <li>
+                                        <span>Телефон:</span>
+                                        <span><a href="tel:15143126677">+1 (514) 312-6677</a></span>
+                                    </li>
+                                    <li>
+                                        <span>Еще:</span>
+                                        <div class="socials socials-footer">
+                                            <div class="share-link">
+                                                <a target="_blank"><i class='bx bx-envelope'></i></a>
+                                                <a href="#" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                                                <a href="#" target="_blank"><i class='bx bxl-telegram'></i></a>
+                                                <a href="#" target="_blank"><i class='flaticon-viber'></i></a>
+                                                <a href="#" target="_blank"><i class='bx bxl-vk'></i></a>
+                                            </div>
+                                        </div>
+
+                                        <span><a href="mailto:hello@mund.com">hello@mund.com</a></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-footer-widget">
+                                <h3>Наш Инстаграмм</h3>
+                                <ul class="instagram-list">
+                                    <li>
+                                        <div class="box">
+                                            <img src="/images/instagram/instagram-1.jpg" alt="image">
+                                            <i class="bx bxl-instagram"></i>
+                                            <a href="#" target="_blank" class="link-btn"></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <img src="/images/instagram/instagram-2.jpg" alt="image">
+                                            <i class="bx bxl-instagram"></i>
+                                            <a href="#" target="_blank" class="link-btn"></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <img src="/images/instagram/instagram-3.jpg" alt="image">
+                                            <i class="bx bxl-instagram"></i>
+                                            <a href="#" target="_blank" class="link-btn"></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <img src="/images/instagram/instagram-4.jpg" alt="image">
+                                            <i class="bx bxl-instagram"></i>
+                                            <a href="#" target="_blank" class="link-btn"></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <img src="/images/instagram/instagram-5.jpg" alt="image">
+                                            <i class="bx bxl-instagram"></i>
+                                            <a href="#" target="_blank" class="link-btn"></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <img src="/images/instagram/instagram-6.jpg" alt="image">
+                                            <i class="bx bxl-instagram"></i>
+                                            <a href="#" target="_blank" class="link-btn"></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <img src="/images/instagram/instagram-7.jpg" alt="image">
+                                            <i class="bx bxl-instagram"></i>
+                                            <a href="#" target="_blank" class="link-btn"></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <img src="/images/instagram/instagram-8.jpg" alt="image">
+                                            <i class="bx bxl-instagram"></i>
+                                            <a href="#" target="_blank" class="link-btn"></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <img src="/images/instagram/instagram-9.jpg" alt="image">
+                                            <i class="bx bxl-instagram"></i>
+                                            <a href="#" target="_blank" class="link-btn"></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Footer Area -->
+            <!-- Start Copy Right Area -->
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="copyright-area-content">
+                        <p> Copyright &#x40; 2023 Mund is proudly created by
+                            <a href="https://envytheme.com/" target="_blank"> EnvyTheme </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Copy Right Area -->
+
+            <!-- Добавить новый фильтр -->
+            <div class="aside-form" id="add-search-for-newsletter">
+                <div class="aside-form__overlay" data-aside-close="data-aside-close"></div>
+                <div class="aside-form__content">
+                    <div class="aside-form__header">
+                        <div class="aside-form__title">Добавить новый фильтр</div>
+                        <button class="btn close aside-form__close" type="button" aria-label="Close modal" title="Закрыть" data-aside-close="data-aside-close"></button>
+                    </div>
+                    +filter-content
+                    <div class="aside-form__footer">
+                        <div class="section-btn">
+                            <button class="btn default-btn" id="search-advanced-submit"> Добавить новый фильтр
+                                <span style="top: -507px; left: -852.15px;"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    +save-search()
+
+    <!-- Start Go Top Area -->
+    <div class="go-top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </div>
+    <!-- End Go Top Area -->
+
+    <!-- Модалка Подписки на почту -->
+    <div class="modal fade" id="newsletter-email-modal" aria-hidden="true" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+                <label>
+                    <input type="email" class="form-field" placeholder="Электронная почта">
+                </label>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="disabled">Получать на почту</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

@@ -8,7 +8,6 @@ ready(function() {
         return;
     }
     filter.addEventListener('click', function(event) {
-        console.log('filter click: ' + event.target.classList[0]);
         if (event.target.classList.contains('btn--clear-filter')) {
             console.log('btn clear click');
             var filterMark = this.querySelector('.filter-main__mark-select');
@@ -75,9 +74,7 @@ ready(function() {
     // Теги чекбокса Привод
     let filterDrive = document.querySelector('#advanced-search-page-filter .filter-drive');
     let tagsListId = filterDrive && filterDrive.dataset && filterDrive.dataset.tagsId;
-    console.log(tagsListId);
     let tagsList = tagsListId && document.getElementById(tagsListId);
-    console.log(tagsList);
     if (tagsList) {
 	    filterDrive.addEventListener('change', function(event) {
 	    	if (event.target.classList.contains('field-checkbox__input')) {
